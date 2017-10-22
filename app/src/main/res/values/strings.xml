@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Sara</string>
+    <string name="cabecera_menu">Cabecera del menu</string>
+    <string name="txt_monitor">Monitor</string>
+    <string name="txt_citas">Citas</string>
+    <string name="txt_administrador">Administrador</string>
+    <string name="txt_crear_monitor">Crear Monitor</string>
+    <string name="txt_crear_cita">Crear Cita</string>
+    <string name="txt_mas_opciones">Más opciones</string>
+    <string name="txt_configuracion">Configuración</string>
+    <string name="txt_salir">Salir</string>
+
+</resources>
