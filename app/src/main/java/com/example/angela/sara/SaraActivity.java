@@ -5,11 +5,10 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import com.example.angela.sara.util.AdaptadorDeMonitor;
 import com.example.angela.sara.vo.Monitor;
 
 import java.util.ArrayList;
@@ -18,8 +17,8 @@ public class SaraActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
     private NavigationView navView;
-    private RecyclerView listadoDeMonitores;
     private ArrayList<Monitor> monitores;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,20 +45,36 @@ public class SaraActivity extends AppCompatActivity {
         monitores.add(new Monitor("Goku", "Calculo"));
         monitores.add(new Monitor("Alejandro Magno", "Calculo"));
 
-        listadoDeMonitores= (RecyclerView) findViewById(R.id.listaMonitores);
-        final AdaptadorDeMonitor adaptador = new  AdaptadorDeMonitor(monitores);
-        listadoDeMonitores.setAdapter(adaptador);
-        listadoDeMonitores.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false));
-
     }
 
+    /**
+     * Metodo que permite crear el menu de opciones
+     * @param menu
+     * @return
+     */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    /**
+     * Método que permite verifiar que opcion se eleige en el menu
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
         switch(item.getItemId()) {
             case android.R.id.home:
                 drawerLayout.openDrawer(GravityCompat.START);
                 return true;
         }
+
         return super.onOptionsItemSelected(item);
+
     }
+
 }

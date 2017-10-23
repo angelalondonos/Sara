@@ -19,9 +19,5 @@
         app:headerLayout="@layout/encabezado_navview"
         app:menu="@menu/menu_nav" />
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/listaMonitores"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
 
 </android.support.v4.widget.DrawerLayout>

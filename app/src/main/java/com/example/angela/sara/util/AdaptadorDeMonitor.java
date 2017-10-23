@@ -1,6 +1,7 @@
 package com.example.angela.sara.util;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,24 +51,30 @@ public class AdaptadorDeMonitor extends RecyclerView.Adapter<AdaptadorDeMonitor.
     }
 
     /**
-     * Clase que carga la información que se muestra del monitor 
+     * Clase que carga la información que se muestra del monitor
      */
 
-    public static class MonitorViewHolder extends RecyclerView.ViewHolder {
+    public static class MonitorViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-        private TextView txtNombrePresonaje;
+        private TextView txtNombreMonitor;
         private TextView txtLineaMonitoria;
 
         public MonitorViewHolder(View itemView) {
             super(itemView);
-            txtNombrePresonaje = (TextView) itemView.findViewById(R.id.nombre);
+            txtNombreMonitor = (TextView) itemView.findViewById(R.id.nombre);
             txtLineaMonitoria = (TextView) itemView.findViewById(R.id.linea_monitoria);
+            itemView.findViewById(R.id.linea_monitoria);
+
         }
 
         public void binMonitor(Monitor monitor) {
-            txtNombrePresonaje.setText(monitor.getNombre());
-
+            txtNombreMonitor.setText(monitor.getNombre());
             txtLineaMonitoria.setText(monitor.getLineaMonitoria());
+        }
+
+        @Override
+        public void onClick(View view) {
+            Log.d("TAG", "Element " + getAdapterPosition() + " clicked. "+ txtNombreMonitor.getText());
         }
     }
 }
