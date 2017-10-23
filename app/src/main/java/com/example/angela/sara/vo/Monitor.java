@@ -1,5 +1,8 @@
 package com.example.angela.sara.vo;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  *
  * Clase con datos necesarios de monitor
@@ -9,7 +12,7 @@ package com.example.angela.sara.vo;
  *
  */
 
-public class Monitor {
+public class Monitor implements Parcelable{
 
     private String nombre;
     private String userName;
@@ -80,6 +83,18 @@ public class Monitor {
 
     public void setLugarAsesoria(String lugarAsesoria) {
         this.lugarAsesoria = lugarAsesoria;
+    }
+
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+
     }
 }
 

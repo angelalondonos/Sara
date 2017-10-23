@@ -1,5 +1,6 @@
 package com.example.angela.sara;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -10,6 +11,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.example.angela.sara.Fragments.ListaDeMonitoresFragment;
+import com.example.angela.sara.activity.DetalleDeMonitorActivity;
 import com.example.angela.sara.vo.Monitor;
 
 import java.util.ArrayList;
@@ -83,6 +85,9 @@ public class SaraActivity extends AppCompatActivity implements ListaDeMonitoresF
 
     @Override
     public void onMonitorSeleccionado(int position) {
+        Intent intent = new Intent(this, DetalleDeMonitorActivity.class);
+        intent.putExtra("per", monitores.get(position));
+        startActivity(intent);
 
     }
 }
