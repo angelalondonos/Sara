@@ -1,6 +1,8 @@
 package com.example.angela.sara.Fragments;
 
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -26,11 +28,13 @@ import java.util.ArrayList;
  * @author Cristian Agudelo
  * A simple {@link Fragment} subclass.
  */
-public class ListaDeMonitoresFragment extends Fragment{
+public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMonitor.OnClickAdaptadorDeMonitor{
 
     private AdaptadorDeMonitor adaptador;
     private RecyclerView listadoDeMonitores;
     private ArrayList<Monitor> monitores;
+    private OnMonitorSeleccionadoListener listener;
+
 
 
     /**
@@ -38,6 +42,14 @@ public class ListaDeMonitoresFragment extends Fragment{
      */
     public ListaDeMonitoresFragment() {
         // Required empty public constructor
+    }
+
+
+    /**
+     * Crea la conexion entre el fragmento y su parte grafica
+     */
+    public interface OnMonitorSeleccionadoListener {
+        void onMonitorSeleccionado(int position);
     }
 
     /**
@@ -66,7 +78,7 @@ public class ListaDeMonitoresFragment extends Fragment{
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        adaptador = new AdaptadorDeMonitor(monitores);
+        adaptador = new AdaptadorDeMonitor(monitores, this);
         listadoDeMonitores = (RecyclerView) getView().findViewById(R.id.listaMonitores);
         listadoDeMonitores.setAdapter(adaptador);
         listadoDeMonitores.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
@@ -107,4 +119,33 @@ public class ListaDeMonitoresFragment extends Fragment{
 
     }
 
+    @Override
+    public void onClickPosition(int pos) {
+        listener.onMonitorSeleccionado(pos);
+    }
+
+    /**
+     * Método para fijar una referencia a la Activity,
+     * el cual debe implementar la interfaz OnMonitorSeleccionadoListener,
+     * que luego podemos utilizar para pasar objetos del Fragment
+     * a la Activity
+     * @param context
+     */
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        Activity activity;
+        if (context instanceof Activity){
+            activity = (Activity) context;
+            try {
+                listener = (OnMonitorSeleccionadoListener) activity;
+            } catch (ClassCastException e) {
+                throw new ClassCastException(activity.toString() + " debe implementar la interfaz OnMonitorSeleccionadoListener");
+            }
+        }
+    }
+
+    public void setMonitores(ArrayList<Monitor> monitores) {
+        this.monitores = monitores;
+    }
 }

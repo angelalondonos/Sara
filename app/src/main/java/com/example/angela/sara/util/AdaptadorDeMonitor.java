@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.angela.sara.Fragments.ListaDeMonitoresFragment;
 import com.example.angela.sara.R;
 import com.example.angela.sara.vo.Monitor;
 
@@ -21,13 +22,15 @@ import java.util.ArrayList;
 public class AdaptadorDeMonitor extends RecyclerView.Adapter<AdaptadorDeMonitor.MonitorViewHolder> {
 
     private ArrayList<Monitor> monitores;
+    private static OnClickAdaptadorDeMonitor listener;
 
     /**
      * Método constructor de la clase AdaptadorDeMonitor
      * @param monitores
      */
-    public AdaptadorDeMonitor(ArrayList<Monitor> monitores) {
+    public AdaptadorDeMonitor(ArrayList<Monitor> monitores, ListaDeMonitoresFragment listaDeMonitoresFragment) {
         this.monitores = monitores;
+        listener = (OnClickAdaptadorDeMonitor) listaDeMonitoresFragment;
     }
 
     @Override
@@ -37,6 +40,11 @@ public class AdaptadorDeMonitor extends RecyclerView.Adapter<AdaptadorDeMonitor.
         MonitorViewHolder monitorVH = new MonitorViewHolder(itemView);
         return monitorVH;
     }
+
+    public interface OnClickAdaptadorDeMonitor{
+        void onClickPosition(int pos);
+    }
+
 
     @Override
     public void onBindViewHolder(MonitorViewHolder holder, int position) {
@@ -59,6 +67,7 @@ public class AdaptadorDeMonitor extends RecyclerView.Adapter<AdaptadorDeMonitor.
         private TextView txtNombreMonitor;
         private TextView txtLineaMonitoria;
 
+
         public MonitorViewHolder(View itemView) {
             super(itemView);
             txtNombreMonitor = (TextView) itemView.findViewById(R.id.nombre);
@@ -74,6 +83,8 @@ public class AdaptadorDeMonitor extends RecyclerView.Adapter<AdaptadorDeMonitor.
 
         @Override
         public void onClick(View view) {
+
+            listener.onClickPosition(getAdapterPosition());
             Log.d("TAG", "Element " + getAdapterPosition() + " clicked. "+ txtNombreMonitor.getText());
         }
     }

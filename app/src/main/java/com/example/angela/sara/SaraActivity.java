@@ -9,11 +9,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.example.angela.sara.Fragments.ListaDeMonitoresFragment;
 import com.example.angela.sara.vo.Monitor;
 
 import java.util.ArrayList;
 
-public class SaraActivity extends AppCompatActivity {
+public class SaraActivity extends AppCompatActivity implements ListaDeMonitoresFragment.OnMonitorSeleccionadoListener {
 
     private DrawerLayout drawerLayout;
     private NavigationView navView;
@@ -44,6 +45,9 @@ public class SaraActivity extends AppCompatActivity {
         monitores.add(new Monitor("Leonardo da Vinci", "Calculo"));
         monitores.add(new Monitor("Goku", "Calculo"));
         monitores.add(new Monitor("Alejandro Magno", "Calculo"));
+
+        ListaDeMonitoresFragment listaDeMonitoresFragment =(ListaDeMonitoresFragment) getSupportFragmentManager().findFragmentById(R.id.fragmento_lista_monitores);
+        listaDeMonitoresFragment.setMonitores(monitores);
 
     }
 
@@ -77,4 +81,8 @@ public class SaraActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onMonitorSeleccionado(int position) {
+
+    }
 }
