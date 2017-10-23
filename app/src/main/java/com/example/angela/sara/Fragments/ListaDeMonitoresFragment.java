@@ -100,11 +100,10 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
 
         int id = item.getItemId();
 
-        if (id == R.id.menu_agregar) {
-            monitores.add(0, new Monitor("Nuevo personaje","Programación"));
-            adaptador.notifyItemInserted(0);
+        if (id == R.id.cambiar_idioma) {
+
         }
-        if (id == R.id.menu_eliminar) {
+     /**   if (id == R.id.menu_eliminar) {
             monitores.remove(0);
             adaptador.notifyItemRemoved(0);
         }
@@ -114,7 +113,7 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
             monitores.set(2, aux);
             adaptador.notifyItemMoved(1, 2);
         }
-
+**/
         return super.onOptionsItemSelected(item);
 
     }

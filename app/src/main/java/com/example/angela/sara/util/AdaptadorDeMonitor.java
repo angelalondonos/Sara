@@ -36,7 +36,7 @@ public class AdaptadorDeMonitor extends RecyclerView.Adapter<AdaptadorDeMonitor.
     @Override
     public MonitorViewHolder onCreateViewHolder(ViewGroup parent, int
             viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.resumen_personaje, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.resumen_monitor, parent, false);
         MonitorViewHolder monitorVH = new MonitorViewHolder(itemView);
         return monitorVH;
     }
