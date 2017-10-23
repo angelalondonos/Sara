@@ -13,21 +13,21 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="163dp"
+        android:layout_height="120dp"
         android:padding="16dp">
 
         <ImageView
             android:id="@+id/imagen"
             android:src="@drawable/persona"
-            android:layout_width="150dp"
-            android:layout_height="180dp"
+            android:layout_width="110dp"
+            android:layout_height="100dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginEnd="16dp" />
 
         <TextView
             android:id="@+id/nombre"
-            android:text="algo"
+            android:text=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -35,10 +35,11 @@
             android:textSize="30sp" />
 
         <TextView
-            android:text="algoo"
+            android:text=""
             android:id="@+id/linea_monitoria"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="20sp"
             android:layout_below="@+id/nombre"
             android:layout_toEndOf="@+id/imagen" />
 

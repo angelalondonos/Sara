@@ -28,6 +28,28 @@ public class Monitor implements Parcelable{
         this.lineaMonitoria= lineaMonitoria;
     }
 
+    protected Monitor(Parcel in) {
+        nombre = in.readString();
+        userName = in.readString();
+        telefono = in.readString();
+        semestre = in.readString();
+        lineaMonitoria = in.readString();
+        contrasena = in.readString();
+        lugarAsesoria = in.readString();
+    }
+
+
+    public static final Creator<Monitor> CREATOR = new Creator<Monitor>() {
+        @Override
+        public Monitor createFromParcel(Parcel in) {
+            return new Monitor(in);
+        }
+
+        @Override
+        public Monitor[] newArray(int size) {
+            return new Monitor[size];
+        }
+    };
 
     public String getNombre() {
         return nombre;
@@ -94,7 +116,12 @@ public class Monitor implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-
+        parcel.writeString(contrasena);
+        parcel.writeString(nombre);
+        parcel.writeString(lineaMonitoria);
+        parcel.writeString(lugarAsesoria);
+        parcel.writeString(semestre);
+        parcel.writeString(userName);
     }
 }
 

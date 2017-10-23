@@ -67,12 +67,12 @@ public class AdaptadorDeMonitor extends RecyclerView.Adapter<AdaptadorDeMonitor.
         private TextView txtNombreMonitor;
         private TextView txtLineaMonitoria;
 
-
         public MonitorViewHolder(View itemView) {
             super(itemView);
             txtNombreMonitor = (TextView) itemView.findViewById(R.id.nombre);
             txtLineaMonitoria = (TextView) itemView.findViewById(R.id.linea_monitoria);
             itemView.findViewById(R.id.linea_monitoria);
+            itemView.setOnClickListener(this);
 
         }
 
