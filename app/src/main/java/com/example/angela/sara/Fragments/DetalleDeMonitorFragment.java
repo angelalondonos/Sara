@@ -13,8 +13,6 @@ import android.widget.TextView;
 import com.example.angela.sara.R;
 import com.example.angela.sara.vo.Monitor;
 
-import butterknife.BindView;
-
 /**
  * Clase que permite ver el detalle del monitor
  * @author Angela Londono
@@ -24,7 +22,7 @@ import butterknife.BindView;
  */
 public class DetalleDeMonitorFragment extends Fragment implements View.OnClickListener{
 
-    @BindView(R.id.textView) protected TextView txtNombre;
+    private TextView txtNombre;
     private Monitor monitor;
 
     public DetalleDeMonitorFragment() {
@@ -41,7 +39,7 @@ public class DetalleDeMonitorFragment extends Fragment implements View.OnClickLi
 
     public void mostrarMonitor (Monitor monitor) {
         this.monitor = monitor;
-        txtNombre = (TextView) getView().findViewById(R.id.titulo_de_detalle_personaje);
+        txtNombre = (TextView) getView().findViewById(R.id.descripcion_de_detalle_personaje);
         txtNombre.setText(monitor.getNombre());
     }
     @Override

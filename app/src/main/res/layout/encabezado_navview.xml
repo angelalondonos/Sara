@@ -6,33 +6,40 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:layout_height="193dp"
-        android:src="@drawable/cabecera"
+        android:layout_height="170dp"
+        android:contentDescription="@string/cabecera_menu"
         android:scaleType="centerCrop"
-        android:contentDescription="@string/cabecera_menu"/>
+        android:src="@drawable/cabecera" />
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/circleImageView"
-        android:layout_width="62dp"
-        android:layout_height="64dp"
-        android:layout_gravity="end|bottom"
-        android:layout_marginBottom="4dp"
-        android:layout_marginStart="4dp"
-        android:src="@drawable/persona"
-        app:civ_border_color="@color/colorPrimaryDark"
-        app:civ_border_width="1dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="170dp">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="10dp"
-        android:layout_marginStart="10dp"
-        android:text="@string/txt_administrador"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
-        android:textColor="#000000"
-        android:textStyle="bold" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImageView"
+            android:layout_width="62dp"
+            android:layout_height="64dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="4dp"
+            android:layout_marginStart="4dp"
+            android:src="@drawable/persona"
+            app:civ_border_color="@color/colorPrimaryDark"
+            app:civ_border_width="1dp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/txt_administrador"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
+            android:textColor="#000000" />
+
+    </LinearLayout>
+
 
 </FrameLayout>

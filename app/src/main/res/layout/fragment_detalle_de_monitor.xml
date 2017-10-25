@@ -23,25 +23,71 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/titulo_de_detalle_personaje"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="7dp"
-                android:layout_marginTop="7dp"
-                android:text=""
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/descripcion_de_detalle_personaje"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="top"
                 android:maxLines="30"
-                android:text=""
-                android:textSize="16dp" />
+                android:text="@string/txt_nombre"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/txt_userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:maxLines="30"
+                android:text="@string/txt_userName"
+                android:textSize="25dp" />
+
+
+            <TextView
+                android:id="@+id/txt_contrasena"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:maxLines="30"
+                android:text="@string/txt_contrasena"
+                android:textSize="25dp" />
+
+
+            <TextView
+                android:id="@+id/txt_telefono"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:maxLines="30"
+                android:text="@string/txt_telefono"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/txt_semestre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:maxLines="30"
+                android:text="@string/txt_semestre"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/txt_linea_monitoria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:maxLines="30"
+                android:text="@string/txt_lineaMonitoria"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/txt_lugar_asesoria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:maxLines="30"
+                android:text="@string/txt_lugarAsesoria"
+                android:textSize="25dp" />
 
 
         </LinearLayout>

@@ -21,10 +21,6 @@ import com.example.angela.sara.vo.Monitor;
 
 import java.util.ArrayList;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
-
 /**
  * Fragmento que contiene la lista de monitores
  * @author Angela Londono
@@ -35,11 +31,9 @@ import butterknife.Unbinder;
 public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMonitor.OnClickAdaptadorDeMonitor{
 
     private AdaptadorDeMonitor adaptador;
-    @BindView(R.id.listaMonitores) protected RecyclerView listadoDeMonitores;
+    private RecyclerView listadoDeMonitores;
     private ArrayList<Monitor> monitores;
     private OnMonitorSeleccionadoListener listener;
-    private Unbinder unbider;
-
 
     /**
      * Método constructor de la clase ListaDeMonitoresFragment
@@ -66,13 +60,8 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        View view=inflater.inflate(R.layout.activity_detalle_de_monitor, container, false);
         // Inflate the layout for this fragment
-
-        unbider= ButterKnife.bind(this, view); //Inicializa la vista
-
-        return view;
+        return inflater.inflate(R.layout.fragment_lista_de_monitores, container, false);
 
     }
 
@@ -88,10 +77,9 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
         super.onActivityCreated(savedInstanceState);
 
         adaptador = new AdaptadorDeMonitor(monitores, this);
+        listadoDeMonitores = (RecyclerView) getView().findViewById(R.id.listaMonitores);
         listadoDeMonitores.setAdapter(adaptador);
         listadoDeMonitores.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-
-
     }
 
     @Override

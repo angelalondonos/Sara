@@ -10,6 +10,15 @@
     <string name="txt_configuracion">Configuración</string>
     <string name="txt_salir">Salir</string>
     <string name="title_activity_detalle_de_monitor">DetalleDeMonitorActivity</string>
+    <string name="txt_nombre">Nombre:</string>
+    <string name="txt_userName">UserName:</string>
+    <string name="txt_telefono">Telefono:</string>
+    <string name="txt_semestre">Semestre:</string>
+    <string name="txt_lineaMonitoria">Linea de Monitoria:</string>
+    <string name="txt_contrasena">Contraseña:</string>
+    <string name="txt_lugarAsesoria">Lugar de Asesoria:</string>
+
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

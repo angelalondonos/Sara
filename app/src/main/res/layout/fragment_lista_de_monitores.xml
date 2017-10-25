@@ -6,7 +6,7 @@
     tools:context="com.example.angela.sara.Fragments.ListaDeMonitoresFragment">
 
     <Spinner
-        android:layout_width="59dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </Spinner>
 
