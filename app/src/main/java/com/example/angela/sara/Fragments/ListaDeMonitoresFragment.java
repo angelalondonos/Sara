@@ -28,7 +28,7 @@ import java.util.ArrayList;
  * @author Cristian Agudelo
  * A simple {@link Fragment} subclass.
  */
-public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMonitor.OnClickAdaptadorDeMonitor{
+public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMonitor.OnClickAdaptadorDeMonitor, {
 
     private AdaptadorDeMonitor adaptador;
     private RecyclerView listadoDeMonitores;
@@ -101,17 +101,17 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
         if (id == R.id.cambiar_idioma) {
 
         }
-     /**   if (id == R.id.menu_eliminar) {
-            monitores.remove(0);
-            adaptador.notifyItemRemoved(0);
-        }
-        if (id == R.id.menu_modificar) {
-            Monitor aux = monitores.get(1);
-            monitores.set(1,monitores.get(2));
-            monitores.set(2, aux);
-            adaptador.notifyItemMoved(1, 2);
-        }
-**/
+        /**   if (id == R.id.menu_eliminar) {
+         monitores.remove(0);
+         adaptador.notifyItemRemoved(0);
+         }
+         if (id == R.id.menu_modificar) {
+         Monitor aux = monitores.get(1);
+         monitores.set(1,monitores.get(2));
+         monitores.set(2, aux);
+         adaptador.notifyItemMoved(1, 2);
+         }
+         **/
         return super.onOptionsItemSelected(item);
 
     }

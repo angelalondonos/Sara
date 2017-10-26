@@ -3,19 +3,19 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/menu_seccion_1"
+            android:id="@+id/menu_monitores"
             android:icon="@drawable/persona"
             android:title="@string/txt_monitor" />
         <item
-            android:id="@+id/menu_seccion_2"
+            android:id="@+id/menu_crear_monitor"
             android:icon="@drawable/agregar_monitor"
             android:title="@string/txt_crear_monitor" />
         <item
-            android:id="@+id/menu_seccion_3"
+            android:id="@+id/menu_crear_cita"
             android:icon="@drawable/agregar_cita"
             android:title="@string/txt_crear_cita" />
         <item
-            android:id="@+id/menu_seccion_4"
+            android:id="@+id/menu_citas"
             android:icon="@drawable/citas"
             android:title="@string/txt_citas" />
     </group>

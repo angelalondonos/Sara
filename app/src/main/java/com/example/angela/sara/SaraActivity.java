@@ -31,8 +31,8 @@ public class SaraActivity extends AppCompatActivity implements ListaDeMonitoresF
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_nav_menu);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
-        navView = (NavigationView)findViewById(R.id.navview);
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        navView = (NavigationView) findViewById(R.id.navview);
         navView.setItemIconTintList(null);
 
 
@@ -48,13 +48,14 @@ public class SaraActivity extends AppCompatActivity implements ListaDeMonitoresF
         monitores.add(new Monitor("Goku", "Calculo"));
         monitores.add(new Monitor("Alejandro Magno", "Calculo"));
 
-        ListaDeMonitoresFragment listaDeMonitoresFragment =(ListaDeMonitoresFragment) getSupportFragmentManager().findFragmentById(R.id.fragmento_lista_monitores);
+        ListaDeMonitoresFragment listaDeMonitoresFragment = (ListaDeMonitoresFragment) getSupportFragmentManager().findFragmentById(R.id.fragmento_lista_monitores);
         listaDeMonitoresFragment.setMonitores(monitores);
 
     }
 
     /**
      * Metodo que permite crear el menu de opciones
+     *
      * @param menu
      * @return
      */
@@ -67,13 +68,14 @@ public class SaraActivity extends AppCompatActivity implements ListaDeMonitoresF
 
     /**
      * Método que permite verifiar que opcion se eleige en el menu
+     *
      * @param item
      * @return
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        switch(item.getItemId()) {
+        switch (item.getItemId()) {
             case android.R.id.home:
                 drawerLayout.openDrawer(GravityCompat.START);
                 return true;
@@ -88,6 +90,10 @@ public class SaraActivity extends AppCompatActivity implements ListaDeMonitoresF
         Intent intent = new Intent(this, DetalleDeMonitorActivity.class);
         intent.putExtra("per", monitores.get(position));
         startActivity(intent);
-
     }
+
+
+
+
+
 }
