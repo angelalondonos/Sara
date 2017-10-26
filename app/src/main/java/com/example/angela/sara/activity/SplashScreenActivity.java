@@ -13,6 +13,9 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
+ * @author Angela Londono
+ * @author Rodrigo Ramirez
+ * @author Cristian Agudelo
  * Created by angela on 23/10/17.
  */
 
