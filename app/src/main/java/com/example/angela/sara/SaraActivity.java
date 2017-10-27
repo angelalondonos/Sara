@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.angela.sara.Fragments.CrearMonitorFragment;
@@ -25,11 +26,17 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout drawerLayout;
     private NavigationView navView;
     private ArrayList<Monitor> monitores;
+    private Spinner spLineaMonitoria;
+    //private final static String[] lineaMonitoria = { "Programación", "Calculo", "Algebra" };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sara);
+
+       // ArrayAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, lineaMonitoria);
+        //spLineaMonitoria = (Spinner)findViewById(R.id.spinner_lista_monitores);
+        //spLineaMonitoria.setAdapter(adapter);
 
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_nav_menu);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

@@ -34,4 +34,5 @@ dependencies {
     compile 'com.getbase:floatingactionbutton:1.10.1'
     compile 'com.github.sahildave:floatingactionbutton:0.0.2'
     testCompile 'junit:junit:4.12'
+    compile 'com.getbase:floatingactionbutton:1.10.1'
 }
