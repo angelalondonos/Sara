@@ -1,8 +1,6 @@
 package com.example.angela.sara.Fragments;
 
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -44,8 +42,5 @@ public class DetalleDeMonitorFragment extends Fragment implements View.OnClickLi
     }
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(Intent.ACTION_VIEW,
-                Uri.parse("https://www.youtube.com/watch?v=hP3fmnMuZZU"));
-        startActivity(intent);
     }
 }

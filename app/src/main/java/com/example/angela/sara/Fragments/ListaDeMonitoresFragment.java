@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -99,7 +100,7 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
         int id = item.getItemId();
 
         if (id == R.id.cambiar_idioma) {
-
+            Log.i("Menu", "Pulsada cambiar idioma");
         }
         /**   if (id == R.id.menu_eliminar) {
          monitores.remove(0);
