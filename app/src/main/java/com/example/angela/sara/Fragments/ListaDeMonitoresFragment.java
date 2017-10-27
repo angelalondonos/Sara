@@ -59,11 +59,9 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
      * @return
      */
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_lista_de_monitores, container, false);
-
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_lista_de_monitores, container, false);
+        return view;
     }
 
     @Override
@@ -102,17 +100,6 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
         if (id == R.id.cambiar_idioma) {
             Log.i("Menu", "Pulsada cambiar idioma");
         }
-        /**   if (id == R.id.menu_eliminar) {
-         monitores.remove(0);
-         adaptador.notifyItemRemoved(0);
-         }
-         if (id == R.id.menu_modificar) {
-         Monitor aux = monitores.get(1);
-         monitores.set(1,monitores.get(2));
-         monitores.set(2, aux);
-         adaptador.notifyItemMoved(1, 2);
-         }
-         **/
         return super.onOptionsItemSelected(item);
 
     }

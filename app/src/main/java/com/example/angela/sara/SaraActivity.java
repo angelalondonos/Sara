@@ -25,7 +25,7 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout drawerLayout;
     private NavigationView navView;
     private ArrayList<Monitor> monitores;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,7 +99,6 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
 
 
     private void remplazarFragmento(Fragment fragment) {
-
         getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment).addToBackStack(null).commit();
 
     }
