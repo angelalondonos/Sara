@@ -28,7 +28,7 @@ import java.util.ArrayList;
  * @author Cristian Agudelo
  * A simple {@link Fragment} subclass.
  */
-public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMonitor.OnClickAdaptadorDeMonitor, {
+public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMonitor.OnClickAdaptadorDeMonitor{
 
     private AdaptadorDeMonitor adaptador;
     private RecyclerView listadoDeMonitores;
