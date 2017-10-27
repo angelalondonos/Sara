@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.Window;
 
 import com.example.angela.sara.R;
-import com.example.angela.sara.SaraActivity;
 
 import java.util.Timer;
 import java.util.TimerTask;

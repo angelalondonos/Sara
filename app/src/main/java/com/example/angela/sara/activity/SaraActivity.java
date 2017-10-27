@@ -1,7 +1,8 @@
-package com.example.angela.sara;
+package com.example.angela.sara.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
@@ -11,20 +12,34 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.angela.sara.Fragments.CrearMonitorFragment;
 import com.example.angela.sara.Fragments.ListaDeMonitoresFragment;
-import com.example.angela.sara.activity.DetalleDeMonitorActivity;
+import com.example.angela.sara.R;
 import com.example.angela.sara.vo.Monitor;
 
 import java.util.ArrayList;
 
-public class SaraActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ListaDeMonitoresFragment.OnMonitorSeleccionadoListener{
+public class SaraActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ListaDeMonitoresFragment.OnMonitorSeleccionadoListener, View.OnClickListener{
 
+    /**
+     * creación de un DrawerLayout
+     */
     private DrawerLayout drawerLayout;
+    /**
+     * creación de un NavigationView
+     */
     private NavigationView navView;
+    /**
+     * creación de un ArrayList de monitores
+     */
     private ArrayList<Monitor> monitores;
+    /**
+     * creación de un FloatingActionButton
+     */
+    private FloatingActionButton btnAgregarMonitor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +69,14 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
 
         ListaDeMonitoresFragment listaDeMonitoresFragment = (ListaDeMonitoresFragment) getSupportFragmentManager().findFragmentById(R.id.fragmento_lista_monitores);
         listaDeMonitoresFragment.setMonitores(monitores);
+
+
+        /**
+         * configuración del btnImagen
+         */
+        btnAgregarMonitor = (FloatingActionButton) findViewById(R.id.btn_flotante);
+        btnAgregarMonitor.setOnClickListener(this); //utiliza el onclick listener global
+
 
 
     }
@@ -131,6 +154,16 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         item.setChecked(true);
         drawerLayout.closeDrawers();
         return true;
+    }
+
+    @Override
+    public void onClick(View view) {
+        /**
+         * configuración del btnFlotante
+         */
+        if (view.getId() == btnAgregarMonitor.getId()) {
+            Toast.makeText(this, "FUNCIONA BOTON FLOTANTE", Toast.LENGTH_SHORT).show();
+        }
     }
 }
 

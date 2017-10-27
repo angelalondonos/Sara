@@ -21,7 +21,7 @@
         </activity>
 
         <activity
-            android:name=".SaraActivity"
+            android:name=".activity.SaraActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,6 +40,7 @@
             android:name=".activity.EditarMonitorAcctivity"
             android:screenOrientation="portrait">
         </activity>
+
     </application>
 
 </manifest>
