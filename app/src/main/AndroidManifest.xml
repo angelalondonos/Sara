@@ -30,15 +30,16 @@
         </activity>
 
         <activity
-            android:screenOrientation="portrait"
             android:name=".activity.DetalleDeMonitorActivity"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_detalle_de_monitor"
-            android:theme="@style/AppTheme.NoActionBar">
+           >
         </activity>
 
         <activity
             android:name=".activity.EditarMonitorAcctivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_editar_monitor">
         </activity>
 
     </application>

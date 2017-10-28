@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Sara</string>
     <string name="cabecera_menu">Cabecera del menu</string>
+
+
+    <!-- Nombre txt -->
     <string name="txt_monitor">Monitor</string>
     <string name="txt_citas">Citas</string>
     <string name="txt_administrador">Administrador</string>
@@ -9,7 +12,6 @@
     <string name="txt_mas_opciones">Más opciones</string>
     <string name="txt_configuracion">Configuración</string>
     <string name="txt_salir">Salir</string>
-    <string name="title_activity_detalle_de_monitor">DetalleDeMonitorActivity</string>
     <string name="txt_nombre">Nombre:</string>
     <string name="txt_userName">UserName:</string>
     <string name="txt_telefono">Telefono:</string>
@@ -17,17 +19,24 @@
     <string name="txt_lineaMonitoria">Linea de Monitoria:</string>
     <string name="txt_contrasena">Contraseña:</string>
     <string name="txt_lugarAsesoria">Lugar de Asesoria:</string>
-    <string name="btn_actualizar">ACTUALIZAR</string>
     <string name="txt_horarios">Horario: </string>
     <string name="txt_datos_estudiante">DATOS ESTUDIANTE</string>
     <string name="txt_no_identificacion">No. identificación: </string>
     <string name="txt_datos_monitor">DATOS MONITOR</string>
+
+
+
+    <!-- Nombre botones -->
     <string name="btn_agregar_cita">CREAR CITA</string>
     <string name="btn_agregar_monitor">CREAR</string>
+    <string name="btn_actualizar">ACTUALIZAR</string>
 
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Titulo Actividad -->
+    <string name="title_activity_detalle_de_monitor">Detalle De Monitor</string>
+    <string name="title_activity_crear_cita">Crear Cita</string>
+    <string name="title_activity_crear_monitor">Crear Monitor</string>
+    <string name="title_activity_editar_monitor">Editar Monitor</string>
 
     <string-array name="lineas_monitoria">
         <item>-</item>
