@@ -19,7 +19,10 @@
     <string name="txt_lugarAsesoria">Lugar de Asesoria:</string>
     <string name="btn_actualizar">ACTUALIZAR</string>
     <string name="txt_horarios">Horario: </string>
-
+    <string name="txt_datos_estudiante">DATOS ESTUDIANTE</string>
+    <string name="txt_no_identificacion">No. identificación: </string>
+    <string name="txt_datos_monitor">DATOS MONITOR</string>
+    <string name="btn_agregar_cita">CREAR CITA</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -29,6 +32,20 @@
         <item>Programación</item>
         <item>Algebra</item>
         <item>Calculo</item>
-
     </string-array>
+
+    <string-array name="semestre">
+        <item>-</item>
+        <item>Primero</item>
+        <item>Segundo</item>
+        <item>Tercero</item>
+        <item>Cuarto</item>
+        <item>Quinto</item>
+        <item>Sexto</item>
+        <item>Séptimo</item>
+        <item>Octavo</item>
+        <item>Noveno</item>
+        <item>Décimo</item>
+    </string-array>
+
 </resources>

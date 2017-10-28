@@ -11,26 +11,6 @@
         android:contentDescription=""
         android:src="@drawable/persona" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center">
-
-        <ImageButton
-            android:id="@+id/btn_editar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_edit"
-            android:background="#ffffff"/>
-
-        <ImageButton
-            android:id="@+id/btn_borrar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_delete"
-            android:background="#ffffff"/>
-
-    </LinearLayout>
 
     <ScrollView
         android:id="@+id/scrollView"
@@ -100,6 +80,12 @@
                     android:maxLines="30"
                     android:text="@string/txt_semestre"
                     android:textSize="20dp" />
+
+                <Spinner
+                    android:id="@+id/spinner_semestre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/semestre" />
             </TableRow>
 
             <TableRow>
@@ -123,6 +109,12 @@
                     android:maxLines="30"
                     android:text="@string/txt_lineaMonitoria"
                     android:textSize="20dp" />
+
+                <Spinner
+                    android:id="@+id/spinner_linea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/lineas_monitoria" />
             </TableRow>
 
 

@@ -44,9 +44,9 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sara);
+        setContentView(R.layout.activity_crear_citas);
 
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_nav_menu);
+        /**  getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_nav_menu);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -70,13 +70,14 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         ListaDeMonitoresFragment listaDeMonitoresFragment = (ListaDeMonitoresFragment) getSupportFragmentManager().findFragmentById(R.id.fragmento_lista_monitores);
         listaDeMonitoresFragment.setMonitores(monitores);
 
+         */
 
         /**
          * configuración del btnImagen
-         */
+
         btnAgregarMonitor = (FloatingActionButton) findViewById(R.id.btn_flotante);
         btnAgregarMonitor.setOnClickListener(this); //utiliza el onclick listener global
-
+         */
 
 
     }

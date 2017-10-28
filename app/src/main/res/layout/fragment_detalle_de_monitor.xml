@@ -58,12 +58,12 @@
                     android:textSize="20dp" />
 
                 <TextView
-                    android:id="@+id/nombre"
+                    android:id="@+id/txtview_nombre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_toEndOf="@+id/imagen"
-                    android:text="Luis"
+                    android:text=""
                     android:textSize="20sp" />
 
             </TableRow>
@@ -122,7 +122,7 @@
 
 
             <TableRow>
-            <TextView
+                <TextView
                 android:id="@+id/txt_semestre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -130,6 +130,7 @@
                 android:maxLines="30"
                 android:text="@string/txt_semestre"
                 android:textSize="20dp" />
+
             </TableRow>
 
             <TableRow>
@@ -154,13 +155,14 @@
                     android:text="@string/txt_lineaMonitoria"
                     android:textSize="20dp" />
 
-                <Spinner
-                    android:id="@+id/spinner_lista_monitores"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:entries="@array/lineas_monitoria"
-                    >
-                </Spinner>
+            <TextView
+                android:id="@+id/txtview_linea_monitoria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:maxLines="30"
+                android:text=""
+                android:textSize="20dp" />
             </TableRow>
 
 

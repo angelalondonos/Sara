@@ -21,6 +21,7 @@ import com.example.angela.sara.vo.Monitor;
 public class DetalleDeMonitorFragment extends Fragment implements View.OnClickListener{
 
     private TextView txtNombre;
+    private TextView txtLinea;
     private Monitor monitor;
 
     public DetalleDeMonitorFragment() {
@@ -37,8 +38,10 @@ public class DetalleDeMonitorFragment extends Fragment implements View.OnClickLi
 
     public void mostrarMonitor (Monitor monitor) {
         this.monitor = monitor;
-        txtNombre = (TextView) getView().findViewById(R.id.descripcion_de_detalle_personaje);
+        txtNombre = (TextView) getView().findViewById(R.id.txtview_nombre);
         txtNombre.setText(monitor.getNombre());
+        txtLinea = (TextView) getView().findViewById(R.id.txtview_linea_monitoria);
+        txtLinea.setText(monitor.getLineaMonitoria());
     }
     @Override
     public void onClick(View v) {
