@@ -1,7 +1,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center">
 
     <ImageView
         android:id="@+id/imagen_detalle"
@@ -35,6 +36,15 @@
                     android:text="@string/txt_nombre"
                     android:textSize="20dp" />
 
+
+                <EditText
+                    android:id="@+id/editText_nombre_monitor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    />
+
             </TableRow>
 
             <TableRow>
@@ -46,6 +56,14 @@
                     android:maxLines="30"
                     android:text="@string/txt_userName"
                     android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/editText_userName_monitor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    />
             </TableRow>
 
             <TableRow>
@@ -57,6 +75,13 @@
                     android:maxLines="30"
                     android:text="@string/txt_contrasena"
                     android:textSize="20dp" />
+                <EditText
+                    android:id="@+id/editText_contrasena_monitor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPassword"
+                    />
             </TableRow>
 
             <TableRow>
@@ -68,6 +93,14 @@
                     android:maxLines="30"
                     android:text="@string/txt_telefono"
                     android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/editText_telefono_monitor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="phone"
+                    />
             </TableRow>
 
 
@@ -97,6 +130,12 @@
                     android:maxLines="30"
                     android:text="@string/txt_horarios"
                     android:textSize="20dp" />
+
+                <ImageButton
+                    android:id="@+id/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/citas"/>
             </TableRow>
 
 
@@ -127,11 +166,34 @@
                     android:maxLines="30"
                     android:text="@string/txt_lugarAsesoria"
                     android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/editText_lugar_asesoria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    />
             </TableRow>
+
+<LinearLayout
+    android:gravity="center">
+
+    <Button
+        android:id="@+id/btn_agregar_monitor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="5dp"
+        android:text="@string/btn_agregar_monitor"
+        android:background="@color/colorButton"/>
+
+</LinearLayout>
 
         </TableLayout>
 
+
     </ScrollView>
+
 
 
 </LinearLayout>

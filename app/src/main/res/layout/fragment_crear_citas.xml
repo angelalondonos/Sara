@@ -11,7 +11,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:stretchColumns="2"
-                android:layout_marginStart="15dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginEnd="15dp">
 
 
@@ -20,10 +20,10 @@
                 <TextView
                     android:id="@+id/datos_estudiante"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:maxLines="30"
                     android:text="@string/txt_datos_estudiante"
-                    android:textSize="20dp" />
+                    android:textSize="20dp"
+                    android:textStyle="bold"/>
                 </TableRow>
 
                 <TableRow>
@@ -37,13 +37,13 @@
                         android:text="@string/txt_nombre"
                         android:textSize="20dp" />
 
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/txtview_nombre"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:layout_toEndOf="@+id/imagen"
-                        android:textSize="20sp" />
+                    <EditText
+                        android:id="@+id/editText_nombre"
+                        android:layout_width="0dp"
+                        android:layout_height="54dp"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                   />
 
                 </TableRow>
 
@@ -58,6 +58,13 @@
                         android:text="@string/txt_no_identificacion"
                         android:textSize="20dp" />
 
+                    <EditText
+                        android:id="@+id/editText_identificacion"
+                        android:layout_width="0dp"
+                        android:layout_height="54dp"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        />
                 </TableRow>
 
 
@@ -104,23 +111,28 @@
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:stretchColumns="2"
-        android:layout_marginStart="15dp"
+        android:stretchColumns="1"
+        android:layout_marginStart="20dp"
         android:layout_marginEnd="15dp">
 
-
         <TableRow>
-
             <TextView
-                android:id="@+id/datos_monitor"
+                android:id="@+id/espacio"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:maxLines="30"
-                android:text="@string/txt_datos_monitor"
-                android:textSize="20dp" />
+                android:text=""
+                android:textSize="20dp"
+                android:textStyle="bold"/>
         </TableRow>
 
 
+        <TableRow>
+            <TextView
+                android:id="@+id/datos_monitor"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_datos_monitor"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+        </TableRow>
 
         <TableRow>
             <Spinner
@@ -132,10 +144,13 @@
             </Spinner>
         </TableRow>
 
-        <TableRow>
-
-        </TableRow>
     </TableLayout>
+
+    <ImageButton
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/citas"/>
 
     <Button
         android:id="@+id/btn_agregar_cita"
@@ -143,5 +158,7 @@
         android:layout_height="wrap_content"
         android:drawablePadding="5dp"
         android:text="@string/btn_agregar_cita"
+        android:background="@color/colorButton"
         />
+
 </LinearLayout>

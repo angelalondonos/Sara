@@ -23,6 +23,8 @@
     <string name="txt_no_identificacion">No. identificación: </string>
     <string name="txt_datos_monitor">DATOS MONITOR</string>
     <string name="btn_agregar_cita">CREAR CITA</string>
+    <string name="btn_agregar_monitor">CREAR</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

@@ -97,6 +97,7 @@
                 android:layout_height="wrap_content"
                 android:drawablePadding="5dp"
                 android:text="@string/btn_actualizar"
+                android:background="@color/colorButton"
                 />
         </LinearLayout>
 
