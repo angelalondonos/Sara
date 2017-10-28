@@ -24,8 +24,8 @@
             android:layout_gravity="bottom"
             android:layout_marginBottom="4dp"
             android:layout_marginStart="4dp"
-            android:src="@drawable/persona"
-            app:civ_border_color="@color/colorPrimaryDark"
+            android:src="@drawable/splash_screen"
+            app:civ_border_color="@color/white"
             app:civ_border_width="1dp" />
 
         <TextView

@@ -29,7 +29,7 @@
     <!-- Nombre botones -->
     <string name="btn_agregar_cita">CREAR CITA</string>
     <string name="btn_agregar_monitor">CREAR</string>
-    <string name="btn_actualizar">ACTUALIZAR</string>
+    <string name="btn_actualizar"> ACTUALIZAR </string>
 
 
     <!-- Titulo Actividad -->
@@ -37,6 +37,14 @@
     <string name="title_activity_crear_cita">Crear Cita</string>
     <string name="title_activity_crear_monitor">Crear Monitor</string>
     <string name="title_activity_editar_monitor">Editar Monitor</string>
+
+
+    <!-- mensajes -->
+    <string name="msg_btn_flotante">FUNCIONA BOTON FLOTANTE</string>
+    <string name="msg_btn_crear_monitor">Se ha creado un monitor correctamente</string>
+    <string name="msg_btn_crear_cita">Se ha creado una cita correctamente</string>
+
+
 
     <string-array name="lineas_monitoria">
         <item>-</item>

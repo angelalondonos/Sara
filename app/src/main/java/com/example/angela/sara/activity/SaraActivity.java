@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.angela.sara.Fragments.CrearMonitorFragment;
@@ -22,7 +23,7 @@ import com.example.angela.sara.vo.Monitor;
 
 import java.util.ArrayList;
 
-public class SaraActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ListaDeMonitoresFragment.OnMonitorSeleccionadoListener, View.OnClickListener{
+public class SaraActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ListaDeMonitoresFragment.OnMonitorSeleccionadoListener, View.OnClickListener {
 
     /**
      * creación de un DrawerLayout
@@ -40,6 +41,15 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
      * creación de un FloatingActionButton
      */
     private FloatingActionButton btnAgregarMonitor;
+    /**
+     * creación de un Button
+     */
+    private Button btnCrearMonitor;
+    /**
+     * creación de un Button
+     */
+    private Button btnCrearCita;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,16 +80,14 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         ListaDeMonitoresFragment listaDeMonitoresFragment = (ListaDeMonitoresFragment) getSupportFragmentManager().findFragmentById(R.id.fragmento_lista_monitores);
         listaDeMonitoresFragment.setMonitores(monitores);
 
-
-
-        /**
-         * configuración del btnImagen
-         */
         btnAgregarMonitor = (FloatingActionButton) findViewById(R.id.btn_flotante);
         btnAgregarMonitor.setOnClickListener(this); //utiliza el onclick listener global
 
+        btnCrearMonitor = (Button) findViewById(R.id.btn_agregar_monitor);
+        btnAgregarMonitor.setOnClickListener(this);
 
-
+       // btnCrearCita = (Button) findViewById(R.id.btn_agregar_cita);
+        //btnCrearCita.setOnClickListener(this);
     }
 
     /**
@@ -157,13 +165,31 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
+    /**
+     * Método para mostrar un mensaje en un evento de botón
+     *
+     * @param message
+     */
+    public void mostrarMensaje(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+
     @Override
     public void onClick(View view) {
-        /**
-         * configuración del btnFlotante
-         */
+
         if (view.getId() == btnAgregarMonitor.getId()) {
-            Toast.makeText(this, "FUNCIONA BOTON FLOTANTE", Toast.LENGTH_SHORT).show();
+            mostrarMensaje(getResources().getString(R.string.msg_btn_flotante));
+        } else {
+            if (view.getId() == btnCrearMonitor.getId()) {
+                mostrarMensaje(getResources().getString(R.string.msg_btn_crear_monitor));
+            }
+
+            /**else {
+                if (view.getId() == btnCrearCita.getId()) {
+                    mostrarMensaje(getResources().getString(R.string.msg_btn_crear_cita));
+                }
+            }  */
         }
     }
 }

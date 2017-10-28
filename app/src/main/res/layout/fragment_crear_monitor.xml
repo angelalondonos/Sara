@@ -178,7 +178,6 @@
 
 <LinearLayout
     android:gravity="center">
-
     <Button
         android:id="@+id/btn_agregar_monitor"
         android:layout_width="wrap_content"
