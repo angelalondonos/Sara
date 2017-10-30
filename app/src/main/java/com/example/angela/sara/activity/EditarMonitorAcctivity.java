@@ -11,11 +11,18 @@ import android.widget.ImageView;
 import com.example.angela.sara.R;
 
 /**
- * Created by angela on 26/10/17.
+ * @author Angela Londono
+ * @author Rodrigo Ramirez
+ * @author Cristian Agudelo
+ *
+ * Clase Editar Monitor Activity
  */
 
 public class EditarMonitorAcctivity extends AppCompatActivity {
 
+    /**
+     * creación de un ImageView
+     */
     private ImageView imagenMonitor;
 
     @Override
@@ -30,12 +37,21 @@ public class EditarMonitorAcctivity extends AppCompatActivity {
         cargarImagen();
     }
 
+    /**
+     * Método que pemite cargar imagen y elegir el lugar donde esta la foto
+     */
     private void cargarImagen() {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         intent.setType("image/");
-        startActivityForResult(intent.createChooser(intent, "Seleccione la Alicación"),10);
+        startActivityForResult(intent.createChooser(intent, getResources().getString(R.string.msg_btn_cargar_imagen)),10);
     }
 
+    /**
+     * Método que permite
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

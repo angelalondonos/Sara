@@ -44,6 +44,9 @@
     <string name="msg_btn_crear_monitor">Se ha creado un monitor correctamente</string>
     <string name="msg_btn_crear_cita">Se ha creado una cita correctamente</string>
     <string name="msg_btn_actualizar_monitor">Se ha actualizado el monitor correctamente</string>
+    <string name="msg_btn_cargar_imagen">Seleccione la Aplicación</string>
+
+
 
     <string-array name="lineas_monitoria">
         <item>-</item>

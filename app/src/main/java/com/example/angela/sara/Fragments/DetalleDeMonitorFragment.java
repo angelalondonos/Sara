@@ -20,15 +20,31 @@ import com.example.angela.sara.vo.Monitor;
  */
 public class DetalleDeMonitorFragment extends Fragment implements View.OnClickListener{
 
+    /**
+     * creación de TextView
+     */
     private TextView txtNombre;
     private TextView txtLinea;
+    /**
+     * creación de un Monitor
+     */
     private Monitor monitor;
 
+    /**
+     * Método contructor de la clase
+     */
     public DetalleDeMonitorFragment() {
         // Required empty public constructor
     }
 
 
+    /**
+     * Método que permite inicar fragment_detalle_de_monitor
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -36,6 +52,10 @@ public class DetalleDeMonitorFragment extends Fragment implements View.OnClickLi
         return inflater.inflate(R.layout.fragment_detalle_de_monitor, container, false);
     }
 
+    /**
+     * Método que permite mostrar nombre y linea de monitoria en el detalle
+     * @param monitor
+     */
     public void mostrarMonitor (Monitor monitor) {
         this.monitor = monitor;
         txtNombre = (TextView) getView().findViewById(R.id.txtview_nombre);
@@ -43,6 +63,7 @@ public class DetalleDeMonitorFragment extends Fragment implements View.OnClickLi
         txtLinea = (TextView) getView().findViewById(R.id.txtview_linea_monitoria);
         txtLinea.setText(monitor.getLineaMonitoria());
     }
+
     @Override
     public void onClick(View v) {
     }

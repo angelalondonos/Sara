@@ -9,14 +9,31 @@ import android.view.ViewGroup;
 import com.example.angela.sara.R;
 
 
+/**
+ * @author Angela Londono
+ * @author Rodrigo Ramirez
+ * @author Cristian Agudelo
+ *
+ * Fragmento de Cita
+ */
 public class CitaFragment extends Fragment {
 
+    /**
+     * Constructor vacio de la clase CitaFragment
+     */
     public CitaFragment() {
 
         // Required empty public constructor
     }
 
 
+    /**
+     * Método que permite inicar el fragmento Cita
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

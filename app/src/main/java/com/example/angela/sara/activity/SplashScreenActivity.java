@@ -15,7 +15,8 @@ import java.util.TimerTask;
  * @author Angela Londono
  * @author Rodrigo Ramirez
  * @author Cristian Agudelo
- * Created by angela on 23/10/17.
+ *
+ * Clase de .SplashScreenActivity
  */
 
 public class SplashScreenActivity extends Activity {
