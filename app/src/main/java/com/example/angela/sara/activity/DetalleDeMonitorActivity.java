@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import com.example.angela.sara.Fragments.DetalleDeMonitorFragment;
 import com.example.angela.sara.R;
@@ -24,6 +25,7 @@ public class DetalleDeMonitorActivity extends AppCompatActivity implements View.
      */
     private ImageButton btnImagen;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +41,8 @@ public class DetalleDeMonitorActivity extends AppCompatActivity implements View.
          */
         btnImagen = (ImageButton) findViewById(R.id.btn_editar);
         btnImagen.setOnClickListener(this); //utiliza el onclick listener global
+
+
     }
 
     @Override

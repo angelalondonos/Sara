@@ -13,6 +13,15 @@
         android:contentDescription=""
         android:src="@drawable/persona" />
 
+    <Button
+        android:id="@+id/btn_cargar_imagen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="5dp"
+        android:text="@string/btn_cargar_imagen"
+        android:background="@color/colorButton"
+        android:onClick="onClick"/>
+
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_weight="2"

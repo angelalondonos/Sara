@@ -30,6 +30,7 @@
     <string name="btn_agregar_cita">CREAR CITA</string>
     <string name="btn_agregar_monitor">CREAR</string>
     <string name="btn_actualizar"> ACTUALIZAR </string>
+    <string name="btn_cargar_imagen">Cargar Imagen</string>
 
 
     <!-- Titulo Actividad -->
