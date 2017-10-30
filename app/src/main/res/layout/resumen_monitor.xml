@@ -33,7 +33,7 @@
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/imagen"
             android:text=""
-            android:textSize="30sp" />
+            android:textSize="@dimen/lista_texto_titulo" />
 
         <TextView
             android:id="@+id/linea_monitoria"
@@ -42,7 +42,7 @@
             android:layout_below="@+id/nombre"
             android:layout_toEndOf="@+id/imagen"
             android:text=""
-            android:textSize="20sp" />
+            android:textSize="@dimen/lista_texto_linea_monitoria" />
 
     </RelativeLayout>
 
