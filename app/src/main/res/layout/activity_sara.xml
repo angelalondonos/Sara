@@ -20,10 +20,4 @@
         app:headerLayout="@layout/encabezado_navview"
         app:menu="@menu/menu_nav" />
 
-    <fragment
-        android:id="@+id/fragmento_lista_monitores"
-        class="com.example.angela.sara.Fragments.ListaDeMonitoresFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
 </android.support.v4.widget.DrawerLayout>

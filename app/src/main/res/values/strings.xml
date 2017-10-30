@@ -25,7 +25,6 @@
     <string name="txt_datos_monitor">DATOS MONITOR</string>
 
 
-
     <!-- Nombre botones -->
     <string name="btn_agregar_cita">CREAR CITA</string>
     <string name="btn_agregar_monitor">CREAR</string>
@@ -44,7 +43,6 @@
     <string name="msg_btn_flotante">FUNCIONA BOTON FLOTANTE</string>
     <string name="msg_btn_crear_monitor">Se ha creado un monitor correctamente</string>
     <string name="msg_btn_crear_cita">Se ha creado una cita correctamente</string>
-
 
 
     <string-array name="lineas_monitoria">

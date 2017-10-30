@@ -77,14 +77,20 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         monitores.add(new Monitor("Goku", "Calculo"));
         monitores.add(new Monitor("Alejandro Magno", "Calculo"));
 
-        ListaDeMonitoresFragment listaDeMonitoresFragment = (ListaDeMonitoresFragment) getSupportFragmentManager().findFragmentById(R.id.fragmento_lista_monitores);
-        listaDeMonitoresFragment.setMonitores(monitores);
+        //ListaDeMonitoresFragment listaDeMonitoresFragment = (ListaDeMonitoresFragment) getSupportFragmentManager().findFragmentById(R.id.fragmento_lista_monitores);
+        //listaDeMonitoresFragment.setMonitores(monitores);
 
-        btnAgregarMonitor = (FloatingActionButton) findViewById(R.id.btn_flotante);
+
+        ListaDeMonitoresFragment listaDeMonitoresFragment = new ListaDeMonitoresFragment();
+        listaDeMonitoresFragment.setMonitores(monitores);
+        remplazarFragmento(listaDeMonitoresFragment);
+
+
+       /* btnAgregarMonitor = (FloatingActionButton) findViewById(R.id.btn_flotante);
         btnAgregarMonitor.setOnClickListener(this); //utiliza el onclick listener global
 
         btnCrearMonitor = (Button) findViewById(R.id.btn_agregar_monitor);
-        btnAgregarMonitor.setOnClickListener(this);
+        btnAgregarMonitor.setOnClickListener(this);*/
 
        // btnCrearCita = (Button) findViewById(R.id.btn_agregar_cita);
         //btnCrearCita.setOnClickListener(this);
@@ -134,6 +140,8 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment).addToBackStack(null).commit();
 
     }
+
+
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {

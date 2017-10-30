@@ -51,6 +51,7 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
         void onMonitorSeleccionado(int position);
     }
 
+
     /**
      * Método que al cual se le asigma un layout determinado.
      * @param inflater
