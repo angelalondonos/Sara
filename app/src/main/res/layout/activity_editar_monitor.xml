@@ -102,7 +102,7 @@
 
 
             <Button
-                android:id="@+id/btn_normal"
+                android:id="@+id/btn_actualizar_monitor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawablePadding="5dp"

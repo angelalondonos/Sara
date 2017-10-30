@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.angela.sara.Fragments.CrearMonitorFragment;
+import com.example.angela.sara.Fragments.DetalleDeMonitorFragment;
 import com.example.angela.sara.Fragments.ListaDeMonitoresFragment;
 import com.example.angela.sara.R;
 import com.example.angela.sara.vo.Monitor;
@@ -130,9 +131,17 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onMonitorSeleccionado(int position) {
-        Intent intent = new Intent(this, DetalleDeMonitorActivity.class);
-        intent.putExtra("per", monitores.get(position));
-        startActivity(intent);
+
+        boolean esFragmento = getSupportFragmentManager().findFragmentById(R.id.fragmento_detalle_monitores) != null;
+        if (esFragmento) {
+            ((DetalleDeMonitorFragment)
+                    getSupportFragmentManager().findFragmentById(R.id.fragmento_detalle_monitores
+                    )).mostrarMonitor(monitores.get(position));
+        } else {
+            Intent intent = new Intent(this, DetalleDeMonitorActivity.class);
+            intent.putExtra("per", monitores.get(position));
+            startActivity(intent);
+        }
     }
 
 
