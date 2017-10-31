@@ -74,7 +74,6 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         navView.setItemIconTintList(null);
         navView.setNavigationItemSelectedListener(this);
 
-
         monitores = new ArrayList();
         monitores.add(new Monitor("Ronaldinho", "Programación"));
         monitores.add(new Monitor("Albert Einstein", "Programación"));
@@ -87,6 +86,9 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         monitores.add(new Monitor("Goku", "Calculo"));
         monitores.add(new Monitor("Alejandro Magno", "Calculo"));
 
+
+
+
         //ListaDeMonitoresFragment listaDeMonitoresFragment = (ListaDeMonitoresFragment) getSupportFragmentManager().findFragmentById(R.id.fragmento_lista_monitores);
         //listaDeMonitoresFragment.setMonitores(monitores);
 
@@ -95,11 +97,17 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         listaDeMonitoresFragment.setMonitores(monitores);
         remplazarFragmento(listaDeMonitoresFragment);
 
-        /**btnCrearMonitor = (Button) findViewById(R.id.btn_agregar_monitor);
-        btnAgregarMonitor.setOnClickListener(this);
+
+        //btnAgregarMonitor = (FloatingActionButton) findViewById(R.id.btn_flotante);
+        //btnAgregarMonitor.setOnClickListener(this); //utiliza el onclick listener global
+
+        //btnCrearMonitor = (Button) findViewById(R.id.btn_agregar_monitor);
+       // btnCrearMonitor = (Button) findViewById(R.id.btn_agregar_monitor);
+
+        //btnAgregarMonitor.setOnClickListener(this);
 
         btnCrearCita = (Button) findViewById(R.id.btn_agregar_cita);
-        btnCrearCita.setOnClickListener(this);*/
+        btnCrearCita.setOnClickListener(this);
     }
 
     /**

@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -15,6 +16,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.angela.sara.R;
 import com.example.angela.sara.util.AdaptadorDeMonitor;
@@ -47,6 +49,10 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
      * creación de un OnMonitorSeleccionadoListener
      */
     private OnMonitorSeleccionadoListener listener;
+    /**
+     * creación de un FloatingActionButton
+     */
+    private FloatingActionButton btnAgregarMonitor;
 
 
     /**
@@ -54,6 +60,18 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
      */
     public ListaDeMonitoresFragment() {
         // Required empty public constructor
+
+        monitores = new ArrayList();
+        monitores.add(new Monitor("Ronaldinho", "Programación"));
+        monitores.add(new Monitor("Albert Einstein", "Programación"));
+        monitores.add(new Monitor("Leonardo da Vinci", "Programación"));
+        monitores.add(new Monitor("Goku", "Calculo"));
+        monitores.add(new Monitor("Alejandro Magno", "Calculo"));
+        monitores.add(new Monitor("Ronaldinho", "Calculo"));
+        monitores.add(new Monitor("Albert Einstein", "Calculo"));
+        monitores.add(new Monitor("Leonardo da Vinci", "Calculo"));
+        monitores.add(new Monitor("Goku", "Calculo"));
+        monitores.add(new Monitor("Alejandro Magno", "Calculo"));
     }
 
     /**
@@ -74,12 +92,24 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_lista_de_monitores, container, false);
+
+        btnAgregarMonitor = (FloatingActionButton) view.findViewById(R.id.btn_flotante);
+        btnAgregarMonitor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Toast.makeText(view, "Hola Mundo", Toast.LENGTH_SHORT).show();
+                Log.i("Menu", "Agregar Monitor");
+                remplazarFragmento(new CrearMonitorFragment());
+            }
+        });//utiliza el onclick listener global
         return view;
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
 
         setHasOptionsMenu(true);
     }
@@ -144,5 +174,10 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
 
     public void setMonitores(ArrayList<Monitor> monitores) {
         this.monitores = monitores;
+    }
+
+    private void remplazarFragmento(Fragment fragment) {
+        getFragmentManager().beginTransaction().replace(R.id.content_frame, fragment).addToBackStack(null).commit();
+
     }
 }
