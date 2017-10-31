@@ -65,6 +65,18 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         navView.setItemIconTintList(null);
         navView.setNavigationItemSelectedListener(this);
 
+        monitores = new ArrayList();
+        monitores.add(new Monitor("Ronaldinho", "Programación"));
+        monitores.add(new Monitor("Albert Einstein", "Programación"));
+        monitores.add(new Monitor("Leonardo da Vinci", "Programación"));
+        monitores.add(new Monitor("Goku", "Calculo"));
+        monitores.add(new Monitor("Alejandro Magno", "Calculo"));
+        monitores.add(new Monitor("Ronaldinho", "Calculo"));
+        monitores.add(new Monitor("Albert Einstein", "Calculo"));
+        monitores.add(new Monitor("Leonardo da Vinci", "Calculo"));
+        monitores.add(new Monitor("Goku", "Calculo"));
+        monitores.add(new Monitor("Alejandro Magno", "Calculo"));
+
 
 
 

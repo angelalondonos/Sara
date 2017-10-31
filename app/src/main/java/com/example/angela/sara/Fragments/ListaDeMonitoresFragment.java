@@ -47,6 +47,7 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
      */
     public ListaDeMonitoresFragment() {
         // Required empty public constructor
+
         monitores = new ArrayList();
         monitores.add(new Monitor("Ronaldinho", "Programación"));
         monitores.add(new Monitor("Albert Einstein", "Programación"));
