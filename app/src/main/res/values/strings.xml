@@ -4,7 +4,7 @@
 
 
     <!-- Nombre txt -->
-    <string name="txt_monitor">Monitor</string>
+    <string name="txt_monitor">Monitores</string>
     <string name="txt_citas">Citas</string>
     <string name="txt_administrador">Administrador</string>
     <string name="txt_crear_monitor">Crear Monitor</string>
@@ -46,6 +46,11 @@
     <string name="msg_btn_actualizar_monitor">Se ha actualizado el monitor correctamente</string>
     <string name="msg_btn_cargar_imagen">Seleccione la Aplicación</string>
 
+
+    <!-- mensajes -->
+    <string name="txt_cita1">8:00 am Juana Perez</string>
+    <string name="txt_cita2">9:00 am Juana Perez</string>
+    <string name="txt_cita3">10:00 am Juana Perez</string>
 
 
     <string-array name="lineas_monitoria">
