@@ -2,6 +2,8 @@ package com.example.angela.sara.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.CalendarContract;
+import android.provider.CalendarContract.Events;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -14,6 +16,8 @@ import android.widget.Toast;
 import com.example.angela.sara.Fragments.DetalleDeMonitorFragment;
 import com.example.angela.sara.R;
 import com.example.angela.sara.vo.Monitor;
+
+import java.util.Calendar;
 
 /**
  * @author Angela Londono
@@ -32,7 +36,6 @@ public class DetalleDeMonitorActivity extends AppCompatActivity implements View.
      * creación de un FloatingActionButton
      */
     private FloatingActionButton btnAgregarCita;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,6 +97,11 @@ public class DetalleDeMonitorActivity extends AppCompatActivity implements View.
         return true;
     }
 
+    /**
+     * Método que permite verifiacar que opcion se elege en el menu
+     * @param item
+     * @return
+     */
     @Override
      public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -104,5 +112,29 @@ public class DetalleDeMonitorActivity extends AppCompatActivity implements View.
             startActivity(Intent.createChooser(intent, getResources().getString(R.string.msg_btn_compartir)));
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * Método que permite brri calendario
+     * @param view
+     */
+    public void onAddEventClicked(View view){
+        Intent intent = new Intent(Intent.ACTION_INSERT);
+        intent.setType("vnd.android.cursor.item/event");
+
+        Calendar cal = Calendar.getInstance();
+        long startTime = cal.getTimeInMillis();
+        long endTime = cal.getTimeInMillis()  + 60 * 60 * 1000;
+
+        intent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, startTime);
+        intent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME,endTime);
+        intent.putExtra(CalendarContract.EXTRA_EVENT_ALL_DAY, true);
+
+        intent.putExtra(Events.TITLE, "Monitor 1");
+        intent.putExtra(Events.DESCRIPTION,  "Descripción");
+        intent.putExtra(Events.EVENT_LOCATION, "Universidad del Quindío");
+        intent.putExtra(Events.RRULE, "FREQ=YEARLY");
+
+        startActivity(intent);
     }
 }
