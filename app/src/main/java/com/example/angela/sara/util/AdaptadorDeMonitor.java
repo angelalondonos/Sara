@@ -76,6 +76,8 @@ public class AdaptadorDeMonitor extends RecyclerView.Adapter<AdaptadorDeMonitor.
 
         }
 
+
+
         public void binMonitor(Monitor monitor) {
             txtNombreMonitor.setText(monitor.getNombre());
             txtLineaMonitoria.setText(monitor.getLineaMonitoria());

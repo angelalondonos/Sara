@@ -6,7 +6,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:padding="8dp"
     android:layout_margin="6dp"
-    card_view:cardBackgroundColor="#A9E2F3"
+    card_view:cardBackgroundColor="@color/colorResumenMonitor"
     card_view:cardCornerRadius="4dp"
     card_view:cardElevation="6dp"
     android:id="@+id/resumen_monitor"

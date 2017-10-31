@@ -45,6 +45,8 @@
     <string name="msg_btn_crear_cita">Se ha creado una cita correctamente</string>
     <string name="msg_btn_actualizar_monitor">Se ha actualizado el monitor correctamente</string>
     <string name="msg_btn_cargar_imagen">Seleccione la Aplicación</string>
+    <string name="msg_btn_compartir">Compartir con</string>
+    <string name="msg_btn_compartir_prueba">Prueba boton Compartir</string>
 
 
     <!-- mensajes -->

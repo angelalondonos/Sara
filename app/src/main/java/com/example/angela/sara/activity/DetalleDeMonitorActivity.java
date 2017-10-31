@@ -20,9 +20,9 @@ import com.example.angela.sara.vo.Monitor;
 public class DetalleDeMonitorActivity extends AppCompatActivity implements View.OnClickListener{
 
      /**
-      * creación de un ImageButton
+      * creación de ImageButton
      */
-    private ImageButton btnImagen;
+    private ImageButton btnImagen, btnCompartir;
 
 
     @Override
@@ -34,12 +34,24 @@ public class DetalleDeMonitorActivity extends AppCompatActivity implements View.
         Monitor monitor = (Monitor) getIntent().getExtras().get("per");
         detalleMonitor.mostrarMonitor(monitor);
 
-
         /**
          * configuración del btnImagen
          */
         btnImagen = (ImageButton) findViewById(R.id.btn_editar);
         btnImagen.setOnClickListener(this); //utiliza el onclick listener global
+
+
+        btnCompartir = (ImageButton) findViewById(R.id.btn_compartir);
+        btnCompartir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                 intent.setType("text/plain");
+                 intent.putExtra(Intent.EXTRA_TEXT, getResources().getString(R.string.msg_btn_compartir_prueba));
+                 startActivity(Intent.createChooser(intent, getResources().getString(R.string.msg_btn_compartir)));
+            }
+        });
     }
 
     @Override

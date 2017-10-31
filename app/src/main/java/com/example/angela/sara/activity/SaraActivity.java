@@ -60,7 +60,6 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
      */
     private Button btnCrearCita;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,9 +85,6 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         monitores.add(new Monitor("Goku", "Calculo"));
         monitores.add(new Monitor("Alejandro Magno", "Calculo"));
 
-
-
-
         //ListaDeMonitoresFragment listaDeMonitoresFragment = (ListaDeMonitoresFragment) getSupportFragmentManager().findFragmentById(R.id.fragmento_lista_monitores);
         //listaDeMonitoresFragment.setMonitores(monitores);
 
@@ -98,16 +94,14 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         remplazarFragmento(listaDeMonitoresFragment);
 
 
-        //btnAgregarMonitor = (FloatingActionButton) findViewById(R.id.btn_flotante);
-        //btnAgregarMonitor.setOnClickListener(this); //utiliza el onclick listener global
 
         //btnCrearMonitor = (Button) findViewById(R.id.btn_agregar_monitor);
        // btnCrearMonitor = (Button) findViewById(R.id.btn_agregar_monitor);
 
-        //btnAgregarMonitor.setOnClickListener(this);
 
-        btnCrearCita = (Button) findViewById(R.id.btn_agregar_cita);
-        btnCrearCita.setOnClickListener(this);
+        //btnCrearCita = (Button) findViewById(R.id.btn_agregar_cita);
+        //btnCrearCita.setOnClickListener(this);
+
     }
 
     /**

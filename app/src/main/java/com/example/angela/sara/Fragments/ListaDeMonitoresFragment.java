@@ -16,7 +16,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.angela.sara.R;
 import com.example.angela.sara.util.AdaptadorDeMonitor;
@@ -53,7 +52,6 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
      * creación de un FloatingActionButton
      */
     private FloatingActionButton btnAgregarMonitor;
-
 
     /**
      * Método constructor de la clase ListaDeMonitoresFragment
@@ -97,19 +95,16 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
         btnAgregarMonitor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Toast.makeText(view, "Hola Mundo", Toast.LENGTH_SHORT).show();
-                Log.i("Menu", "Agregar Monitor");
                 remplazarFragmento(new CrearMonitorFragment());
             }
         });//utiliza el onclick listener global
+
         return view;
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
 
         setHasOptionsMenu(true);
     }
