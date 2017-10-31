@@ -93,7 +93,7 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_lista_de_monitores, container, false);
 
-        btnAgregarMonitor = (FloatingActionButton) view.findViewById(R.id.btn_flotante);
+        btnAgregarMonitor = (FloatingActionButton) view.findViewById(R.id.btn_flotante_agregar_monitor);
         btnAgregarMonitor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
