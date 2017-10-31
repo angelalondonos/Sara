@@ -12,7 +12,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -33,7 +32,7 @@ import java.util.ArrayList;
  *
  * Clase principal
  */
-public class SaraActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ListaDeMonitoresFragment.OnMonitorSeleccionadoListener, View.OnClickListener{
+public class SaraActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ListaDeMonitoresFragment.OnMonitorSeleccionadoListener{
 
     /**
      * creación de un DrawerLayout
@@ -145,9 +144,7 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
 
         boolean esFragmento = getSupportFragmentManager().findFragmentById(R.id.fragmento_detalle_monitores) != null;
         if (esFragmento) {
-            ((DetalleDeMonitorFragment)
-                    getSupportFragmentManager().findFragmentById(R.id.fragmento_detalle_monitores
-                    )).mostrarMonitor(monitores.get(position));
+            ((DetalleDeMonitorFragment) getSupportFragmentManager().findFragmentById(R.id.fragmento_detalle_monitores)).mostrarMonitor(monitores.get(position));
         } else {
             Intent intent = new Intent(this, DetalleDeMonitorActivity.class);
             intent.putExtra("per", monitores.get(position));
@@ -205,17 +202,18 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-    @Override
+    /**
+     @Override
     public void onClick(View view) {
 
-            if (view.getId() == btnCrearMonitor.getId()) {
+        if (view.getId() == btnCrearMonitor.getId()) {
                 mostrarMensaje(getResources().getString(R.string.msg_btn_crear_monitor));
             }
-          /**  else {
+           else {
                 if (view.getId() == btnCrearCita.getId()) {
                     mostrarMensaje(getResources().getString(R.string.msg_btn_crear_cita));
                 }
-            */
-    }
+
+    }  */
 }
 
