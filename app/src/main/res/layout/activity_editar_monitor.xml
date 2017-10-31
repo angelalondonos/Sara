@@ -13,95 +13,183 @@
         android:contentDescription=""
         android:src="@drawable/ic_add_photo" />
 
-
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_weight="2"
         android:layout_width="match_parent"
         android:layout_height="0dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TableLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:stretchColumns="2"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp">
+
+            <TableRow>
+                <TextView
+                    android:id="@+id/descripcion_de_detalle_personaje"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:maxLines="30"
+                    android:text="@string/txt_nombre"
+                    android:textSize="20dp" />
 
 
-            <TextView
-                android:id="@+id/descripcion_de_detalle_personaje"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top"
-                android:maxLines="30"
-                android:text="@string/txt_nombre"
-                android:textSize="20dp" />
+                <EditText
+                    android:id="@+id/editText_nombre_editar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    />
 
-            <TextView
-                android:id="@+id/txt_userName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top"
-                android:maxLines="30"
-                android:text="@string/txt_userName"
-                android:textSize="20dp" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:id="@+id/txt_userName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:maxLines="30"
+                    android:text="@string/txt_userName"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/editText_userName_editar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:id="@+id/txt_contrasena"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:maxLines="30"
+                    android:text="@string/txt_contrasena"
+                    android:textSize="20dp" />
+                <EditText
+                    android:id="@+id/editText_contrasena_editar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPassword"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:id="@+id/txt_telefono"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:maxLines="30"
+                    android:text="@string/txt_telefono"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/editText_telefono_editar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="phone"
+                    />
+            </TableRow>
 
 
-            <TextView
-                android:id="@+id/txt_contrasena"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top"
-                android:maxLines="30"
-                android:text="@string/txt_contrasena"
-                android:textSize="20dp" />
+            <TableRow>
+                <TextView
+                    android:id="@+id/txt_semestre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:maxLines="30"
+                    android:text="@string/txt_semestre"
+                    android:textSize="20dp" />
+
+                <Spinner
+                    android:id="@+id/spinner_semestre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/semestre" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:id="@+id/txt_horario_editar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:maxLines="30"
+                    android:text="@string/txt_horarios"
+                    android:textSize="20dp" />
+
+                <ImageButton
+                    android:id="@+id/button_editar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/citas"/>
+            </TableRow>
 
 
-            <TextView
-                android:id="@+id/txt_telefono"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top"
-                android:maxLines="30"
-                android:text="@string/txt_telefono"
-                android:textSize="20dp" />
+            <TableRow>
+                <TextView
+                    android:id="@+id/txt_linea_monitoria_editar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:maxLines="30"
+                    android:text="@string/txt_lineaMonitoria"
+                    android:textSize="20dp" />
 
-            <TextView
-                android:id="@+id/txt_semestre"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top"
-                android:maxLines="30"
-                android:text="@string/txt_semestre"
-                android:textSize="20dp" />
-
-            <TextView
-                android:id="@+id/txt_linea_monitoria"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top"
-                android:maxLines="30"
-                android:text="@string/txt_lineaMonitoria"
-                android:textSize="20dp" />
-
-            <TextView
-                android:id="@+id/txt_lugar_asesoria"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top"
-                android:maxLines="30"
-                android:text="@string/txt_lugarAsesoria"
-                android:textSize="20dp" />
+                <Spinner
+                    android:id="@+id/spinner_linea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/lineas_monitoria" />
+            </TableRow>
 
 
-            <Button
-                android:id="@+id/btn_actualizar_monitor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawablePadding="5dp"
-                android:text="@string/btn_actualizar"
-                android:background="@color/colorButton"
-                />
-        </LinearLayout>
+            <TableRow>
+                <TextView
+                    android:id="@+id/txt_lugar_asesoria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:maxLines="30"
+                    android:text="@string/txt_lugarAsesoria"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/editText_lugar_asesoria_editar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    />
+            </TableRow>
+
+            <LinearLayout
+                android:gravity="center">
+                <Button
+                    android:id="@+id/btn_actualizar_monitor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="5dp"
+                    android:text="@string/btn_actualizar"
+                    android:background="@color/colorButton"/>
+
+            </LinearLayout>
+
+        </TableLayout>
+
 
     </ScrollView>
 </LinearLayout>

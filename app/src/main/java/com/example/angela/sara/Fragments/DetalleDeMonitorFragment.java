@@ -18,7 +18,7 @@ import com.example.angela.sara.vo.Monitor;
  * @author Cristian Agudelo
  * A simple {@link Fragment} subclass.
  */
-public class DetalleDeMonitorFragment extends Fragment implements View.OnClickListener{
+public class DetalleDeMonitorFragment extends Fragment {
 
     /**
      * creación de TextView
@@ -29,6 +29,8 @@ public class DetalleDeMonitorFragment extends Fragment implements View.OnClickLi
      * creación de un Monitor
      */
     private Monitor monitor;
+
+
 
     /**
      * Método contructor de la clase
@@ -51,6 +53,9 @@ public class DetalleDeMonitorFragment extends Fragment implements View.OnClickLi
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_detalle_de_monitor, container, false);
 
+
+
+
         return view;
     }
 
@@ -66,7 +71,5 @@ public class DetalleDeMonitorFragment extends Fragment implements View.OnClickLi
         txtLinea.setText(monitor.getLineaMonitoria());
     }
 
-    @Override
-    public void onClick(View v) {
-    }
+
 }

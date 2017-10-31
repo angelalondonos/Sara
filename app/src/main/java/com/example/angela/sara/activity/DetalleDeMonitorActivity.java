@@ -2,12 +2,11 @@ package com.example.angela.sara.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.angela.sara.Fragments.DetalleDeMonitorFragment;
 import com.example.angela.sara.R;
@@ -20,12 +19,16 @@ import com.example.angela.sara.vo.Monitor;
  * Created by angela on 22/10/17.
  */
 
-public class DetalleDeMonitorActivity extends AppCompatActivity implements View.OnClickListener {
+public class DetalleDeMonitorActivity extends AppCompatActivity implements View.OnClickListener{
 
-    /**
-     * creación de ImageButton
+     /**
+      * creación de un ImageButton
      */
-    private ImageButton btnImagen, btnCompartir;
+    private ImageButton btnImagen;
+    /**
+     * creación de un FloatingActionButton
+     */
+    private FloatingActionButton btnAgregarCita;
 
 
     @Override
@@ -44,16 +47,26 @@ public class DetalleDeMonitorActivity extends AppCompatActivity implements View.
         btnImagen.setOnClickListener(this); //utiliza el onclick listener global
 
 
-        /**
-        btnCompartir = (ImageButton) findViewById(R.id.btn_compartir);
+        btnAgregarCita = (FloatingActionButton) findViewById(R.id.btn_flotante_agregar_cita);
+        btnAgregarCita.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "Funciona", Toast.LENGTH_SHORT).show();
+                // remplazarFragmento(new CrearCitasFragment());
+            }
+        });//utiliza el onclick listener global
+
+
+/**
+        ImageButton btnCompartir = (ImageButton) findViewById(R.id.btn_compartir);
         btnCompartir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Intent intent = new Intent(Intent.ACTION_SEND);
-                intent.setType("text/plain");
-                intent.putExtra(Intent.EXTRA_TEXT, getResources().getString(R.string.msg_btn_compartir_prueba));
-                startActivity(Intent.createChooser(intent, getResources().getString(R.string.msg_btn_compartir)));
+                 intent.setType("text/plain");
+                 intent.putExtra(Intent.EXTRA_TEXT, "El mejor blog ");
+                 startActivity(Intent.createChooser(intent, "Share with"));
             }
         });*/
     }
@@ -78,23 +91,9 @@ public class DetalleDeMonitorActivity extends AppCompatActivity implements View.
         startActivity(intent);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.menu_compartir) {
-            Intent intent = new Intent(Intent.ACTION_SEND);
-            intent.setType("text/plain");
-            intent.putExtra(Intent.EXTRA_TEXT, getResources().getString(R.string.msg_btn_compartir_prueba));
-            startActivity(Intent.createChooser(intent, getResources().getString(R.string.msg_btn_compartir)));
-        }
-        return super.onOptionsItemSelected(item);
-    }
+    /**
+    private void remplazarFragmento(Fragment fragment) {
+        getFragmentManager().beginTransaction().replace(R.id.content_frame, fragment).addToBackStack(null).commit();
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_share, menu);
-        return true;
-    }
+    }*/
 }

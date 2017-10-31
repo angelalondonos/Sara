@@ -23,7 +23,7 @@
     <string name="txt_datos_estudiante">DATOS ESTUDIANTE</string>
     <string name="txt_no_identificacion">No. identificación: </string>
     <string name="txt_datos_monitor">DATOS MONITOR</string>
-
+    <string name="txt_datos_cita">CITAS</string>
 
     <!-- Nombre botones -->
     <string name="btn_agregar_cita">CREAR CITA</string>
@@ -50,9 +50,9 @@
 
 
     <!-- mensajes -->
-    <string name="txt_cita1">8:00 am Juana Perez</string>
-    <string name="txt_cita2">9:00 am Juana Perez</string>
-    <string name="txt_cita3">10:00 am Juana Perez</string>
+    <string name="txt_cita1">8:00 am  Juana Perez</string>
+    <string name="txt_cita2">9:00 am  Luis Ramirez</string>
+    <string name="txt_cita3">10:00 am  Maria Parra</string>
 
 
     <string-array name="lineas_monitoria">

@@ -35,6 +35,6 @@
         android:layout_margin="16dp"
         android:src="@drawable/ic_agregar"
         app:backgroundTint="#0040FF"
-        app:fabSize="normal"/>
+        />
 
 </FrameLayout>

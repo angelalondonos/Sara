@@ -2,9 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!--
+
+<!--
     <ImageButton
         android:id="@+id/btn_compartir"
         android:layout_width="wrap_content"
@@ -13,9 +15,12 @@
         android:background="@drawable/ic_action_name"/>
     -->
 
+
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="20dp">
 
         <ImageView
             android:id="@+id/imagen_detalle"
@@ -27,9 +32,9 @@
         <ImageButton
             android:id="@+id/btn_editar"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ic_edit"
-            android:layout_gravity="end|bottom"/>
+            android:layout_height="40dp"
+            android:layout_gravity="end|bottom"
+            android:background="@drawable/ic_edit" />
     </FrameLayout>
 
 
@@ -184,11 +189,171 @@
             </TableRow>
 
         </TableLayout>
-
-
-
-
-
     </ScrollView>
 
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="15dp"
+                android:stretchColumns="2"
+                >
+
+
+
+                <TableRow>
+                    <TextView
+                        android:id="@+id/espacio"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/Separador"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <FrameLayout
+                        android:id="@+id/LineaTitulo"
+                        android:layout_width="fill_parent"
+                        android:layout_height="2px"
+                        android:layout_span="6"
+                        android:background="@color/colorResumenMonitor" >
+                    </FrameLayout>
+                </TableRow>
+
+
+                <TableRow>
+                    <TextView
+                        android:id="@+id/citas_monitor"
+                        android:layout_height="wrap_content"
+                        android:text="@string/txt_datos_cita"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/SeparadorCabecera"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <FrameLayout
+                        android:id="@+id/LineaCabecera"
+                        android:layout_width="fill_parent"
+                        android:layout_height="2px"
+                        android:layout_span="6"
+                        android:background="@color/colorResumenMonitor" >
+                    </FrameLayout>
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/txt_asesoria1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:maxLines="30"
+                        android:text="@string/txt_cita1"
+                        android:textSize="20dp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/txt_asesoria2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:maxLines="30"
+                        android:text="@string/txt_cita2"
+                        android:textSize="20dp" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:id="@+id/txt_asesoria3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:maxLines="30"
+                        android:text="@string/txt_cita3"
+                        android:textSize="20dp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/txt_asesoria4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:maxLines="30"
+                        android:text="@string/txt_cita1"
+                        android:textSize="20dp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/txt_asesoria5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:maxLines="30"
+                        android:text="@string/txt_cita3"
+                        android:textSize="20dp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/txt_asesoria6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:maxLines="30"
+                        android:text="@string/txt_cita2"
+                        android:textSize="20dp" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/SeparadorAbajo"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <FrameLayout
+                        android:id="@+id/LineaAbajo"
+                        android:layout_width="fill_parent"
+                        android:layout_height="2px"
+                        android:layout_span="6"
+                        android:background="@color/colorResumenMonitor" >
+                    </FrameLayout>
+                </TableRow>
+            </TableLayout>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/btn_flotante_agregar_cita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="16dp"
+                android:src="@drawable/ic_agregar"
+                app:backgroundTint="#0040FF" />
+        </FrameLayout>
+
+    </ScrollView>
 </LinearLayout>
