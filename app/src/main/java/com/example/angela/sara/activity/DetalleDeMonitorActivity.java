@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -56,19 +59,6 @@ public class DetalleDeMonitorActivity extends AppCompatActivity implements View.
             }
         });//utiliza el onclick listener global
 
-
-/**
-        ImageButton btnCompartir = (ImageButton) findViewById(R.id.btn_compartir);
-        btnCompartir.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(Intent.ACTION_SEND);
-                 intent.setType("text/plain");
-                 intent.putExtra(Intent.EXTRA_TEXT, "El mejor blog ");
-                 startActivity(Intent.createChooser(intent, "Share with"));
-            }
-        });*/
     }
 
     @Override
@@ -92,8 +82,27 @@ public class DetalleDeMonitorActivity extends AppCompatActivity implements View.
     }
 
     /**
-    private void remplazarFragmento(Fragment fragment) {
-        getFragmentManager().beginTransaction().replace(R.id.content_frame, fragment).addToBackStack(null).commit();
+     * Metodo que permite crear el menu de opciones
+     *
+     * @param menu
+     * @return
+     */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_share, menu);
+        return true;
+    }
 
-    }*/
+    @Override
+     public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.menu_compartir) {
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            intent.putExtra(Intent.EXTRA_TEXT, getResources().getString(R.string.msg_btn_compartir_prueba));
+            startActivity(Intent.createChooser(intent, getResources().getString(R.string.msg_btn_compartir)));
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
