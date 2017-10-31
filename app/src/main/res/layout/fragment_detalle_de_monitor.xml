@@ -148,10 +148,12 @@
                     android:textSize="20dp" />
 
                 <ImageButton
-                    android:id="@+id/button_horatio_detalle"
+                    android:id="@+id/button_horario_detalle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/citas"/>
+                    android:src="@drawable/citas"
+                    android:onClick="onAddEventClicked"
+                    />
 
             </TableRow>
 
