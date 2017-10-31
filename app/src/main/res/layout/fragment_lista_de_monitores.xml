@@ -28,7 +28,7 @@
 </LinearLayout>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/btn_flotante"
+        android:id="@+id/btn_flotante_agregar_monitor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"

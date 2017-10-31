@@ -33,14 +33,27 @@ import java.util.ArrayList;
  */
 public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMonitor.OnClickAdaptadorDeMonitor{
 
+    /**
+     * creación de un AdaptadorDeMonitor
+     */
     private AdaptadorDeMonitor adaptador;
+    /**
+     * creación de un RecyclerView
+     */
     private RecyclerView listadoDeMonitores;
+    /**
+     * creación de un ArrayList<Monitor>
+     */
     private ArrayList<Monitor> monitores;
+    /**
+     * creación de un OnMonitorSeleccionadoListener
+     */
     private OnMonitorSeleccionadoListener listener;
     /**
      * creación de un FloatingActionButton
      */
     private FloatingActionButton btnAgregarMonitor;
+
 
     /**
      * Método constructor de la clase ListaDeMonitoresFragment
@@ -61,7 +74,6 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
         monitores.add(new Monitor("Alejandro Magno", "Calculo"));
     }
 
-
     /**
      * Crea la conexion entre el fragmento y su parte grafica
      */
@@ -71,7 +83,7 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
 
 
     /**
-     * Método que al cual se le asigma un layout determinado.
+     * Método al que se le asigna un layout determinado.
      * @param inflater
      * @param container
      * @param savedInstanceState
@@ -127,7 +139,6 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
     public boolean onOptionsItemSelected(MenuItem item) {
 
         int id = item.getItemId();
-
         if (id == R.id.cambiar_idioma) {
             Log.i("Menu", "Pulsada cambiar idioma");
         }

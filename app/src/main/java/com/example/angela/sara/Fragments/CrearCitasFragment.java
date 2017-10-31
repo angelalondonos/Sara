@@ -10,16 +10,28 @@ import android.view.ViewGroup;
 import com.example.angela.sara.R;
 
 /**
+ * @author Angela Londono
+ * @author Rodrigo Ramirez
+ * @author Cristian Agudelo
  * A simple {@link Fragment} subclass.
  */
 public class CrearCitasFragment extends Fragment {
 
-
+    /**
+     * Contructor vacio de la clase CrearCitaFragment
+     */
     public CrearCitasFragment() {
         // Required empty public constructor
     }
 
 
+    /**
+     * Metodo que permite inicar el fragment_crear_cita
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

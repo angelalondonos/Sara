@@ -16,6 +16,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.angela.sara.Fragments.CitaFragment;
+import com.example.angela.sara.Fragments.CrearCitasFragment;
 import com.example.angela.sara.Fragments.CrearMonitorFragment;
 import com.example.angela.sara.Fragments.DetalleDeMonitorFragment;
 import com.example.angela.sara.Fragments.ListaDeMonitoresFragment;
@@ -24,7 +26,14 @@ import com.example.angela.sara.vo.Monitor;
 
 import java.util.ArrayList;
 
-public class SaraActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ListaDeMonitoresFragment.OnMonitorSeleccionadoListener, View.OnClickListener {
+/**
+ * @author Angela Londono
+ * @author Rodrigo Ramirez
+ * @author Cristian Agudelo
+ *
+ * Clase principal
+ */
+public class SaraActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ListaDeMonitoresFragment.OnMonitorSeleccionadoListener{
 
     /**
      * creación de un DrawerLayout
@@ -88,11 +97,24 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         listaDeMonitoresFragment.setMonitores(monitores);
         remplazarFragmento(listaDeMonitoresFragment);
 
+        btnAgregarMonitor = (FloatingActionButton) findViewById(R.id.btn_flotante_agregar_monitor);
+        btnAgregarMonitor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (view.getId() == btnAgregarMonitor.getId()) {
+                    mostrarMensaje(getResources().getString(R.string.msg_btn_flotante));
+                    remplazarFragmento(new CrearMonitorFragment());
+                }
+            }
+        });
+
 
         //btnAgregarMonitor = (FloatingActionButton) findViewById(R.id.btn_flotante);
         //btnAgregarMonitor.setOnClickListener(this); //utiliza el onclick listener global
 
         //btnCrearMonitor = (Button) findViewById(R.id.btn_agregar_monitor);
+       // btnCrearMonitor = (Button) findViewById(R.id.btn_agregar_monitor);
+
         //btnAgregarMonitor.setOnClickListener(this);
 
        // btnCrearCita = (Button) findViewById(R.id.btn_agregar_cita);
@@ -131,6 +153,10 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
+    /**
+     * Método que verifica cual monitor es seleccionado de acuerdo a la posicion
+     * @param position
+     */
     @Override
     public void onMonitorSeleccionado(int position) {
 
@@ -153,11 +179,13 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-
+    /**
+     * Método que permite cambiar de opcion en el Navigation Drawer
+     * @param item
+     * @return
+     */
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-
-        Toast.makeText(this, "Estoy aquí", Toast.LENGTH_SHORT).show();
 
         switch (item.getItemId()) {
             case R.id.menu_monitores:
@@ -167,10 +195,10 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
                 remplazarFragmento(new CrearMonitorFragment());
                 break;
             case R.id.menu_crear_cita:
-                Log.i("NavigationView", "Pulsada seccion 3");
+                remplazarFragmento(new CrearCitasFragment());
                 break;
             case R.id.menu_citas:
-                Log.i("NavigationView", "Pulsada seccion 3");
+                remplazarFragmento(new CitaFragment());
                 break;
             case R.id.menu_opcion_1:
                 Log.i("NavigationView", "Pulsada opción 1");
@@ -193,23 +221,19 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
-
+/**
     @Override
     public void onClick(View view) {
 
-        if (view.getId() == btnAgregarMonitor.getId()) {
-            mostrarMensaje(getResources().getString(R.string.msg_btn_flotante));
-        } else {
             if (view.getId() == btnCrearMonitor.getId()) {
                 mostrarMensaje(getResources().getString(R.string.msg_btn_crear_monitor));
-            }
+          }
 
-            /**else {
+            else {
                 if (view.getId() == btnCrearCita.getId()) {
                     mostrarMensaje(getResources().getString(R.string.msg_btn_crear_cita));
                 }
-            }  */
-        }
-    }
+            }
+    }*/
 }
 
