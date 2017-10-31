@@ -19,6 +19,7 @@ import com.example.angela.sara.Fragments.CrearCitasFragment;
 import com.example.angela.sara.Fragments.CrearMonitorFragment;
 import com.example.angela.sara.Fragments.DetalleDeMonitorFragment;
 import com.example.angela.sara.Fragments.ListaDeMonitoresFragment;
+import com.example.angela.sara.Fragments.TabletFragment;
 import com.example.angela.sara.R;
 import com.example.angela.sara.vo.Monitor;
 
@@ -68,6 +69,7 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         navView.setItemIconTintList(null);
         navView.setNavigationItemSelectedListener(this);
 
+
         monitores = new ArrayList();
         monitores.add(new Monitor("Ronaldinho", "Programación"));
         monitores.add(new Monitor("Albert Einstein", "Programación"));
@@ -83,12 +85,18 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         //ListaDeMonitoresFragment listaDeMonitoresFragment = (ListaDeMonitoresFragment) getSupportFragmentManager().findFragmentById(R.id.fragmento_lista_monitores);
         //listaDeMonitoresFragment.setMonitores(monitores);
 
+        if (findViewById(R.id.fragmento_tablet) == null) {
+            Log.i("NavigationView", "Estoy en la tablet");
 
-        ListaDeMonitoresFragment listaDeMonitoresFragment = new ListaDeMonitoresFragment();
-        listaDeMonitoresFragment.setMonitores(monitores);
-        remplazarFragmento(listaDeMonitoresFragment);
+            ListaDeMonitoresFragment listaDeMonitoresFragment = new ListaDeMonitoresFragment();
+            listaDeMonitoresFragment.setMonitores(monitores);
+            remplazarFragmento(listaDeMonitoresFragment);
+        }else{
+            Log.i("NavigationView", "Estoy en la tablet");
 
-
+            TabletFragment tabletFragment = new TabletFragment();
+            remplazarFragmento(tabletFragment);
+        }
     }
 
     /**

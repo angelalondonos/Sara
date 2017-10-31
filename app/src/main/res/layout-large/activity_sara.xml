@@ -20,6 +20,13 @@
         app:headerLayout="@layout/encabezado_navview"
         app:menu="@menu/menu_nav" />
 
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/fragmento_tablet"
+        class="com.example.angela.sara.Fragments.TabletFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </fragment>
 
 
 </android.support.v4.widget.DrawerLayout>
