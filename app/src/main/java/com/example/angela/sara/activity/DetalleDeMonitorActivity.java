@@ -3,6 +3,9 @@ package com.example.angela.sara.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -17,10 +20,10 @@ import com.example.angela.sara.vo.Monitor;
  * Created by angela on 22/10/17.
  */
 
-public class DetalleDeMonitorActivity extends AppCompatActivity implements View.OnClickListener{
+public class DetalleDeMonitorActivity extends AppCompatActivity implements View.OnClickListener {
 
-     /**
-      * creación de ImageButton
+    /**
+     * creación de ImageButton
      */
     private ImageButton btnImagen, btnCompartir;
 
@@ -41,17 +44,18 @@ public class DetalleDeMonitorActivity extends AppCompatActivity implements View.
         btnImagen.setOnClickListener(this); //utiliza el onclick listener global
 
 
+        /**
         btnCompartir = (ImageButton) findViewById(R.id.btn_compartir);
         btnCompartir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Intent intent = new Intent(Intent.ACTION_SEND);
-                 intent.setType("text/plain");
-                 intent.putExtra(Intent.EXTRA_TEXT, getResources().getString(R.string.msg_btn_compartir_prueba));
-                 startActivity(Intent.createChooser(intent, getResources().getString(R.string.msg_btn_compartir)));
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_TEXT, getResources().getString(R.string.msg_btn_compartir_prueba));
+                startActivity(Intent.createChooser(intent, getResources().getString(R.string.msg_btn_compartir)));
             }
-        });
+        });*/
     }
 
     @Override
@@ -72,5 +76,25 @@ public class DetalleDeMonitorActivity extends AppCompatActivity implements View.
     public void pasarAEditarMonitor(View view) {
         Intent intent = new Intent(this, EditarMonitorAcctivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.menu_compartir) {
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            intent.putExtra(Intent.EXTRA_TEXT, getResources().getString(R.string.msg_btn_compartir_prueba));
+            startActivity(Intent.createChooser(intent, getResources().getString(R.string.msg_btn_compartir)));
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_share, menu);
+        return true;
     }
 }
