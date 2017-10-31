@@ -8,7 +8,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.angela.sara.R;
 
@@ -28,6 +30,12 @@ public class CrearMonitorFragment extends Fragment {
      * creación de un ImageView
      */
     private ImageView imagenMonitor;
+    /**
+     * creación de un Button
+     */
+    private Button btnCrearMonitor;
+
+
     /**
      * Constructor vacio de la clase CrearMonitorFragment
      */
@@ -55,6 +63,16 @@ public class CrearMonitorFragment extends Fragment {
                 cargarImagen();
             }
         });
+
+
+        btnCrearMonitor = (Button) view.findViewById(R.id.btn_agregar_monitor);
+        btnCrearMonitor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(), getResources().getString(R.string.msg_btn_crear_monitor), Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
         return view;
     }

@@ -13,7 +13,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.example.angela.sara.Fragments.CitaFragment;
 import com.example.angela.sara.Fragments.CrearCitasFragment;
@@ -50,10 +49,7 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
      * creación de un FloatingActionButton
      */
     private FloatingActionButton btnAgregarMonitor;
-    /**
-     * creación de un Button
-     */
-    private Button btnCrearMonitor;
+
     /**
      * creación de un Button
      */
@@ -92,14 +88,6 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         listaDeMonitoresFragment.setMonitores(monitores);
         remplazarFragmento(listaDeMonitoresFragment);
 
-
-
-        //btnCrearMonitor = (Button) findViewById(R.id.btn_agregar_monitor);
-       // btnCrearMonitor = (Button) findViewById(R.id.btn_agregar_monitor);
-
-
-        //btnCrearCita = (Button) findViewById(R.id.btn_agregar_cita);
-        //btnCrearCita.setOnClickListener(this);
 
     }
 
@@ -152,7 +140,10 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-
+    /**
+     * Método que permite cambiar de fragment
+     * @param fragment
+     */
     private void remplazarFragmento(Fragment fragment) {
         getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment).addToBackStack(null).commit();
 
@@ -192,28 +183,7 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-    /**
-     * Método para mostrar un mensaje en un evento de botón
-     *
-     * @param message
-     */
-    public void mostrarMensaje(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-    }
 
 
-    /**
-     @Override
-    public void onClick(View view) {
-
-        if (view.getId() == btnCrearMonitor.getId()) {
-                mostrarMensaje(getResources().getString(R.string.msg_btn_crear_monitor));
-            }
-           else {
-                if (view.getId() == btnCrearCita.getId()) {
-                    mostrarMensaje(getResources().getString(R.string.msg_btn_crear_cita));
-                }
-
-    }  */
 }
 

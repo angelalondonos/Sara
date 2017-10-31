@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.angela.sara.R;
 
@@ -24,6 +26,11 @@ public class EditarMonitorAcctivity extends AppCompatActivity {
      * creación de un ImageView
      */
     private ImageView imagenMonitor;
+    /**
+     * creación de un Button
+     */
+    private Button btnActualizarMonitor;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +38,22 @@ public class EditarMonitorAcctivity extends AppCompatActivity {
         setContentView(R.layout.activity_editar_monitor);
 
         imagenMonitor = (ImageView) findViewById(R.id.imagen_detalle);
+        imagenMonitor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cargarImagen();
+            }
+        });
+
+        btnActualizarMonitor= (Button) findViewById(R.id.btn_actualizar_monitor);
+        btnActualizarMonitor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), getResources().getString(R.string.msg_btn_actualizar_monitor), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
-    public void onClick(View view) {
-        cargarImagen();
-    }
 
     /**
      * Método que pemite cargar imagen y elegir el lugar donde esta la foto

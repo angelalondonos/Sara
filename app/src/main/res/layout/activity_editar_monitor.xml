@@ -11,16 +11,8 @@
         android:layout_height="0dp"
         android:layout_weight="0.75"
         android:contentDescription=""
-        android:src="@drawable/persona" />
+        android:src="@drawable/ic_add_photo" />
 
-    <Button
-        android:id="@+id/btn_cargar_imagen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_cargar_imagen"
-        android:background="@color/colorButton"
-        android:layout_gravity="center"
-        android:onClick="onClick"/>
 
     <ScrollView
         android:id="@+id/scrollView"
