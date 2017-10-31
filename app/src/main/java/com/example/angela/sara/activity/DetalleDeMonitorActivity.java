@@ -6,6 +6,7 @@ import android.provider.CalendarContract;
 import android.provider.CalendarContract.Events;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -66,6 +67,9 @@ public class DetalleDeMonitorActivity extends AppCompatActivity implements View.
 
     @Override
     public void onClick(View v) {
+
+        Log.i("NavigationView", "Estoy onClick de detalle");
+
         /**
          * configuración del btnImagen
          */

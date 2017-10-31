@@ -86,7 +86,7 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         //listaDeMonitoresFragment.setMonitores(monitores);
 
         if (findViewById(R.id.fragmento_tablet) == null) {
-            Log.i("NavigationView", "Estoy en la tablet");
+            Log.i("NavigationView", "Estoy en Celular");
 
             ListaDeMonitoresFragment listaDeMonitoresFragment = new ListaDeMonitoresFragment();
             listaDeMonitoresFragment.setMonitores(monitores);

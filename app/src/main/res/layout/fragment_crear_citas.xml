@@ -147,10 +147,11 @@
     </TableLayout>
 
     <ImageButton
-        android:id="@+id/button"
+        android:id="@+id/button_horario_cita"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/citas"/>
+        android:src="@drawable/citas"
+        android:onClick="onAddEventClicked"/>
 
     <Button
         android:id="@+id/btn_agregar_cita"
