@@ -97,7 +97,7 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         listaDeMonitoresFragment.setMonitores(monitores);
         remplazarFragmento(listaDeMonitoresFragment);
 
-        btnAgregarMonitor = (FloatingActionButton) findViewById(R.id.btn_flotante_agregar_monitor);
+        /*btnAgregarMonitor = (FloatingActionButton) findViewById(R.id.btn_flotante_agregar_monitor);
         btnAgregarMonitor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -106,7 +106,7 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
                     remplazarFragmento(new CrearMonitorFragment());
                 }
             }
-        });
+        });*/
 
 
         //btnAgregarMonitor = (FloatingActionButton) findViewById(R.id.btn_flotante);
