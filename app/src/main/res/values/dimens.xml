@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="lista_texto_titulo">14pt</dimen>
-    <dimen name="lista_texto_linea_monitoria">9pt</dimen>
-    <dimen name="detalle_texto_titulo">9pt</dimen>
+    <dimen name="lista_texto_titulo">12pt</dimen>
+    <dimen name="lista_texto_linea_monitoria">8pt</dimen>
+    <dimen name="detalle_texto_titulo">6pt</dimen>
     <dimen name="detalle_texto_descripción">8pt</dimen>
 </resources>

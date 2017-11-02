@@ -5,17 +5,6 @@
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-<!--
-    <ImageButton
-        android:id="@+id/btn_compartir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:background="@drawable/ic_action_name"/>
-    -->
-
-
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -211,8 +200,6 @@
                 android:layout_marginStart="15dp"
                 android:stretchColumns="2"
                 >
-
-
 
                 <TableRow>
                     <TextView

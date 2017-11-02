@@ -85,7 +85,7 @@ public class CrearMonitorFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_INSERT);
                 intent.setType("vnd.android.cursor.item/event");
-                
+
                 intent.putExtra(Events.DESCRIPTION,  getResources().getString(R.string.msg_calendario_estado));
                 intent.putExtra(Events.EVENT_LOCATION, getResources().getString(R.string.msg_universidad));
                 intent.putExtra(Events.RRULE, "FREQ=YEARLY");
