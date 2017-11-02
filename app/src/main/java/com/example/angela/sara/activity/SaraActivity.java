@@ -1,7 +1,10 @@
 package com.example.angela.sara.activity;
 
+import android.content.ContentUris;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -14,7 +17,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Button;
 
-import com.example.angela.sara.Fragments.CitaFragment;
 import com.example.angela.sara.Fragments.CrearCitasFragment;
 import com.example.angela.sara.Fragments.CrearMonitorFragment;
 import com.example.angela.sara.Fragments.DetalleDeMonitorFragment;
@@ -177,7 +179,15 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
                 remplazarFragmento(new CrearCitasFragment());
                 break;
             case R.id.menu_citas:
-                remplazarFragmento(new CitaFragment());
+
+                long startMillis= 0;
+
+                Uri.Builder builder = CalendarContract.CONTENT_URI.buildUpon();
+                builder.appendPath("time");
+                ContentUris.appendId(builder, startMillis);
+                Intent intent = new Intent(Intent.ACTION_VIEW).setData(builder.build());
+                startActivity(intent);
+                
                 break;
             case R.id.menu_opcion_1:
                 Log.i("NavigationView", "Pulsada opción 1");
