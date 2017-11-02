@@ -27,6 +27,7 @@ import com.example.angela.sara.vo.Monitor;
 
 import java.util.ArrayList;
 
+
 /**
  * @author Angela Londono
  * @author Rodrigo Ramirez
@@ -187,7 +188,7 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
                 ContentUris.appendId(builder, startMillis);
                 Intent intent = new Intent(Intent.ACTION_VIEW).setData(builder.build());
                 startActivity(intent);
-                
+
                 break;
             case R.id.menu_opcion_1:
                 Log.i("NavigationView", "Pulsada opción 1");

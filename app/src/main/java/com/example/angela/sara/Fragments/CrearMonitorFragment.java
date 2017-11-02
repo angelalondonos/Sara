@@ -3,12 +3,14 @@ package com.example.angela.sara.Fragments;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.CalendarContract.Events;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -34,6 +36,10 @@ public class CrearMonitorFragment extends Fragment {
      * creación de un Button
      */
     private Button btnCrearMonitor;
+    /**
+     * Creación de ImageButton
+     */
+    private ImageButton btnHorario;
 
 
     /**
@@ -73,7 +79,20 @@ public class CrearMonitorFragment extends Fragment {
             }
         });
 
+        btnHorario = (ImageButton) view.findViewById(R.id.button_horario_monitor);
+        btnHorario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_INSERT);
+                intent.setType("vnd.android.cursor.item/event");
+                
+                intent.putExtra(Events.DESCRIPTION,  getResources().getString(R.string.msg_calendario_estado));
+                intent.putExtra(Events.EVENT_LOCATION, getResources().getString(R.string.msg_universidad));
+                intent.putExtra(Events.RRULE, "FREQ=YEARLY");
 
+                startActivity(intent);
+            }
+        }); //utiliza el onclick listener global
         return view;
     }
 

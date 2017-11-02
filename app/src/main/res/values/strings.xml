@@ -47,6 +47,8 @@
     <string name="msg_btn_cargar_imagen">Seleccione la Aplicación</string>
     <string name="msg_btn_compartir">Compartir con</string>
     <string name="msg_btn_compartir_prueba">Prueba boton Compartir</string>
+    <string name="msg_calendario_estado">Estado (Disponible o OCupado</string>
+    <string name="msg_universidad">Universidad del Quindío</string>
 
 
     <!-- mensajes -->

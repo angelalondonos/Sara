@@ -10,11 +10,17 @@ import android.view.ViewGroup;
 import com.example.angela.sara.R;
 
 /**
- * A simple {@link Fragment} subclass.
+ * @author Angela Londono
+ * @author Rodrigo Ramirez
+ * @author Cristian Agudelo
+ *
+ * Fragmento
  */
 public class TabletFragment extends Fragment {
 
-
+    /**
+     * Metodo constructor de la clase TabletFragment
+     */
     public TabletFragment() {
         // Required empty public constructor
     }

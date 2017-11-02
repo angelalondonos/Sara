@@ -3,18 +3,16 @@ package com.example.angela.sara.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.CalendarContract;
 import android.provider.CalendarContract.Events;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.angela.sara.R;
-
-import java.util.Calendar;
 
 /**
  * @author Angela Londono
@@ -28,6 +26,10 @@ public class CrearCitasFragment extends Fragment {
      * creación de un Button
      */
     private Button btnCrearCita;
+    /**
+     * creación de un ImageButton
+     */
+    private ImageButton btnImagen;
 
     /**
      * Contructor vacio de la clase CrearCitaFragment
@@ -57,6 +59,27 @@ public class CrearCitasFragment extends Fragment {
                 mostrarMensaje(getResources().getString(R.string.msg_btn_crear_cita));
             }
         });
+
+        /**
+         * configuración del btnImagen
+         */
+        btnImagen = (ImageButton) view.findViewById(R.id.button_horario_cita);
+        btnImagen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_INSERT);
+                intent.setType("vnd.android.cursor.item/event");
+
+                intent.putExtra(Events.TITLE, "Monitor 1");
+                intent.putExtra(Events.DESCRIPTION,  getResources().getString(R.string.msg_calendario_estado));
+                intent.putExtra(Events.EVENT_LOCATION, getResources().getString(R.string.msg_universidad));
+                intent.putExtra(Events.RRULE, "FREQ=YEARLY");
+
+                startActivity(intent);
+            }
+        }); //utiliza el onclick listener global
+
+
         // Inflate the layout for this fragment
         return view;
     }
