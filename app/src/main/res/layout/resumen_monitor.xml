@@ -35,7 +35,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/nombre"
+        android:id="@+id/nombre_resumen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -44,7 +44,7 @@
         android:textSize="@dimen/lista_texto_titulo" />
 
     <TextView
-        android:id="@+id/linea_monitoria"
+        android:id="@+id/linea_monitoria_resumen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/nombre"

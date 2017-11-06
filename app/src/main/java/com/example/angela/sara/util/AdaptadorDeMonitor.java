@@ -30,12 +30,16 @@ public class AdaptadorDeMonitor extends RecyclerView.Adapter<AdaptadorDeMonitor.
      */
     public AdaptadorDeMonitor(ArrayList<Monitor> monitores, ListaDeMonitoresFragment listaDeMonitoresFragment) {
         this.monitores = monitores;
-        listener = (OnClickAdaptadorDeMonitor) listaDeMonitoresFragment;
+        try{
+            listener= (OnClickAdaptadorDeMonitor) listaDeMonitoresFragment;
+        }catch (ClassCastException e){
+            e.printStackTrace();
+        }
     }
 
     @Override
-    public MonitorViewHolder onCreateViewHolder(ViewGroup parent, int
-            viewType) {
+    public MonitorViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.resumen_monitor, parent, false);
         MonitorViewHolder monitorVH = new MonitorViewHolder(itemView);
         return monitorVH;
@@ -69,14 +73,11 @@ public class AdaptadorDeMonitor extends RecyclerView.Adapter<AdaptadorDeMonitor.
 
         public MonitorViewHolder(View itemView) {
             super(itemView);
-            txtNombreMonitor = (TextView) itemView.findViewById(R.id.nombre);
-            txtLineaMonitoria = (TextView) itemView.findViewById(R.id.linea_monitoria);
-            itemView.findViewById(R.id.linea_monitoria);
+            txtNombreMonitor = (TextView) itemView.findViewById(R.id.nombre_resumen);
+            txtLineaMonitoria = (TextView) itemView.findViewById(R.id.linea_monitoria_resumen);
             itemView.setOnClickListener(this);
 
         }
-
-
 
         public void binMonitor(Monitor monitor) {
             txtNombreMonitor.setText(monitor.getNombre());

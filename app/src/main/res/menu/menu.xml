@@ -5,7 +5,7 @@
         android:id="@+id/cambiar_idioma"
         android:icon="@mipmap/ic_launcher"
         android:orderInCategory="1"
-        android:title="Cambiar Idioma"
+        android:title="@string/Cambiar_idioma"
         app:showAsAction="never" />
 
 </menu>
