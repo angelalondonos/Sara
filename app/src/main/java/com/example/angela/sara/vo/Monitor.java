@@ -21,7 +21,17 @@ public class Monitor implements Parcelable{
     private String lineaMonitoria;
     private String contrasena;
     private String lugarAsesoria;
+    private String id;
 
+    public Monitor(String nombre, String userName, String telefono, String semestre, String lineaMonitoria, String contrasena, String lugarAsesoria) {
+        this.nombre = nombre;
+        this.userName = userName;
+        this.telefono = telefono;
+        this.semestre = semestre;
+        this.lineaMonitoria = lineaMonitoria;
+        this.contrasena = contrasena;
+        this.lugarAsesoria = lugarAsesoria;
+    }
 
     public Monitor(String nombre, String lineaMonitoria) {
         this.nombre = nombre;
@@ -36,6 +46,10 @@ public class Monitor implements Parcelable{
         lineaMonitoria = in.readString();
         contrasena = in.readString();
         lugarAsesoria = in.readString();
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
 

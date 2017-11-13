@@ -10,11 +10,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.angela.sara.R;
+import com.example.angela.sara.util.ManagerFireBase;
+import com.example.angela.sara.vo.Monitor;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -40,6 +44,24 @@ public class CrearMonitorFragment extends Fragment {
      * Creación de ImageButton
      */
     private ImageButton btnHorario;
+    /*
+    * Atributo de clase ManagerFireBase
+     */
+    private ManagerFireBase managerFireBase;
+
+    private EditText nombre;
+
+    private EditText userName;
+
+    private EditText contraseña;
+
+    private EditText telefono;
+
+    //semestre = spinner_semestre
+
+    //linea = txt_linea_monitoria"
+
+    private EditText lugar ;
 
 
     /**
@@ -70,11 +92,29 @@ public class CrearMonitorFragment extends Fragment {
             }
         });
 
+        nombre = (EditText) view.findViewById(R.id.editText_nombre_monitor);
+
+        userName = (EditText) view.findViewById(R.id.editText_userName_monitor);
+
+        contraseña = (EditText) view.findViewById(R.id.editText_contrasena_monitor);
+
+        telefono = (EditText) view.findViewById(R.id.editText_telefono_monitor);
+
+        //semestre = spinner_semestre
+
+        //linea = txt_linea_monitoria"
+
+        lugar = (EditText) view.findViewById(R.id.editText_lugar_asesoria);
+
+        managerFireBase = ManagerFireBase.instanciar(this);
+        //managerFireBase.escucharEventoFireBase();
+
 
         btnCrearMonitor = (Button) view.findViewById(R.id.btn_agregar_monitor);
         btnCrearMonitor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                managerFireBase.insertarMonitor(crearMonitor());
                 Toast.makeText(getActivity(), getResources().getString(R.string.msg_btn_crear_monitor), Toast.LENGTH_SHORT).show();
             }
         });
@@ -94,6 +134,15 @@ public class CrearMonitorFragment extends Fragment {
             }
         }); //utiliza el onclick listener global
         return view;
+    }
+
+    private Monitor crearMonitor() {
+
+        Monitor monitor = new Monitor(nombre.getText().toString(), userName.getText().toString(),
+                telefono.getText().toString(), "Ultimo", "Programación", contraseña.getText().toString(),
+                lugar.getText().toString());
+
+        return monitor;
     }
 
 

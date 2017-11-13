@@ -73,17 +73,6 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         navView.setNavigationItemSelectedListener(this);
 
 
-        monitores = new ArrayList();
-        monitores.add(new Monitor("Ronaldinho", "Programación"));
-        monitores.add(new Monitor("Albert Einstein", "Programación"));
-        monitores.add(new Monitor("Leonardo da Vinci", "Programación"));
-        monitores.add(new Monitor("Goku", "Calculo"));
-        monitores.add(new Monitor("Alejandro Magno", "Calculo"));
-        monitores.add(new Monitor("Ronaldinho", "Calculo"));
-        monitores.add(new Monitor("Albert Einstein", "Calculo"));
-        monitores.add(new Monitor("Leonardo da Vinci", "Calculo"));
-        monitores.add(new Monitor("Goku", "Calculo"));
-        monitores.add(new Monitor("Alejandro Magno", "Calculo"));
 
         //ListaDeMonitoresFragment listaDeMonitoresFragment = (ListaDeMonitoresFragment) getSupportFragmentManager().findFragmentById(R.id.fragmento_lista_monitores);
         //listaDeMonitoresFragment.setMonitores(monitores);
@@ -92,7 +81,6 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
             Log.i("NavigationView", "Estoy en Celular");
 
             ListaDeMonitoresFragment listaDeMonitoresFragment = new ListaDeMonitoresFragment();
-            listaDeMonitoresFragment.setMonitores(monitores);
             remplazarFragmento(listaDeMonitoresFragment);
         }else{
             Log.i("NavigationView", "Estoy en la tablet");

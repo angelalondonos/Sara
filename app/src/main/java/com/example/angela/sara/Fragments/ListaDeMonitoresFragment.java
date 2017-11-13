@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 
 import com.example.angela.sara.R;
 import com.example.angela.sara.util.AdaptadorDeMonitor;
+import com.example.angela.sara.util.ManagerFireBase;
 import com.example.angela.sara.vo.Monitor;
 
 import java.util.ArrayList;
@@ -30,7 +31,7 @@ import java.util.ArrayList;
  * @author Cristian Agudelo
  * A simple {@link Fragment} subclass.
  */
-public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMonitor.OnClickAdaptadorDeMonitor{
+public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMonitor.OnClickAdaptadorDeMonitor, ManagerFireBase.OnActualizarAdaptadorListener{
 
     /**
      * creación de un AdaptadorDeMonitor
@@ -53,23 +54,22 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
      */
     private FloatingActionButton btnAgregarMonitor;
 
+    /*
+    * Atributo de clase ManagerFireBase
+     */
+    private ManagerFireBase managerFireBase;
+
     /**
      * Método constructor de la clase ListaDeMonitoresFragment
      */
     public ListaDeMonitoresFragment() {
         // Required empty public constructor
+    }
 
-        monitores = new ArrayList();
-        monitores.add(new Monitor("Ronaldinho", "Programación"));
-        monitores.add(new Monitor("Albert Einstein", "Programación"));
-        monitores.add(new Monitor("Leonardo da Vinci", "Programación"));
-        monitores.add(new Monitor("Goku", "Calculo"));
-        monitores.add(new Monitor("Alejandro Magno", "Calculo"));
-        monitores.add(new Monitor("Ronaldinho", "Calculo"));
-        monitores.add(new Monitor("Albert Einstein", "Calculo"));
-        monitores.add(new Monitor("Leonardo da Vinci", "Calculo"));
-        monitores.add(new Monitor("Goku", "Calculo"));
-        monitores.add(new Monitor("Alejandro Magno", "Calculo"));
+    @Override
+    public void actualizarAdaptador(Monitor monitor) {
+        monitores.add(monitor);
+        adaptador.notifyItemInserted(monitores.size()-1);
     }
 
     /**
@@ -90,6 +90,8 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_lista_de_monitores, container, false);
+
+        
 
         btnAgregarMonitor = (FloatingActionButton) view.findViewById(R.id.btn_flotante_agregar_monitor);
         btnAgregarMonitor.setOnClickListener(new View.OnClickListener() {
