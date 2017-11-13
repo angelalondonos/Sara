@@ -56,8 +56,6 @@ public class DetalleDeMonitorActivity extends AppCompatActivity implements View.
          */
         btnImagen.setOnClickListener(this); //utiliza el onclick listener global
 
-
-        btnAgregarCita = (FloatingActionButton) findViewById(R.id.btn_flotante_agregar_cita);
         btnAgregarCita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -120,7 +118,7 @@ public class DetalleDeMonitorActivity extends AppCompatActivity implements View.
     }
 
     /**
-     * Método que permite brri calendario
+     * Método que permite abrir calendario
      * @param view
      */
     public void onAddEventClicked(View view){

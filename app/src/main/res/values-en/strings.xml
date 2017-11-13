@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sara</string>
+    <string name="cabecera_menu">Cabecera del menu</string>
+
+
+    <!-- Nombre txt -->
+    <string name="txt_monitor">Monitors</string>
+    <string name="txt_citas">Appointments</string>
+    <string name="txt_administrador">Administrator</string>
+    <string name="txt_crear_monitor">Create Monitor</string>
+    <string name="txt_crear_cita">Create an Appointment</string>
+    <string name="txt_mas_opciones">More options</string>
+    <string name="txt_configuracion">Configuration</string>
+    <string name="txt_salir">Exit</string>
+    <string name="txt_nombre">Name:</string>
+    <string name="txt_userName">UserName:</string>
+    <string name="txt_telefono">Phone:</string>
+    <string name="txt_semestre">Semester:</string>
+    <string name="txt_lineaMonitoria">Monitoria Line:</string>
+    <string name="txt_contrasena">Password:</string>
+    <string name="txt_lugarAsesoria">Advice place:</string>
+    <string name="txt_horarios">Schedule: </string>
+    <string name="txt_datos_estudiante">STUDENT DATA</string>
+    <string name="txt_no_identificacion">ID: </string>
+    <string name="txt_datos_monitor">MONITOR DATA</string>
+    <string name="txt_datos_cita">Appointments</string>
+
+    <!-- Nombre botones -->
+    <string name="btn_agregar_cita">CREATE APPOINTMENT</string>
+    <string name="btn_agregar_monitor">CREATE</string>
+    <string name="btn_actualizar"> TO UPDATE </string>
+    <string name="btn_cargar_imagen">Upload Image</string>
+
+
+    <!-- Titulo Actividad -->
+    <string name="title_activity_detalle_de_monitor">Monitor Detail</string>
+    <string name="title_activity_crear_cita">Create an Appointment</string>
+    <string name="title_activity_crear_monitor">Create Monitor</string>
+    <string name="title_activity_editar_monitor">Edit Monitor</string>
+    <string name="Cambiar_idioma">Change language</string>
+
+
+    <!-- mensajes -->
+    <string name="msg_btn_flotante">FUNCIONA BOTON FLOTANTE</string>
+    <string name="msg_btn_crear_monitor">A monitor has been created correctly</string>
+    <string name="msg_btn_crear_cita">A new appointment has been created</string>
+    <string name="msg_btn_actualizar_monitor">The monitor data has been updated</string>
+    <string name="msg_btn_cargar_imagen">Seleccione la Aplicación</string>
+    <string name="msg_btn_compartir">Compartir con</string>
+    <string name="msg_btn_compartir_prueba">Prueba boton Compartir</string>
+    <string name="msg_calendario_estado">Estado (Disponible o OCupado</string>
+    <string name="msg_universidad">Universidad del Quindío</string>
+
+
+    <!-- mensajes -->
+    <string name="txt_cita1">8:00 am  Juana Perez</string>
+    <string name="txt_cita2">9:00 am  Luis Ramirez</string>
+    <string name="txt_cita3">10:00 am  Maria Parra</string>
+
+
+    <string-array name="lineas_monitoria">
+        <item>-</item>
+        <item>Programación</item>
+        <item>Algebra</item>
+        <item>Calculo</item>
+    </string-array>
+
+    <string-array name="semestre">
+        <item>-</item>
+        <item>Primero</item>
+        <item>Segundo</item>
+        <item>Tercero</item>
+        <item>Cuarto</item>
+        <item>Quinto</item>
+        <item>Sexto</item>
+        <item>Séptimo</item>
+        <item>Octavo</item>
+        <item>Noveno</item>
+        <item>Décimo</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
