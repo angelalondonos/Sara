@@ -36,4 +36,8 @@ dependencies {
     compile 'com.github.sahildave:floatingactionbutton:0.0.2'
     compile 'com.github.fafaldo:fab-toolbar:1.2.0'
     testCompile 'junit:junit:4.12'
+
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
 }

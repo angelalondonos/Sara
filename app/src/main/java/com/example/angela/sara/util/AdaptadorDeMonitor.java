@@ -13,6 +13,9 @@ import com.example.angela.sara.vo.Monitor;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * @author Angela Londono
  * @author Rodrigo Ramirez
@@ -68,13 +71,12 @@ public class AdaptadorDeMonitor extends RecyclerView.Adapter<AdaptadorDeMonitor.
 
     public static class MonitorViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-        private TextView txtNombreMonitor;
-        private TextView txtLineaMonitoria;
+        @BindView(R.id.nombre_resumen) protected TextView txtNombreMonitor;
+        @BindView(R.id.linea_monitoria_resumen) protected TextView txtLineaMonitoria;
 
         public MonitorViewHolder(View itemView) {
             super(itemView);
-            txtNombreMonitor = (TextView) itemView.findViewById(R.id.nombre_resumen);
-            txtLineaMonitoria = (TextView) itemView.findViewById(R.id.linea_monitoria_resumen);
+            ButterKnife.bind(this, itemView);
             itemView.setOnClickListener(this);
 
         }

@@ -16,6 +16,9 @@ import android.widget.TextView;
 import com.example.angela.sara.R;
 import com.example.angela.sara.vo.Monitor;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Clase que permite ver el detalle del monitor
  * @author Angela Londono
@@ -28,13 +31,13 @@ public class DetalleDeMonitorFragment extends Fragment {
     /**
      * creación de TextView
      */
-    private TextView txtNombre;
-    private TextView txtLinea;
+    @BindView(R.id.txtview_nombre) protected TextView txtNombre;
+    @BindView(R.id.txtview_linea_monitoria) protected TextView txtLinea;
     /**
      * creación de un Monitor
      */
     private Monitor monitor;
-    private ImageButton btnHorario;
+    @BindView(R.id.button_horario_detalle) protected ImageButton btnHorario;
 
 
     /**
@@ -58,7 +61,7 @@ public class DetalleDeMonitorFragment extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_detalle_de_monitor, container, false);
 
-        btnHorario = (ImageButton) view.findViewById(R.id.button_horario_detalle);
+        ButterKnife.bind(this, view);
         btnHorario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,9 +87,7 @@ public class DetalleDeMonitorFragment extends Fragment {
      */
     public void mostrarMonitor (Monitor monitor) {
         this.monitor = monitor;
-        txtNombre = (TextView) getView().findViewById(R.id.txtview_nombre);
         txtNombre.setText(monitor.getNombre());
-        txtLinea = (TextView) getView().findViewById(R.id.txtview_linea_monitoria);
         txtLinea.setText(monitor.getLineaMonitoria());
     }
 

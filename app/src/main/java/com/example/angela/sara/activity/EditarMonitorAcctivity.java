@@ -12,6 +12,9 @@ import android.widget.Toast;
 
 import com.example.angela.sara.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * @author Angela Londono
  * @author Rodrigo Ramirez
@@ -25,11 +28,11 @@ public class EditarMonitorAcctivity extends AppCompatActivity {
     /**
      * creación de un ImageView
      */
-    private ImageView imagenMonitor;
+    @BindView(R.id.imagen_detalle) protected ImageView imagenMonitor;
     /**
      * creación de un Button
      */
-    private Button btnActualizarMonitor;
+    @BindView(R.id.btn_actualizar_monitor) protected Button btnActualizarMonitor;
 
 
     @Override
@@ -37,7 +40,8 @@ public class EditarMonitorAcctivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar_monitor);
 
-        imagenMonitor = (ImageView) findViewById(R.id.imagen_detalle);
+        ButterKnife.bind(this);
+
         imagenMonitor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,7 +49,6 @@ public class EditarMonitorAcctivity extends AppCompatActivity {
             }
         });
 
-        btnActualizarMonitor= (Button) findViewById(R.id.btn_actualizar_monitor);
         btnActualizarMonitor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
