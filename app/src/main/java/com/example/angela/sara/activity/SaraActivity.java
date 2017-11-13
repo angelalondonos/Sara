@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.CalendarContract;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
@@ -27,6 +26,9 @@ import com.example.angela.sara.vo.Monitor;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 
 /**
  * @author Angela Londono
@@ -40,19 +42,16 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
     /**
      * creación de un DrawerLayout
      */
-    private DrawerLayout drawerLayout;
+    @BindView(R.id.drawer_layout) protected DrawerLayout drawerLayout;
     /**
      * creación de un NavigationView
      */
-    private NavigationView navView;
+    @BindView(R.id.navview) protected NavigationView navView;
     /**
      * creación de un ArrayList de monitores
      */
     private ArrayList<Monitor> monitores;
-    /**
-     * creación de un FloatingActionButton
-     */
-    private FloatingActionButton btnAgregarMonitor;
+
 
     /**
      * creación de un Button
@@ -67,8 +66,8 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_nav_menu);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        navView = (NavigationView) findViewById(R.id.navview);
+        ButterKnife.bind(this);
+
         navView.setItemIconTintList(null);
         navView.setNavigationItemSelectedListener(this);
 

@@ -6,7 +6,6 @@ import android.provider.CalendarContract;
 import android.provider.CalendarContract.Events;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -20,6 +19,9 @@ import com.example.angela.sara.vo.Monitor;
 
 import java.util.Calendar;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * @author Angela Londono
  * @author Rodrigo Ramirez
@@ -32,11 +34,11 @@ public class DetalleDeMonitorActivity extends AppCompatActivity implements View.
      /**
       * creación de un ImageButton
      */
-    private ImageButton btnImagen;
+    @BindView(R.id.btn_editar) protected ImageButton btnImagen;
     /**
      * creación de un FloatingActionButton
      */
-    private FloatingActionButton btnAgregarCita;
+    @BindView(R.id.btn_flotante_agregar_cita) protected FloatingActionButton btnAgregarCita;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,14 +49,13 @@ public class DetalleDeMonitorActivity extends AppCompatActivity implements View.
         Monitor monitor = (Monitor) getIntent().getExtras().get("per");
         detalleMonitor.mostrarMonitor(monitor);
 
+        ButterKnife.bind(this);
+
         /**
          * configuración del btnImagen
          */
-        btnImagen = (ImageButton) findViewById(R.id.btn_editar);
         btnImagen.setOnClickListener(this); //utiliza el onclick listener global
 
-
-        btnAgregarCita = (FloatingActionButton) findViewById(R.id.btn_flotante_agregar_cita);
         btnAgregarCita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,8 +68,6 @@ public class DetalleDeMonitorActivity extends AppCompatActivity implements View.
 
     @Override
     public void onClick(View v) {
-
-        Log.i("NavigationView", "Estoy onClick de detalle");
 
         /**
          * configuración del btnImagen
@@ -119,7 +118,7 @@ public class DetalleDeMonitorActivity extends AppCompatActivity implements View.
     }
 
     /**
-     * Método que permite brri calendario
+     * Método que permite abrir calendario
      * @param view
      */
     public void onAddEventClicked(View view){

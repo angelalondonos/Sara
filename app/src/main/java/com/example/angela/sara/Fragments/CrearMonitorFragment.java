@@ -20,6 +20,9 @@ import com.example.angela.sara.R;
 import com.example.angela.sara.util.ManagerFireBase;
 import com.example.angela.sara.vo.Monitor;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 import static android.app.Activity.RESULT_OK;
 
 /**
@@ -35,14 +38,16 @@ public class CrearMonitorFragment extends Fragment {
     /**
      * creación de un ImageView
      */
-    private ImageView imagenMonitor;
+    @BindView(R.id.imagen_detalle) protected ImageView imagenMonitor;
     /**
      * creación de un Button
      */
-    private Button btnCrearMonitor;
+    @BindView(R.id.btn_agregar_monitor) protected  Button btnCrearMonitor;
     /**
      * Creación de ImageButton
      */
+
+    
     private ImageButton btnHorario;
     /*
     * Atributo de clase ManagerFireBase
@@ -62,6 +67,9 @@ public class CrearMonitorFragment extends Fragment {
     //linea = txt_linea_monitoria"
 
     private EditText lugar ;
+
+
+    @BindView(R.id.button_horario_monitor) protected  ImageButton btnHorario;
 
 
     /**
@@ -84,7 +92,8 @@ public class CrearMonitorFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view=inflater.inflate(R.layout.fragment_crear_monitor, container, false);
-        imagenMonitor = (ImageView) view.findViewById(R.id.imagen_detalle);
+        ButterKnife.bind(this, view);
+
         imagenMonitor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -110,7 +119,6 @@ public class CrearMonitorFragment extends Fragment {
         //managerFireBase.escucharEventoFireBase();
 
 
-        btnCrearMonitor = (Button) view.findViewById(R.id.btn_agregar_monitor);
         btnCrearMonitor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -119,7 +127,6 @@ public class CrearMonitorFragment extends Fragment {
             }
         });
 
-        btnHorario = (ImageButton) view.findViewById(R.id.button_horario_monitor);
         btnHorario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

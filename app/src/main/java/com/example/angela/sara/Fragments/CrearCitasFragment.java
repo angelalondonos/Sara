@@ -14,6 +14,9 @@ import android.widget.Toast;
 
 import com.example.angela.sara.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * @author Angela Londono
  * @author Rodrigo Ramirez
@@ -25,11 +28,11 @@ public class CrearCitasFragment extends Fragment {
     /**
      * creación de un Button
      */
-    private Button btnCrearCita;
+    @BindView(R.id.btn_agregar_cita) protected Button btnCrearCita;
     /**
      * creación de un ImageButton
      */
-    private ImageButton btnImagen;
+    @BindView(R.id.button_horario_cita) protected ImageButton btnImagen;
 
     /**
      * Contructor vacio de la clase CrearCitaFragment
@@ -52,7 +55,8 @@ public class CrearCitasFragment extends Fragment {
 
         View view= inflater.inflate(R.layout.fragment_crear_citas, container, false);
 
-        Button btnCrearCita = (Button) view.findViewById(R.id.btn_agregar_cita);
+        ButterKnife.bind(this, view);
+
         btnCrearCita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,7 +67,6 @@ public class CrearCitasFragment extends Fragment {
         /**
          * configuración del btnImagen
          */
-        btnImagen = (ImageButton) view.findViewById(R.id.button_horario_cita);
         btnImagen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

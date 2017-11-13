@@ -24,6 +24,10 @@ import com.example.angela.sara.vo.Monitor;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
 /**
  * Fragmento que contiene la lista de monitores
  * @author Angela Londono
@@ -40,7 +44,8 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
     /**
      * creación de un RecyclerView
      */
-    private RecyclerView listadoDeMonitores;
+    @BindView(R.id.listaMonitores) protected RecyclerView listadoDeMonitores;
+    private Unbinder unbinder;
     /**
      * creación de un ArrayList<Monitor>
      */
@@ -91,7 +96,8 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_lista_de_monitores, container, false);
 
-        
+
+        unbinder= ButterKnife.bind(this, view);
 
         btnAgregarMonitor = (FloatingActionButton) view.findViewById(R.id.btn_flotante_agregar_monitor);
         btnAgregarMonitor.setOnClickListener(new View.OnClickListener() {
@@ -116,7 +122,6 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
         super.onActivityCreated(savedInstanceState);
 
         adaptador = new AdaptadorDeMonitor(monitores, this);
-        listadoDeMonitores = (RecyclerView) getView().findViewById(R.id.listaMonitores);
         listadoDeMonitores.setAdapter(adaptador);
         listadoDeMonitores.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
     }
@@ -176,5 +181,11 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
     private void remplazarFragmento(Fragment fragment) {
         getFragmentManager().beginTransaction().replace(R.id.content_frame, fragment).addToBackStack(null).commit();
 
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        unbinder.unbind();
     }
 }
