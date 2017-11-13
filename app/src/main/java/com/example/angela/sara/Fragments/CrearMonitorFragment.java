@@ -47,8 +47,7 @@ public class CrearMonitorFragment extends Fragment {
      * Creación de ImageButton
      */
 
-    
-    private ImageButton btnHorario;
+
     /*
     * Atributo de clase ManagerFireBase
      */
