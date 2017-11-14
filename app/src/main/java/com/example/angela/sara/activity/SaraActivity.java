@@ -80,7 +80,7 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         if (findViewById(R.id.fragmento_tablet) == null) {
             Log.i("NavigationView", "Estoy en Celular");
 
-            ListaDeMonitoresFragment listaDeMonitoresFragment = new ListaDeMonitoresFragment();
+            
             remplazarFragmento(listaDeMonitoresFragment);
         }else{
             Log.i("NavigationView", "Estoy en la tablet");
