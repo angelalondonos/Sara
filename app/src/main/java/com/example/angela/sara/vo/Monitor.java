@@ -23,6 +23,8 @@ public class Monitor implements Parcelable{
     private String lugarAsesoria;
     private String id;
 
+    public Monitor(){}
+
     public Monitor(String nombre, String userName, String telefono, String semestre, String lineaMonitoria, String contrasena, String lugarAsesoria) {
         this.nombre = nombre;
         this.userName = userName;

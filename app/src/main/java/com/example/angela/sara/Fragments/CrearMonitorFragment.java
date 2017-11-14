@@ -114,7 +114,7 @@ public class CrearMonitorFragment extends Fragment {
 
         lugar = (EditText) view.findViewById(R.id.editText_lugar_asesoria);
 
-        managerFireBase = ManagerFireBase.instanciar(this);
+        managerFireBase = ManagerFireBase.getInstancia();
         //managerFireBase.escucharEventoFireBase();
 
 

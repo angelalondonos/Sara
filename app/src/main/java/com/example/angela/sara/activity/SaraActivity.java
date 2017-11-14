@@ -52,6 +52,7 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
      */
     private ArrayList<Monitor> monitores;
 
+    private ListaDeMonitoresFragment listaDeMonitoresFragment;
 
     /**
      * creación de un Button
@@ -72,7 +73,7 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         navView.setNavigationItemSelectedListener(this);
 
 
-
+        listaDeMonitoresFragment = new ListaDeMonitoresFragment();
         //ListaDeMonitoresFragment listaDeMonitoresFragment = (ListaDeMonitoresFragment) getSupportFragmentManager().findFragmentById(R.id.fragmento_lista_monitores);
         //listaDeMonitoresFragment.setMonitores(monitores);
 
@@ -158,7 +159,7 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
 
         switch (item.getItemId()) {
             case R.id.menu_monitores:
-                remplazarFragmento(new ListaDeMonitoresFragment());
+                remplazarFragmento(listaDeMonitoresFragment);
                 break;
             case R.id.menu_crear_monitor:
                 remplazarFragmento(new CrearMonitorFragment());

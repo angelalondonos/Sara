@@ -121,6 +121,10 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        monitores = new ArrayList<>();
+        managerFireBase = ManagerFireBase.instanciar(this);
+        managerFireBase.escucharEventoFireBase();
+
         adaptador = new AdaptadorDeMonitor(monitores, this);
         listadoDeMonitores.setAdapter(adaptador);
         listadoDeMonitores.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));

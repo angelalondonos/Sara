@@ -9,6 +9,9 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 import static android.content.ContentValues.TAG;
 
@@ -23,6 +26,7 @@ public class ManagerFireBase {
     private static ManagerFireBase instancia;
     private Fragment fragment;
     private OnActualizarAdaptadorListener listener;
+    private Monitor monitores;
 
     public ManagerFireBase() {
     }
@@ -31,6 +35,7 @@ public class ManagerFireBase {
         database = FirebaseDatabase.getInstance();
         databaseRef = database.getReference();
         this.fragment = fragment;
+        listener = (OnActualizarAdaptadorListener) fragment;
     }
     public static ManagerFireBase instanciar(Fragment fragment) {
         if (instancia == null) {
@@ -43,6 +48,7 @@ public class ManagerFireBase {
     }
 
     public void escucharEventoFireBase(){
+
         databaseRef.addChildEventListener(new ChildEventListener()
         {
             @Override
@@ -56,6 +62,11 @@ public class ManagerFireBase {
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
                 Log.v(TAG,"cambiado");
+                Monitor monitor = dataSnapshot.getValue(Monitor.class);
+                monitor.setId(dataSnapshot.getKey());
+
+                listener.actualizarAdaptador(monitor);
+
             }
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
@@ -74,5 +85,13 @@ public class ManagerFireBase {
 
     public interface OnActualizarAdaptadorListener{
         public void actualizarAdaptador(Monitor monitor);
+    }
+
+    public void eliminarMonitor(String id){
+        databaseRef.child(id).removeValue();
+    }
+
+    public static ManagerFireBase getInstancia() {
+        return instancia;
     }
 }
