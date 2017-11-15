@@ -81,7 +81,7 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
      * Crea la conexion entre el fragmento y su parte grafica
      */
     public interface OnMonitorSeleccionadoListener {
-        void onMonitorSeleccionado(int position);
+        void onMonitorSeleccionado(Monitor monitor);
     }
 
 
@@ -153,8 +153,7 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
     }
 
     @Override
-    public void onClickPosition(int pos) {
-        listener.onMonitorSeleccionado(pos);
+    public void onClickPosition(int pos) {listener.onMonitorSeleccionado(monitores.get(pos));
     }
 
     /**

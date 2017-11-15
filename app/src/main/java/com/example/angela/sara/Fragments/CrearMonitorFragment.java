@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -61,9 +62,9 @@ public class CrearMonitorFragment extends Fragment {
 
     private EditText telefono;
 
-    //semestre = spinner_semestre
+    private Spinner semestre;
 
-    //linea = txt_linea_monitoria"
+    private Spinner linea_monitoria;
 
     private EditText lugar ;
 
@@ -108,9 +109,10 @@ public class CrearMonitorFragment extends Fragment {
 
         telefono = (EditText) view.findViewById(R.id.editText_telefono_monitor);
 
-        //semestre = spinner_semestre
+        semestre = (Spinner) view.findViewById(R.id.spinner_semestre);
 
-        //linea = txt_linea_monitoria"
+        linea_monitoria = (Spinner) view.findViewById(R.id.spinner_linea);
+
 
         lugar = (EditText) view.findViewById(R.id.editText_lugar_asesoria);
 
@@ -145,7 +147,7 @@ public class CrearMonitorFragment extends Fragment {
     private Monitor crearMonitor() {
 
         Monitor monitor = new Monitor(nombre.getText().toString(), userName.getText().toString(),
-                telefono.getText().toString(), "Ultimo", "Programación", contraseña.getText().toString(),
+                telefono.getText().toString(), semestre.getSelectedItem().toString(), linea_monitoria.getSelectedItem().toString(), contraseña.getText().toString(),
                 lugar.getText().toString());
 
         return monitor;

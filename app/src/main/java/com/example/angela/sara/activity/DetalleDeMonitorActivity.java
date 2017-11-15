@@ -46,7 +46,7 @@ public class DetalleDeMonitorActivity extends AppCompatActivity implements View.
         setContentView(R.layout.activity_detalle_de_monitor);
 
         DetalleDeMonitorFragment detalleMonitor = (DetalleDeMonitorFragment) getSupportFragmentManager().findFragmentById(R.id.fragmento_detalle_monitores);
-        Monitor monitor = (Monitor) getIntent().getExtras().get("per");
+        Monitor monitor = (Monitor) getIntent().getExtras().get("Monitor");
         detalleMonitor.mostrarMonitor(monitor);
 
         ButterKnife.bind(this);

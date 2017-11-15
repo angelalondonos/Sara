@@ -69,6 +69,7 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
 
         ButterKnife.bind(this);
 
+
         navView.setItemIconTintList(null);
         navView.setNavigationItemSelectedListener(this);
 
@@ -80,7 +81,7 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         if (findViewById(R.id.fragmento_tablet) == null) {
             Log.i("NavigationView", "Estoy en Celular");
 
-            
+
             remplazarFragmento(listaDeMonitoresFragment);
         }else{
             Log.i("NavigationView", "Estoy en la tablet");
@@ -124,17 +125,17 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
 
     /**
      * Método que verifica cual monitor es seleccionado de acuerdo a la posicion
-     * @param position
+     * @param monitor
      */
     @Override
-    public void onMonitorSeleccionado(int position) {
+    public void onMonitorSeleccionado(Monitor monitor) {
 
         boolean esFragmento = getSupportFragmentManager().findFragmentById(R.id.fragmento_detalle_monitores) != null;
         if (esFragmento) {
-            ((DetalleDeMonitorFragment) getSupportFragmentManager().findFragmentById(R.id.fragmento_detalle_monitores)).mostrarMonitor(monitores.get(position));
+            ((DetalleDeMonitorFragment) getSupportFragmentManager().findFragmentById(R.id.fragmento_detalle_monitores)).mostrarMonitor(monitor);
         } else {
             Intent intent = new Intent(this, DetalleDeMonitorActivity.class);
-            intent.putExtra("per", monitores.get(position));
+            intent.putExtra("Monitor", monitor);
             startActivity(intent);
         }
     }
