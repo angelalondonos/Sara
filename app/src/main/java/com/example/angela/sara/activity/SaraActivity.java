@@ -54,6 +54,8 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
 
     private ListaDeMonitoresFragment listaDeMonitoresFragment;
 
+    private CrearCitasFragment crearCitasFragment;
+
     /**
      * creación de un Button
      */
@@ -75,6 +77,7 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
 
 
         listaDeMonitoresFragment = new ListaDeMonitoresFragment();
+        crearCitasFragment = new CrearCitasFragment();
         //ListaDeMonitoresFragment listaDeMonitoresFragment = (ListaDeMonitoresFragment) getSupportFragmentManager().findFragmentById(R.id.fragmento_lista_monitores);
         //listaDeMonitoresFragment.setMonitores(monitores);
 
@@ -166,7 +169,7 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
                 remplazarFragmento(new CrearMonitorFragment());
                 break;
             case R.id.menu_crear_cita:
-                remplazarFragmento(new CrearCitasFragment());
+                remplazarFragmento(crearCitasFragment);
                 break;
             case R.id.menu_citas:
 

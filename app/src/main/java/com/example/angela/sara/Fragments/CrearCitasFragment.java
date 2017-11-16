@@ -8,11 +8,18 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.angela.sara.R;
+import com.example.angela.sara.util.MonitorAdapter;
+import com.example.angela.sara.vo.Monitor;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,6 +40,11 @@ public class CrearCitasFragment extends Fragment {
      * creación de un ImageButton
      */
     @BindView(R.id.button_horario_cita) protected ImageButton btnImagen;
+
+    Spinner datos_monitores;
+    ArrayList<Monitor> monitores;
+    ArrayList<String> nombre_monitores;
+    ArrayAdapter<String> comboAdapter;
 
     /**
      * Contructor vacio de la clase CrearCitaFragment
@@ -57,6 +69,33 @@ public class CrearCitasFragment extends Fragment {
 
         ButterKnife.bind(this, view);
 
+        Spinner b = (Spinner) view.findViewById(R.id.datos_monitores);
+
+
+         monitores = new ArrayList<>();
+        //Arreglo con nombre de frutas
+        //monitores.add(new Monitor("Rodrigo", "Proframación"));
+        //monitores.add(new Monitor("Angela", "Proframación"));
+
+
+
+        final int size = monitores.size();
+        String [] nombres = new String [size];
+        for (int i = 0; i < size; i++){
+           nombres[i] = monitores.get(i).getNombre();
+        }
+
+
+
+        ArrayAdapter<String> spinnerCountShoesArrayAdapter =
+                new ArrayAdapter<String>( getActivity().getApplicationContext(), android.R.layout.simple_spinner_item, nombres);
+        spinnerCountShoesArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        b.setAdapter(spinnerCountShoesArrayAdapter);
+
+
+
+        MonitorAdapter adapter = new MonitorAdapter(getActivity().getApplicationContext(), monitores);
         btnCrearCita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

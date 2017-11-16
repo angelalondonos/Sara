@@ -19,7 +19,10 @@ import android.widget.Toast;
 
 import com.example.angela.sara.R;
 import com.example.angela.sara.util.ManagerFireBase;
+import com.example.angela.sara.vo.Cita;
 import com.example.angela.sara.vo.Monitor;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -67,6 +70,8 @@ public class CrearMonitorFragment extends Fragment {
     private Spinner linea_monitoria;
 
     private EditText lugar ;
+
+    private ArrayList<Cita> citas;
 
 
     @BindView(R.id.button_horario_monitor) protected  ImageButton btnHorario;
@@ -148,7 +153,7 @@ public class CrearMonitorFragment extends Fragment {
 
         Monitor monitor = new Monitor(nombre.getText().toString(), userName.getText().toString(),
                 telefono.getText().toString(), semestre.getSelectedItem().toString(), linea_monitoria.getSelectedItem().toString(), contraseña.getText().toString(),
-                lugar.getText().toString());
+                lugar.getText().toString(), citas );
 
         return monitor;
     }

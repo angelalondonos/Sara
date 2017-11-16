@@ -126,12 +126,16 @@
 
 
         <TableRow>
-            <TextView
-                android:id="@+id/datos_monitor"
+            <Spinner
+                android:id="@+id/datos_monitores"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txt_datos_monitor"
-                android:textSize="20dp"
-                android:textStyle="bold"/>
+                android:textSize="20sp"
+                android:gravity="left"
+                android:textColor="#67dc7c"
+                android:padding="5dip">
+            </Spinner>
+
         </TableRow>
 
         <TableRow>

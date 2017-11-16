@@ -3,6 +3,8 @@ package com.example.angela.sara.vo;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.ArrayList;
+
 /**
  *
  * Clase con datos necesarios de monitor
@@ -22,10 +24,11 @@ public class Monitor implements Parcelable{
     private String contrasena;
     private String lugarAsesoria;
     private String id;
+    private ArrayList<Cita> citas;
 
     public Monitor(){}
 
-    public Monitor(String nombre, String userName, String telefono, String semestre, String lineaMonitoria, String contrasena, String lugarAsesoria) {
+    public Monitor(String nombre, String userName, String telefono, String semestre, String lineaMonitoria, String contrasena, String lugarAsesoria, ArrayList<Cita> citas) {
         this.nombre = nombre;
         this.userName = userName;
         this.telefono = telefono;
@@ -33,6 +36,7 @@ public class Monitor implements Parcelable{
         this.lineaMonitoria = lineaMonitoria;
         this.contrasena = contrasena;
         this.lugarAsesoria = lugarAsesoria;
+        this.citas = citas;
     }
 
     public Monitor(String nombre, String lineaMonitoria) {
