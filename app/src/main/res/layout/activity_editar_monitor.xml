@@ -121,23 +121,6 @@
                     android:entries="@array/semestre" />
             </TableRow>
 
-            <TableRow>
-                <TextView
-                    android:id="@+id/txt_horario_editar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="top"
-                    android:maxLines="30"
-                    android:text="@string/txt_horarios"
-                    android:textSize="20dp" />
-
-                <ImageButton
-                    android:id="@+id/button_editar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/citas"/>
-            </TableRow>
-
 
             <TableRow>
                 <TextView
@@ -174,6 +157,23 @@
                     android:ems="10"
                     android:inputType="textPersonName"
                     />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:id="@+id/txt_horario_editar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:maxLines="30"
+                    android:text="@string/txt_horarios"
+                    android:textSize="20dp" />
+
+                <ImageButton
+                    android:id="@+id/button_editar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/citas"/>
             </TableRow>
 
             <LinearLayout

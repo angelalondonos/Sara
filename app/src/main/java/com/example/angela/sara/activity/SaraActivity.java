@@ -22,6 +22,7 @@ import com.example.angela.sara.Fragments.DetalleDeMonitorFragment;
 import com.example.angela.sara.Fragments.ListaDeMonitoresFragment;
 import com.example.angela.sara.Fragments.TabletFragment;
 import com.example.angela.sara.R;
+import com.example.angela.sara.util.Utilidades;
 import com.example.angela.sara.vo.Monitor;
 
 import java.util.ArrayList;
@@ -64,6 +65,7 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Utilidades.obtenerLenguaje(this);
         setContentView(R.layout.activity_sara);
 
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_nav_menu);
@@ -119,6 +121,13 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         switch (item.getItemId()) {
             case android.R.id.home:
                 drawerLayout.openDrawer(GravityCompat.START);
+                return true;
+            case R.id.cambiar_idioma:
+                Utilidades.cambiarIdioma(this);
+                Intent intent = getIntent();
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                finish();
+                startActivity(intent);
                 return true;
         }
 

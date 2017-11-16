@@ -46,11 +46,11 @@
     <string name="msg_btn_crear_monitor">A monitor has been created correctly</string>
     <string name="msg_btn_crear_cita">A new appointment has been created</string>
     <string name="msg_btn_actualizar_monitor">The monitor data has been updated</string>
-    <string name="msg_btn_cargar_imagen">Seleccione la Aplicación</string>
-    <string name="msg_btn_compartir">Compartir con</string>
+    <string name="msg_btn_cargar_imagen">Select the Application</string>
+    <string name="msg_btn_compartir">Share with</string>
     <string name="msg_btn_compartir_prueba">Prueba boton Compartir</string>
-    <string name="msg_calendario_estado">Estado (Disponible o OCupado</string>
-    <string name="msg_universidad">Universidad del Quindío</string>
+    <string name="msg_calendario_estado">State (Available or OCupado</string>
+    <string name="msg_universidad"> University of Quindío</string>
 
 
     <!-- mensajes -->
@@ -61,23 +61,23 @@
 
     <string-array name="lineas_monitoria">
         <item>-</item>
-        <item>Programación</item>
+        <item>Programming</item>
         <item>Algebra</item>
         <item>Calculo</item>
     </string-array>
 
     <string-array name="semestre">
         <item>-</item>
-        <item>Primero</item>
-        <item>Segundo</item>
-        <item>Tercero</item>
-        <item>Cuarto</item>
-        <item>Quinto</item>
-        <item>Sexto</item>
-        <item>Séptimo</item>
-        <item>Octavo</item>
-        <item>Noveno</item>
-        <item>Décimo</item>
+        <item>I</item>
+        <item>II</item>
+        <item>III</item>
+        <item>IV</item>
+        <item>V</item>
+        <item>VI</item>
+        <item>VII</item>
+        <item>VIII</item>
+        <item>IX</item>
+        <item>X</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->

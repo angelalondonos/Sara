@@ -9,11 +9,9 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -96,7 +94,6 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_lista_de_monitores, container, false);
 
-
         unbinder= ButterKnife.bind(this, view);
 
         btnAgregarMonitor = (FloatingActionButton) view.findViewById(R.id.btn_flotante_agregar_monitor);
@@ -133,23 +130,6 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
-    }
-
-
-    /**
-     * Método que permite verifiar que opcion se eleige en el menu
-     * @param item
-     * @return
-     */
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        int id = item.getItemId();
-        if (id == R.id.cambiar_idioma) {
-            Log.i("Menu", "Pulsada cambiar idioma");
-        }
-        return super.onOptionsItemSelected(item);
-
     }
 
     @Override
