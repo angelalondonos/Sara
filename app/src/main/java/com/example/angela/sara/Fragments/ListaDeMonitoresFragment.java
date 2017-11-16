@@ -9,7 +9,6 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -146,7 +145,6 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
 
         int id = item.getItemId();
         if (id == R.id.cambiar_idioma) {
-            Log.i("Menu", "Pulsada cambiar idioma");
         }
         return super.onOptionsItemSelected(item);
 

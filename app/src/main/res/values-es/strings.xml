@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Sara</string>
+    <string name="cabecera_menu">Cabecera del menu</string>
+
+
+    <!-- Nombre txt -->
+    <string name="txt_monitor">Monitores</string>
+    <string name="txt_citas">Citas</string>
+    <string name="txt_administrador">Administrador</string>
+    <string name="txt_crear_monitor">Crear Monitor</string>
+    <string name="txt_crear_cita">Crear Cita</string>
+    <string name="txt_mas_opciones">Más opciones</string>
+    <string name="txt_configuracion">Configuración</string>
+    <string name="txt_salir">Salir</string>
+    <string name="txt_nombre">Nombre:</string>
+    <string name="txt_userName">UserName:</string>
+    <string name="txt_telefono">Telefono:</string>
+    <string name="txt_semestre">Semestre:</string>
+    <string name="txt_lineaMonitoria">Linea de Monitoria:</string>
+    <string name="txt_contrasena">Contraseña:</string>
+    <string name="txt_lugarAsesoria">Lugar de Asesoria:</string>
+    <string name="txt_horarios">Horario: </string>
+    <string name="txt_datos_estudiante">DATOS ESTUDIANTE</string>
+    <string name="txt_no_identificacion">No. identificación: </string>
+    <string name="txt_datos_monitor">DATOS MONITOR</string>
+    <string name="txt_datos_cita">CITAS</string>
+
+    <!-- Nombre botones -->
+    <string name="btn_agregar_cita">CREAR CITA</string>
+    <string name="btn_agregar_monitor">CREAR</string>
+    <string name="btn_actualizar"> ACTUALIZAR </string>
+    <string name="btn_cargar_imagen">Cargar Imagen</string>
+
+
+    <!-- Titulo Actividad -->
+    <string name="title_activity_detalle_de_monitor">Detalle De Monitor</string>
+    <string name="title_activity_crear_cita">Crear Cita</string>
+    <string name="title_activity_crear_monitor">Crear Monitor</string>
+    <string name="title_activity_editar_monitor">Editar Monitor</string>
+    <string name="Cambiar_idioma">Cambiar Idioma</string>
+
+
+    <!-- mensajes -->
+    <string name="msg_btn_flotante">FUNCIONA BOTON FLOTANTE</string>
+    <string name="msg_btn_crear_monitor">Se ha creado un monitor correctamente</string>
+    <string name="msg_btn_crear_cita">Se ha creado una nueva cita</string>
+    <string name="msg_btn_actualizar_monitor">Se han actualizado los datos del monitor</string>
+    <string name="msg_btn_cargar_imagen">Seleccione la Aplicación</string>
+    <string name="msg_btn_compartir">Compartir con</string>
+    <string name="msg_btn_compartir_prueba">Prueba boton Compartir</string>
+    <string name="msg_calendario_estado">Estado (Disponible o OCupado</string>
+    <string name="msg_universidad">Universidad del Quindío</string>
+
+
+    <!-- mensajes -->
+    <string name="txt_cita1">8:00 am  Juana Perez</string>
+    <string name="txt_cita2">9:00 am  Luis Ramirez</string>
+    <string name="txt_cita3">10:00 am  Maria Parra</string>
+
+
+    <string-array name="lineas_monitoria">
+        <item>-</item>
+        <item>Programación</item>
+        <item>Algebra</item>
+        <item>Calculo</item>
+    </string-array>
+
+    <string-array name="semestre">
+        <item>-</item>
+        <item>Primero</item>
+        <item>Segundo</item>
+        <item>Tercero</item>
+        <item>Cuarto</item>
+        <item>Quinto</item>
+        <item>Sexto</item>
+        <item>Séptimo</item>
+        <item>Octavo</item>
+        <item>Noveno</item>
+        <item>Décimo</item>
+    </string-array>
+
+
+
+</resources>
