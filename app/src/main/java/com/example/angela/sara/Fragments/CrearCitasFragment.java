@@ -11,12 +11,15 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.angela.sara.R;
+import com.example.angela.sara.util.ManagerFireBase;
 import com.example.angela.sara.util.MonitorAdapter;
+import com.example.angela.sara.vo.Cita;
 import com.example.angela.sara.vo.Monitor;
 
 import java.util.ArrayList;
@@ -41,10 +44,17 @@ public class CrearCitasFragment extends Fragment {
      */
     @BindView(R.id.button_horario_cita) protected ImageButton btnImagen;
 
-    Spinner datos_monitores;
+
     ArrayList<Monitor> monitores;
-    ArrayList<String> nombre_monitores;
-    ArrayAdapter<String> comboAdapter;
+    private ManagerFireBase managerFireBase;
+
+    private EditText editText_nombre;
+    private EditText editText_identificacion;
+    private Spinner spinner_semestre;
+    private Spinner spinner_lista_monitores;
+    private Spinner datos_monitores;
+
+
 
     /**
      * Contructor vacio de la clase CrearCitaFragment
@@ -74,8 +84,8 @@ public class CrearCitasFragment extends Fragment {
 
          monitores = new ArrayList<>();
         //Arreglo con nombre de frutas
-        //monitores.add(new Monitor("Rodrigo", "Proframación"));
-        //monitores.add(new Monitor("Angela", "Proframación"));
+        monitores.add(new Monitor("Rodrigo", "Proframación"));
+        monitores.add(new Monitor("Angela", "Proframación"));
 
 
 
@@ -93,12 +103,14 @@ public class CrearCitasFragment extends Fragment {
 
         b.setAdapter(spinnerCountShoesArrayAdapter);
 
-
+        managerFireBase = ManagerFireBase.getInstancia();
 
         MonitorAdapter adapter = new MonitorAdapter(getActivity().getApplicationContext(), monitores);
         btnCrearCita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Monitor monitor = new Monitor();
+                managerFireBase.agregarCitaMonitor(crearCita(), monitor);
                 mostrarMensaje(getResources().getString(R.string.msg_btn_crear_cita));
             }
         });
@@ -124,6 +136,13 @@ public class CrearCitasFragment extends Fragment {
 
         // Inflate the layout for this fragment
         return view;
+    }
+
+    private Cita crearCita() {
+
+        Cita cita = new Cita(editText_nombre.getText().toString(), editText_identificacion.getText().toString(),
+                             spinner_semestre.getSelectedItem().toString(), spinner_lista_monitores.getSelectedItem().toString());
+        return cita;
     }
 
 

@@ -3,6 +3,7 @@ package com.example.angela.sara.util;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 
+import com.example.angela.sara.vo.Cita;
 import com.example.angela.sara.vo.Monitor;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -12,6 +13,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import static android.content.ContentValues.TAG;
 
@@ -43,8 +46,15 @@ public class ManagerFireBase {
         }
         return instancia;
     }
+
     public void insertarMonitor(Monitor monitor){
         databaseRef.push().setValue(monitor);
+    }
+
+    public void agregarCitaMonitor(Cita cita, Monitor monitor){
+        Map<String, Object> hopperUpdates = new HashMap<String, Object>();
+        hopperUpdates.put("nickname", "Amazing Grace");
+        databaseRef.updateChildren(hopperUpdates);
     }
 
     public void escucharEventoFireBase(){

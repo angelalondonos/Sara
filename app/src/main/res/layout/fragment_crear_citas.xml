@@ -138,16 +138,6 @@
 
         </TableRow>
 
-        <TableRow>
-            <Spinner
-                android:id="@+id/spinner_monitores"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:entries="@array/semestre"
-                >
-            </Spinner>
-        </TableRow>
-
     </TableLayout>
 
     <ImageButton
