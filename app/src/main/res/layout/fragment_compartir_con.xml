@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.angela.sara.Fragments.CompartirConFragment"
+    android:gravity="end"
+    android:orientation="vertical"
+    android:layout_marginEnd="20dp">
+
+    <ImageButton
+        android:id="@+id/button_compartir_facebook"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/icono_facebook"/>
+
+    <ImageButton
+        android:id="@+id/button_compartir_twitter"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/icono_twitter" />
+
+</LinearLayout>
