@@ -33,6 +33,11 @@ public class DetalleDeMonitorFragment extends Fragment {
      */
     @BindView(R.id.txtview_nombre) protected TextView txtNombre;
     @BindView(R.id.txtview_linea_monitoria) protected TextView txtLinea;
+    @BindView(R.id.contrasena_detalle) protected TextView txtContrasena;
+    @BindView(R.id.userName_detalle) protected TextView txtUsename;
+    @BindView(R.id.telefono_detalle) protected TextView txtTelefono;
+    @BindView(R.id.semestre_detalle) protected TextView txtSemestre;
+    @BindView(R.id.lugar_detalle) protected TextView txtLugarAsesoria;
     /**
      * creación de un Monitor
      */
@@ -87,8 +92,15 @@ public class DetalleDeMonitorFragment extends Fragment {
      */
     public void mostrarMonitor (Monitor monitor) {
         this.monitor = monitor;
-        txtNombre.setText(monitor.getNombre());
-        txtLinea.setText(monitor.getLineaMonitoria());
+        txtNombre.setText(monitor.getUserName());
+        txtLinea.setText(monitor.getTelefono());
+        txtContrasena.setText(monitor.getContrasena());
+        txtUsename.setText(monitor.getContrasena());
+        txtTelefono.setText(monitor.getLugarAsesoria());
+        txtContrasena.setText(monitor.getNombre());
+        txtLugarAsesoria.setText(monitor.getSemestre());
+        txtSemestre.setText(monitor.getLineaMonitoria());
+
     }
 
 

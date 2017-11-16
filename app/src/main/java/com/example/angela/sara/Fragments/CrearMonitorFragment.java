@@ -14,7 +14,6 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.angela.sara.R;
@@ -53,21 +52,13 @@ public class CrearMonitorFragment extends Fragment {
     * Atributo de clase ManagerFireBase
      */
     private ManagerFireBase managerFireBase;
-
-    private EditText nombre;
-
-    private EditText userName;
-
-    private EditText contraseña;
-
-    private EditText telefono;
-
-    private Spinner semestre;
-
-    private Spinner linea_monitoria;
-
-    private EditText lugar ;
-
+    @BindView(R.id.editText_nombre_monitor) protected  EditText nombre;
+    @BindView(R.id.editText_userName_monitor) protected  EditText userName;
+    @BindView(R.id.editText_contrasena_monitor) protected  EditText contraseña;
+    @BindView(R.id.editText_telefono_monitor) protected  EditText telefono;
+    @BindView(R.id.spinner_semestre) protected  Spinner semestre;
+    @BindView(R.id.spinner_linea) protected  Spinner linea_monitoria;
+    @BindView(R.id.editText_lugar_asesoria) protected  EditText lugar;
 
     @BindView(R.id.button_horario_monitor) protected  ImageButton btnHorario;
 
@@ -101,21 +92,6 @@ public class CrearMonitorFragment extends Fragment {
             }
         });
 
-        nombre = (EditText) view.findViewById(R.id.editText_nombre_monitor);
-
-        userName = (EditText) view.findViewById(R.id.editText_userName_monitor);
-
-        contraseña = (EditText) view.findViewById(R.id.editText_contrasena_monitor);
-
-        telefono = (EditText) view.findViewById(R.id.editText_telefono_monitor);
-
-        semestre = (Spinner) view.findViewById(R.id.spinner_semestre);
-
-        linea_monitoria = (Spinner) view.findViewById(R.id.spinner_linea);
-
-
-        lugar = (EditText) view.findViewById(R.id.editText_lugar_asesoria);
-
         managerFireBase = ManagerFireBase.getInstancia();
         //managerFireBase.escucharEventoFireBase();
 
@@ -125,6 +101,8 @@ public class CrearMonitorFragment extends Fragment {
             public void onClick(View view) {
                 managerFireBase.insertarMonitor(crearMonitor());
                 Toast.makeText(getActivity(), getResources().getString(R.string.msg_btn_crear_monitor), Toast.LENGTH_SHORT).show();
+                remplazarFragmento(new ListaDeMonitoresFragment());
+
             }
         });
 
@@ -176,5 +154,10 @@ public class CrearMonitorFragment extends Fragment {
             Uri path = data.getData();
             imagenMonitor.setImageURI(path);
         }
+    }
+
+    private void remplazarFragmento(Fragment fragment) {
+        getFragmentManager().beginTransaction().replace(R.id.content_frame, fragment).addToBackStack(null).commit();
+
     }
 }

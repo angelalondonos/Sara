@@ -37,8 +37,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:stretchColumns="2"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="10dp">
+            android:layout_gravity="center"
+           >
 
             <TableRow>
 
@@ -73,12 +73,12 @@
                 android:textSize="20dp" />
 
                 <TextView
-                    android:id="@+id/userName"
+                    android:id="@+id/userName_detalle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_toEndOf="@+id/imagen"
-                    android:text="Luis1234"
+                    android:text=""
                     android:textSize="20sp" />
             </TableRow>
 
@@ -94,7 +94,7 @@
                 android:textSize="20dp" />
 
                 <TextView
-                    android:id="@+id/contrasena"
+                    android:id="@+id/contrasena_detalle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
@@ -111,6 +111,14 @@
                 android:maxLines="30"
                 android:text="@string/txt_telefono"
                 android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/telefono_detalle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/imagen"
+                    android:textSize="20sp" />
              </TableRow>
 
 
@@ -124,6 +132,55 @@
                 android:text="@string/txt_semestre"
                 android:textSize="20dp" />
 
+                <TextView
+                    android:id="@+id/semestre_detalle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/imagen"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:id="@+id/txt_linea_monitoria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:maxLines="30"
+                    android:text="@string/txt_lineaMonitoria"
+                    android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/txtview_linea_monitoria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:maxLines="30"
+                android:text=""
+                android:textSize="20dp" />
+
+            </TableRow>
+
+
+            <TableRow>
+            <TextView
+                android:id="@+id/txt_lugar_asesoria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:maxLines="30"
+                android:text="@string/txt_lugarAsesoria"
+                android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/lugar_detalle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/imagen"
+                    android:textSize="20sp" />
             </TableRow>
 
             <TableRow>
@@ -145,40 +202,6 @@
                     />
 
             </TableRow>
-
-
-            <TableRow>
-                <TextView
-                    android:id="@+id/txt_linea_monitoria"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="top"
-                    android:maxLines="30"
-                    android:text="@string/txt_lineaMonitoria"
-                    android:textSize="20dp" />
-
-            <TextView
-                android:id="@+id/txtview_linea_monitoria"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top"
-                android:maxLines="30"
-                android:text=""
-                android:textSize="20dp" />
-            </TableRow>
-
-
-            <TableRow>
-            <TextView
-                android:id="@+id/txt_lugar_asesoria"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top"
-                android:maxLines="30"
-                android:text="@string/txt_lugarAsesoria"
-                android:textSize="20dp" />
-            </TableRow>
-
         </TableLayout>
     </ScrollView>
 
