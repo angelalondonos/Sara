@@ -18,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.angela.sara.Fragments.CrearCitasFragment;
 import com.example.angela.sara.Fragments.CrearMonitorFragment;
@@ -76,29 +77,31 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
 
         ButterKnife.bind(this);
 
-        Log.e("netHabilitada", Boolean.toString(isNetDisponible()));
-        Log.e("accInternet",   Boolean.toString(isOnlineNet()));
+        if(isNetDisponible())
+        {
+            navView.setItemIconTintList(null);
+            navView.setNavigationItemSelectedListener(this);
 
 
-        navView.setItemIconTintList(null);
-        navView.setNavigationItemSelectedListener(this);
+            listaDeMonitoresFragment = new ListaDeMonitoresFragment();
+            crearCitasFragment = new CrearCitasFragment();
+            //ListaDeMonitoresFragment listaDeMonitoresFragment = (ListaDeMonitoresFragment) getSupportFragmentManager().findFragmentById(R.id.fragmento_lista_monitores);
+            //listaDeMonitoresFragment.setMonitores(monitores);
+
+            if (findViewById(R.id.fragmento_tablet) == null) {
+                Log.i("NavigationView", "Estoy en Celular");
 
 
-        listaDeMonitoresFragment = new ListaDeMonitoresFragment();
-        crearCitasFragment = new CrearCitasFragment();
-        //ListaDeMonitoresFragment listaDeMonitoresFragment = (ListaDeMonitoresFragment) getSupportFragmentManager().findFragmentById(R.id.fragmento_lista_monitores);
-        //listaDeMonitoresFragment.setMonitores(monitores);
+                remplazarFragmento(listaDeMonitoresFragment);
+            }else{
+                Log.i("NavigationView", "Estoy en la tablet");
 
-        if (findViewById(R.id.fragmento_tablet) == null) {
-            Log.i("NavigationView", "Estoy en Celular");
-
-
-            remplazarFragmento(listaDeMonitoresFragment);
-        }else{
-            Log.i("NavigationView", "Estoy en la tablet");
-
-            TabletFragment tabletFragment = new TabletFragment();
-            remplazarFragmento(tabletFragment);
+                TabletFragment tabletFragment = new TabletFragment();
+                remplazarFragmento(tabletFragment);
+            }
+        }else
+        {
+            Toast.makeText(this, getResources().getString(R.string.msg_no_hay_red), Toast.LENGTH_SHORT).show();
         }
     }
 
