@@ -55,6 +55,18 @@ public class Monitor implements Parcelable{
         lugarAsesoria = in.readString();
         this.citas =in.createTypedArrayList(Cita.CREATOR);
     }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(nombre);
+        parcel.writeString(userName);
+        parcel.writeString(telefono);
+        parcel.writeString(semestre);
+        parcel.writeString(lineaMonitoria);
+        parcel.writeString(contrasena);
+        parcel.writeString(lugarAsesoria);
+        parcel.writeTypedList(citas);
+    }
     public void setId(String id) {
         this.id = id;
     }
@@ -144,16 +156,7 @@ public class Monitor implements Parcelable{
         return 0;
     }
 
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(contrasena);
-        parcel.writeString(nombre);
-        parcel.writeString(lineaMonitoria);
-        parcel.writeString(lugarAsesoria);
-        parcel.writeString(semestre);
-        parcel.writeString(userName);
-        parcel.writeTypedList(citas);
-    }
+
 }
 
 

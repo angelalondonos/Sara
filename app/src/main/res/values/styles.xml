@@ -17,4 +17,11 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
     <style name="DialogoTitulo" parent="android:Theme.Holo.Dialog"></style>
+
+    <style name="estilo_celda">
+        <item name="android:typeface">normal</item>
+        <item name="android:textColor">@color/negro</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

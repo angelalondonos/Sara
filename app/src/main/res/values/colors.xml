@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#1976d2</color>
     <color name="colorAccent">#03a9f4</color>
     <color name="white">#ffffff</color>
+    <color name="negro">#000000</color>
     <color name="colorButton">#03a9f4</color>
     <color name="colorResumenMonitor">#bbdefb</color>
 

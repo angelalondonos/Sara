@@ -12,10 +12,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
 import com.example.angela.sara.R;
+import com.example.angela.sara.activity.Tabla;
+import com.example.angela.sara.vo.Cita;
 import com.example.angela.sara.vo.Monitor;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -45,6 +50,8 @@ public class DetalleDeMonitorFragment extends Fragment {
     private Monitor monitor;
     @BindView(R.id.button_horario_detalle) protected ImageButton btnHorario;
 
+    View view;
+
 
     /**
      * Método contructor de la clase
@@ -65,7 +72,7 @@ public class DetalleDeMonitorFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_detalle_de_monitor, container, false);
+        view= inflater.inflate(R.layout.fragment_detalle_de_monitor, container, false);
 
         ButterKnife.bind(this, view);
         btnHorario.setOnClickListener(new View.OnClickListener() {
@@ -102,8 +109,22 @@ public class DetalleDeMonitorFragment extends Fragment {
         txtLugarAsesoria.setText(monitor.getSemestre());
         txtSemestre.setText(monitor.getLineaMonitoria());
 
-        Log.e("netHabilitada", monitor.getCitas().toString());
+        Tabla tabla = new Tabla(this.getActivity(), (TableLayout) view.findViewById(R.id.tabla));
+        tabla.agregarCabecera(R.array.cabecera_tabla);
+
+        ArrayList<Cita> citas = monitor.getCitas();
+        citas.remove(0);
+
+        for(Cita cita : citas)
+        {
+            ArrayList<String> elementos = new ArrayList<String>();
+            elementos.add(cita.getIdentificacion_estudiante());
+            elementos.add(cita.getLineaMonitoria());
+            elementos.add(cita.getNombre_estudiante());
+            elementos.add(cita.getSemestre());
+            tabla.agregarFilaTabla(elementos);
+
+        }
+
     }
-
-
 }
