@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.angela.sara.Fragments.CrearCitasFragment;
 import com.example.angela.sara.Fragments.ListaDeMonitoresFragment;
 import com.example.angela.sara.R;
 import com.example.angela.sara.vo.Monitor;
@@ -35,6 +36,15 @@ public class AdaptadorDeMonitor extends RecyclerView.Adapter<AdaptadorDeMonitor.
         this.monitores = monitores;
         try{
             listener= (OnClickAdaptadorDeMonitor) listaDeMonitoresFragment;
+        }catch (ClassCastException e){
+            e.printStackTrace();
+        }
+    }
+
+    public AdaptadorDeMonitor(ArrayList<Monitor> monitores, CrearCitasFragment crearCitasFragment) {
+        this.monitores = monitores;
+        try{
+            listener= (OnClickAdaptadorDeMonitor) crearCitasFragment;
         }catch (ClassCastException e){
             e.printStackTrace();
         }

@@ -14,6 +14,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static android.content.ContentValues.TAG;
@@ -30,6 +31,7 @@ public class ManagerFireBase {
     private Fragment fragment;
     private OnActualizarAdaptadorListener listener;
     private Monitor monitores;
+    List<Cita> citas;
 
     public ManagerFireBase() {
     }
@@ -39,6 +41,7 @@ public class ManagerFireBase {
         databaseRef = database.getReference();
         this.fragment = fragment;
         listener = (OnActualizarAdaptadorListener) fragment;
+        citas = new ArrayList<Cita>();
     }
     public static ManagerFireBase instanciar(Fragment fragment) {
         if (instancia == null) {
@@ -49,13 +52,34 @@ public class ManagerFireBase {
 
     public void insertarMonitor(Monitor monitor){
         databaseRef.push().setValue(monitor);
+
     }
 
     public void agregarCitaMonitor(Cita cita, Monitor monitor){
-        Map<String, Object> hopperUpdates = new HashMap<String, Object>();
-        hopperUpdates.put("nickname", "Amazing Grace");
-        databaseRef.updateChildren(hopperUpdates);
+
+        ArrayList<Cita> citas = monitor.getCitas();
+        citas.add(cita);
+        databaseRef.child(monitor.getId()).child("citas").setValue(citas);
+
+
+
+        //Map<String, Object> hopperUpdates = new HashMap<String, Object>();
+        //hopperUpdates.put("nickname", "Amazing Grace");
+        //databaseRef.updateChildren(hopperUpdates);
     }
+
+    public void agregarCitasMonitor(List<Cita> citas, String id){
+
+        //databaseRef.child(id).push().setValue(citas);
+
+        Log.e("Monitor ID", id);
+
+
+        //Map<String, Object> hopperUpdates = new HashMap<String, Object>();
+        //hopperUpdates.put("nickname", "Amazing Grace");
+        //databaseRef.updateChildren(hopperUpdates);
+    }
+
 
     public void escucharEventoFireBase(){
 
@@ -68,6 +92,7 @@ public class ManagerFireBase {
                 monitor.setId(dataSnapshot.getKey());
 
                 listener.actualizarAdaptador(monitor);
+
             }
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {

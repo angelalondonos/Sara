@@ -5,7 +5,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.CalendarContract.Events;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,11 +19,16 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.angela.sara.R;
+import com.example.angela.sara.activity.SaraActivity;
 import com.example.angela.sara.util.ManagerFireBase;
 import com.example.angela.sara.vo.Cita;
 import com.example.angela.sara.vo.Monitor;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -65,6 +72,9 @@ public class CrearMonitorFragment extends Fragment {
     @BindView(R.id.editText_lugar_asesoria) protected  EditText lugar;
     @BindView(R.id.button_horario_monitor) protected  ImageButton btnHorario;
 
+    private ArrayList<Cita> citas;
+
+
 
     /**
      * Constructor vacio de la clase CrearMonitorFragment
@@ -88,6 +98,8 @@ public class CrearMonitorFragment extends Fragment {
         View view=inflater.inflate(R.layout.fragment_crear_monitor, container, false);
         ButterKnife.bind(this, view);
 
+        citas = new ArrayList<Cita>();
+
         imagenMonitor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -102,9 +114,12 @@ public class CrearMonitorFragment extends Fragment {
         btnCrearMonitor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                managerFireBase.insertarMonitor(crearMonitor());
+                Monitor monitor = crearMonitor();
+                managerFireBase.insertarMonitor(monitor);
+                Log.e("Citas Monitor", monitor.getCitas().toString());
+
                 Toast.makeText(getActivity(), getResources().getString(R.string.msg_btn_crear_monitor), Toast.LENGTH_SHORT).show();
-                remplazarFragmento(new ListaDeMonitoresFragment());
+                remplazarFragmento(((SaraActivity)getActivity()).getListaDeMonitoresFragment());
 
             }
         });
@@ -127,9 +142,12 @@ public class CrearMonitorFragment extends Fragment {
 
     private Monitor crearMonitor() {
 
+        Cita cita =new Cita("nombre_estudiante", "identificacion_estudiante", "semestre", "lineaMonitoria");
+        citas.add(cita);
         Monitor monitor = new Monitor(nombre.getText().toString(), userName.getText().toString(),
-                telefono.getText().toString(), semestre.getSelectedItem().toString(), linea_monitoria.getSelectedItem().toString(), contraseña.getText().toString(),
-                lugar.getText().toString(),  new ArrayList<Cita>() );
+                telefono.getText().toString(), semestre.getSelectedItem().toString(),
+                linea_monitoria.getSelectedItem().toString(), contraseña.getText().toString(),
+                lugar.getText().toString(), citas);
 
         return monitor;
     }

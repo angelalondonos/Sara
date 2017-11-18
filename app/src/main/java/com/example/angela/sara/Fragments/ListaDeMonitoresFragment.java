@@ -171,4 +171,8 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
         super.onDestroy();
         unbinder.unbind();
     }
+
+    public ArrayList<Monitor> getMonitores() {
+        return monitores;
+    }
 }

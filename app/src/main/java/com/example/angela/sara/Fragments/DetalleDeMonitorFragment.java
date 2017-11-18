@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -101,6 +102,7 @@ public class DetalleDeMonitorFragment extends Fragment {
         txtLugarAsesoria.setText(monitor.getSemestre());
         txtSemestre.setText(monitor.getLineaMonitoria());
 
+        Log.e("netHabilitada", monitor.getCitas().toString());
     }
 
 

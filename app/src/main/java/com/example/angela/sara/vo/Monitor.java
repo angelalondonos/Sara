@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -52,12 +53,15 @@ public class Monitor implements Parcelable{
         lineaMonitoria = in.readString();
         contrasena = in.readString();
         lugarAsesoria = in.readString();
+        this.citas =in.createTypedArrayList(Cita.CREATOR);
     }
-
     public void setId(String id) {
         this.id = id;
     }
 
+    public String getId() {
+        return id;
+    }
 
     public static final Creator<Monitor> CREATOR = new Creator<Monitor>() {
         @Override
@@ -127,7 +131,13 @@ public class Monitor implements Parcelable{
         this.lugarAsesoria = lugarAsesoria;
     }
 
+    public ArrayList<Cita> getCitas() {
+        return citas;
+    }
 
+    public void setCitas(ArrayList<Cita> citas) {
+        this.citas = citas;
+    }
 
     @Override
     public int describeContents() {
@@ -142,6 +152,7 @@ public class Monitor implements Parcelable{
         parcel.writeString(lugarAsesoria);
         parcel.writeString(semestre);
         parcel.writeString(userName);
+        parcel.writeTypedList(citas);
     }
 }
 

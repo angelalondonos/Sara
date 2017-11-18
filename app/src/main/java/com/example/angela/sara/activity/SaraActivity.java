@@ -1,7 +1,10 @@
 package com.example.angela.sara.activity;
 
 import android.content.ContentUris;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.CalendarContract;
@@ -72,6 +75,9 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         ButterKnife.bind(this);
+
+        Log.e("netHabilitada", Boolean.toString(isNetDisponible()));
+        Log.e("accInternet",   Boolean.toString(isOnlineNet()));
 
 
         navView.setItemIconTintList(null);
@@ -202,8 +208,42 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.closeDrawers();
         return true;
     }
+    /*
+    *Metodo para comprovar si la Network esta habilitada
+     */
 
+    private boolean isNetDisponible() {
 
+        ConnectivityManager connectivityManager = (ConnectivityManager)
+                getSystemService(Context.CONNECTIVITY_SERVICE);
 
+        NetworkInfo actNetInfo = connectivityManager.getActiveNetworkInfo();
+
+        return (actNetInfo != null && actNetInfo.isConnected());
+    }
+
+    /*
+    *Metodo para comprovar si hay acceso a internet
+     */
+
+    public Boolean isOnlineNet() {
+
+        try {
+            Process p = java.lang.Runtime.getRuntime().exec("ping -c 1 www.google.es");
+
+            int val           = p.waitFor();
+            boolean reachable = (val == 0);
+            return reachable;
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public ListaDeMonitoresFragment getListaDeMonitoresFragment() {
+        return listaDeMonitoresFragment;
+    }
 }
 

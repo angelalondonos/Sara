@@ -31,6 +31,11 @@ public class Cita implements Parcelable {
         lineaMonitoria = in.readString();
     }
 
+    /**
+     * Método encargado de crear al título académico con base al Parcel recibido,
+     * también es necesario para enviar array para la lectura de arrays enviadas
+     * por medio del Parcel
+     */
     public static final Creator<Cita> CREATOR = new Creator<Cita>() {
         @Override
         public Cita createFromParcel(Parcel in) {
@@ -86,5 +91,9 @@ public class Cita implements Parcelable {
 
     public void setLineaMonitoria(String lineaMonitoria) {
         this.lineaMonitoria = lineaMonitoria;
+    }
+
+    public static Creator<Cita> getCREATOR() {
+        return CREATOR;
     }
 }
