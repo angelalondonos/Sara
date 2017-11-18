@@ -16,6 +16,9 @@ import com.example.angela.sara.R;
 import java.util.ArrayList;
 
 /**
+ * @author Angela Londono
+ * @author Rodrigo Ramirez
+ * @author Cristian Agudelo
  * Created by andres on 18/11/17.
  */
 

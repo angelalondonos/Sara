@@ -28,6 +28,11 @@ import com.example.angela.sara.Fragments.TabletFragment;
 import com.example.angela.sara.R;
 import com.example.angela.sara.util.Utilidades;
 import com.example.angela.sara.vo.Monitor;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
 
 import java.util.ArrayList;
 
@@ -61,6 +66,8 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
 
     private CrearCitasFragment crearCitasFragment;
 
+    private CallbackManager callbackManager;
+
     /**
      * creación de un Button
      */
@@ -76,6 +83,25 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         ButterKnife.bind(this);
+
+        callbackManager = CallbackManager.Factory.create();
+        LoginManager.getInstance().registerCallback(callbackManager,
+
+                new FacebookCallback<LoginResult>() {
+                    @Override
+                    public void onSuccess(LoginResult loginResult) {
+
+                    }
+                    @Override
+                    public void onCancel() {
+
+                    }
+                    @Override
+                    public void onError(FacebookException exception) {
+
+                    }
+                });
+
 
         if(isNetDisponible())
         {
@@ -226,7 +252,7 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
     }
 
     /*
-    *Metodo para comprovar si hay acceso a internet
+     * Metodo para comprobar si hay acceso a internet
      */
 
     public Boolean isOnlineNet() {
@@ -247,6 +273,13 @@ public class SaraActivity extends AppCompatActivity implements NavigationView.On
 
     public ListaDeMonitoresFragment getListaDeMonitoresFragment() {
         return listaDeMonitoresFragment;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        callbackManager.onActivityResult(requestCode, resultCode, data);
+        listaDeMonitoresFragment.onActivityResult(requestCode, resultCode, data);
     }
 }
 

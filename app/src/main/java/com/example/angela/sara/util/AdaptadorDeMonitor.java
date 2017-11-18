@@ -84,6 +84,7 @@ public class AdaptadorDeMonitor extends RecyclerView.Adapter<AdaptadorDeMonitor.
         @BindView(R.id.nombre_resumen) protected TextView txtNombreMonitor;
         @BindView(R.id.linea_monitoria_resumen) protected TextView txtLineaMonitoria;
 
+
         public MonitorViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);

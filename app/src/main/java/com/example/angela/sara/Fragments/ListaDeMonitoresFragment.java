@@ -3,6 +3,7 @@ package com.example.angela.sara.Fragments;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -14,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.angela.sara.R;
 import com.example.angela.sara.util.AdaptadorDeMonitor;
@@ -174,5 +176,19 @@ public class ListaDeMonitoresFragment extends Fragment implements AdaptadorDeMon
 
     public ArrayList<Monitor> getMonitores() {
         return monitores;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == getActivity().RESULT_OK){
+            Bundle bundle = data.getExtras();
+            String fbData = bundle.toString();
+            Toast.makeText(getActivity(), "I am inside resultcode ", Toast.LENGTH_SHORT).show();
+
+        }else
+        {
+            Toast.makeText(getActivity(), "I have no idea what is happening :( ", Toast.LENGTH_SHORT).show();
+        }
     }
 }

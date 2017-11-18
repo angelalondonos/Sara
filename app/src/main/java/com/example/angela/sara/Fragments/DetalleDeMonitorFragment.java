@@ -6,8 +6,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.CalendarContract;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +19,9 @@ import com.example.angela.sara.R;
 import com.example.angela.sara.activity.Tabla;
 import com.example.angela.sara.vo.Cita;
 import com.example.angela.sara.vo.Monitor;
+import com.facebook.share.model.ShareHashtag;
+import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.widget.ShareDialog;
 
 import java.util.ArrayList;
 
@@ -44,6 +47,8 @@ public class DetalleDeMonitorFragment extends Fragment {
     @BindView(R.id.telefono_detalle) protected TextView txtTelefono;
     @BindView(R.id.semestre_detalle) protected TextView txtSemestre;
     @BindView(R.id.lugar_detalle) protected TextView txtLugarAsesoria;
+    @BindView(R.id.button_compartir_facebook) protected ImageButton btnFacebook;
+    ShareDialog shareDialog;
     /**
      * creación de un Monitor
      */
@@ -90,24 +95,24 @@ public class DetalleDeMonitorFragment extends Fragment {
             }
         });
 
+
         return view;
 
     }
 
     /**
-     * Método que permite mostrar nombre y linea de monitoria en el detalle
+     * Método que permite mostrar el detalle del monitor
      * @param monitor
      */
     public void mostrarMonitor (Monitor monitor) {
         this.monitor = monitor;
-        txtNombre.setText(monitor.getUserName());
-        txtLinea.setText(monitor.getTelefono());
+        txtNombre.setText(monitor.getNombre());
+        txtLinea.setText(monitor.getLineaMonitoria());
         txtContrasena.setText(monitor.getContrasena());
-        txtUsename.setText(monitor.getContrasena());
-        txtTelefono.setText(monitor.getLugarAsesoria());
-        txtContrasena.setText(monitor.getNombre());
-        txtLugarAsesoria.setText(monitor.getSemestre());
-        txtSemestre.setText(monitor.getLineaMonitoria());
+        txtUsename.setText(monitor.getUserName());
+        txtTelefono.setText(monitor.getTelefono());
+        txtLugarAsesoria.setText(monitor.getLugarAsesoria());
+        txtSemestre.setText(monitor.getSemestre());
 
         Tabla tabla = new Tabla(this.getActivity(), (TableLayout) view.findViewById(R.id.tabla));
         tabla.agregarCabecera(R.array.cabecera_tabla);
@@ -119,12 +124,36 @@ public class DetalleDeMonitorFragment extends Fragment {
         {
             ArrayList<String> elementos = new ArrayList<String>();
             elementos.add(cita.getIdentificacion_estudiante());
-            elementos.add(cita.getLineaMonitoria());
             elementos.add(cita.getNombre_estudiante());
             elementos.add(cita.getSemestre());
             tabla.agregarFilaTabla(elementos);
 
         }
 
+
+        btnFacebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (ShareDialog.canShow(ShareLinkContent.class)) {
+                    ShareLinkContent content = new ShareLinkContent.Builder()
+
+                            .setContentUrl(Uri.parse("https://www.youtube.com/watch?v=jhUkGIsKvn0"))
+                            .setQuote("Personajes")
+                            .setShareHashtag(new ShareHashtag.Builder()
+                                    .setHashtag("#Personajes")
+                                    .build()).build();
+                    shareDialog.show(content);
+                }
+            }
+        });
+
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        shareDialog = new ShareDialog(getActivity());
     }
 }

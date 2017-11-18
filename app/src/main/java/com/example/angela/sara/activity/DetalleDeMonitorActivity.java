@@ -10,8 +10,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageButton;
-import android.widget.Toast;
 
 import com.example.angela.sara.Fragments.DetalleDeMonitorFragment;
 import com.example.angela.sara.R;
@@ -29,12 +27,8 @@ import butterknife.ButterKnife;
  * Created by angela on 22/10/17.
  */
 
-public class DetalleDeMonitorActivity extends AppCompatActivity implements View.OnClickListener{
+public class DetalleDeMonitorActivity extends AppCompatActivity {
 
-     /**
-      * creación de un ImageButton
-     */
-    @BindView(R.id.btn_editar) protected ImageButton btnImagen;
     /**
      * creación de un FloatingActionButton
      */
@@ -51,41 +45,9 @@ public class DetalleDeMonitorActivity extends AppCompatActivity implements View.
 
         ButterKnife.bind(this);
 
-        /**
-         * configuración del btnImagen
-         */
-        btnImagen.setOnClickListener(this); //utiliza el onclick listener global
-
-        btnAgregarCita.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Funciona", Toast.LENGTH_SHORT).show();
-                // remplazarFragmento(new CrearCitasFragment());
-            }
-        });//utiliza el onclick listener global
 
     }
 
-    @Override
-    public void onClick(View v) {
-
-        /**
-         * configuración del btnImagen
-         */
-        if (v.getId() == btnImagen.getId()) {
-            pasarAEditarMonitor(v);
-        }
-    }
-
-    /**
-     * Método para pasar al activity EditarMonitorAcctivity
-     *
-     * @param view
-     */
-    public void pasarAEditarMonitor(View view) {
-        Intent intent = new Intent(this, EditarMonitorAcctivity.class);
-        startActivity(intent);
-    }
 
     /**
      * Metodo que permite crear el menu de opciones
@@ -109,10 +71,14 @@ public class DetalleDeMonitorActivity extends AppCompatActivity implements View.
      public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.menu_compartir) {
-            Intent intent = new Intent(Intent.ACTION_SEND);
+           /** Intent intent = new Intent(Intent.ACTION_SEND);
             intent.setType("text/plain");
             intent.putExtra(Intent.EXTRA_TEXT, getResources().getString(R.string.msg_btn_compartir_prueba));
             startActivity(Intent.createChooser(intent, getResources().getString(R.string.msg_btn_compartir)));
+          */
+            Intent intent = new Intent(this, EditarMonitorAcctivity.class);
+            startActivity(intent);
+
         }
         return super.onOptionsItemSelected(item);
     }

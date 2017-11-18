@@ -60,6 +60,8 @@
     <string name="txt_cita3">10:00 am  Maria Parra</string>
 
 
+    <string name="facebook_app_id">id_app_facebook</string>
+
     <string-array name="lineas_monitoria">
         <item>-</item>
         <item>Programación</item>
