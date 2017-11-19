@@ -7,10 +7,15 @@ import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.angela.sara.R;
+import com.example.angela.sara.util.ManagerFireBase;
+import com.example.angela.sara.vo.Monitor;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,7 +38,33 @@ public class EditarMonitorAcctivity extends AppCompatActivity {
      * creación de un Button
      */
     @BindView(R.id.btn_actualizar_monitor) protected Button btnActualizarMonitor;
+    /*
+       * Atributo de clase ManagerFireBase
+        */
+    private ManagerFireBase managerFireBase;
 
+    /**
+     * creación de TextView
+     */
+    @BindView(R.id.editText_nombre_editar) protected EditText txtNombre;
+    @BindView(R.id.spinner_linea) protected Spinner txtLinea;
+    @BindView(R.id.editText_contrasena_editar) protected EditText txtContrasena;
+    @BindView(R.id.editText_userName_editar) protected EditText txtUsename;
+    @BindView(R.id.editText_telefono_editar) protected EditText txtTelefono;
+    @BindView(R.id.spinner_semestre) protected Spinner txtSemestre;
+    @BindView(R.id.editText_lugar_asesoria_editar) protected TextView txtLugarAsesoria;
+
+    /**
+     * creación de un Monitor
+     */
+    private Monitor monitor;
+
+    /**
+     * Método constructor de la actividad  Editar Monitor
+      */
+    public EditarMonitorAcctivity() {
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,5 +111,19 @@ public class EditarMonitorAcctivity extends AppCompatActivity {
             Uri path = data.getData();
             imagenMonitor.setImageURI(path);
         }
+    }
+
+
+    /**
+     * Método que permite mostrar el detalle del monitor
+     * @param monitor
+     */
+    public void mostrarMonitor (Monitor monitor) {
+        this.monitor = monitor;
+        txtNombre.setText(monitor.getNombre());
+        txtContrasena.setText(monitor.getContrasena());
+        txtUsename.setText(monitor.getUserName());
+        txtTelefono.setText(monitor.getTelefono());
+        txtLugarAsesoria.setText(monitor.getLugarAsesoria());
     }
 }

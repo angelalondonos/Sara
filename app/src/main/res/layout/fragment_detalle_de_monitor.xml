@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="12dp">
+    android:layout_margin="15dp">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -14,8 +14,8 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imagen_detalle_monitoy"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_gravity="center"
             android:src="@drawable/persona"
             app:civ_border_color="@color/colorPrimaryDark"
@@ -30,10 +30,14 @@
 
             <com.twitter.sdk.android.core.identity.TwitterLoginButton
                 android:id="@+id/twitter_login_button"
-                android:text="Inicia Sesión"
-                android:layout_width="wrap_content"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"/>
 
+            <LinearLayout
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
             <ImageButton
                 android:id="@+id/button_compartir_facebook"
                 android:layout_width="50dp"
@@ -46,7 +50,7 @@
                 android:text="Hacer tweet"
                 android:background="@drawable/icono_twitter"/>
 
-
+            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
@@ -64,6 +68,7 @@
             android:layout_height="wrap_content"
             android:stretchColumns="2"
             android:layout_gravity="center"
+            android:layout_margin="10dp"
            >
 
             <TableRow>
@@ -237,7 +242,6 @@
         android:layout_height="0dp"
         android:layout_weight="2">
 
-
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -247,8 +251,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
                 android:layout_marginStart="15dp"
-                android:stretchColumns="2"
-                >
+                android:stretchColumns="2">
 
                 <TableRow>
                     <TextView
