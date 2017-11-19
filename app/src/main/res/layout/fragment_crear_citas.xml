@@ -119,6 +119,7 @@
             <TextView
                 android:id="@+id/espacio"
                 android:layout_height="wrap_content"
+
                 android:text=""
                 android:textSize="20dp"
                 android:textStyle="bold"/>

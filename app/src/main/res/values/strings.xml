@@ -54,13 +54,12 @@
     <string name="msg_universidad">Universidad del Quindío</string>
 
 
-    <!-- mensajes -->
-    <string name="txt_cita1">8:00 am  Juana Perez</string>
-    <string name="txt_cita2">9:00 am  Luis Ramirez</string>
-    <string name="txt_cita3">10:00 am  Maria Parra</string>
+
+    <string name="facebook_app_id">2001814620061101</string>
 
 
-    <string name="facebook_app_id">id_app_facebook</string>
+    <string name="com.twitter.sdk.android.CONSUMER_KEY">OC9bkxPfsXAkZNaxsrCikNR0q</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET">Zxh68YGP2nL7pUcdFFRFBE7kDmCWYSVNFQT8IEU6GCktVmKXbG</string>
 
     <string-array name="lineas_monitoria">
         <item>-</item>

@@ -2,7 +2,6 @@ package com.example.angela.sara.activity;
 
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.res.Resources;
 import android.graphics.Paint;
 import android.graphics.Rect;
@@ -34,7 +33,7 @@ public class Tabla {
 
     /**
      * Constructor de la tabla
-     * @param fragment Actividad donde va a estar la tabla
+     * @param activity Actividad donde va a estar la tabla
      * @param tabla TableLayout donde se pintará la tabla
      */
     public Tabla(Activity activity, TableLayout tabla)

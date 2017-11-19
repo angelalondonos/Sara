@@ -8,10 +8,12 @@ import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
@@ -19,11 +21,21 @@ import com.example.angela.sara.R;
 import com.example.angela.sara.activity.Tabla;
 import com.example.angela.sara.vo.Cita;
 import com.example.angela.sara.vo.Monitor;
+import com.facebook.login.LoginManager;
 import com.facebook.share.model.ShareHashtag;
 import com.facebook.share.model.ShareLinkContent;
 import com.facebook.share.widget.ShareDialog;
+import com.twitter.sdk.android.core.Callback;
+import com.twitter.sdk.android.core.Result;
+import com.twitter.sdk.android.core.TwitterException;
+import com.twitter.sdk.android.core.TwitterSession;
+import com.twitter.sdk.android.core.identity.TwitterLoginButton;
+import com.twitter.sdk.android.tweetcomposer.TweetComposer;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -47,8 +59,12 @@ public class DetalleDeMonitorFragment extends Fragment {
     @BindView(R.id.telefono_detalle) protected TextView txtTelefono;
     @BindView(R.id.semestre_detalle) protected TextView txtSemestre;
     @BindView(R.id.lugar_detalle) protected TextView txtLugarAsesoria;
+    @BindView(R.id.imagen_detalle_monitoy) protected ImageView imagenDetalle;
     @BindView(R.id.button_compartir_facebook) protected ImageButton btnFacebook;
     ShareDialog shareDialog;
+    private TwitterLoginButton btnloginTwitter;
+    private ImageButton btnCompartirTwitter;
+
     /**
      * creación de un Monitor
      */
@@ -134,6 +150,7 @@ public class DetalleDeMonitorFragment extends Fragment {
         btnFacebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                LoginManager.getInstance().logInWithReadPermissions(DetalleDeMonitorFragment.this, Arrays.asList("public_profile","user_friends"));
 
                 if (ShareDialog.canShow(ShareLinkContent.class)) {
                     ShareLinkContent content = new ShareLinkContent.Builder()
@@ -141,11 +158,14 @@ public class DetalleDeMonitorFragment extends Fragment {
                             .setContentUrl(Uri.parse("https://www.youtube.com/watch?v=jhUkGIsKvn0"))
                             .setQuote("Personajes")
                             .setShareHashtag(new ShareHashtag.Builder()
-                                    .setHashtag("#Personajes")
+                                    .setHashtag("#Sara UQ")
                                     .build()).build();
+
                     shareDialog.show(content);
                 }
+
             }
+
         });
 
     }
@@ -153,7 +173,43 @@ public class DetalleDeMonitorFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
+        TwitterSession session;
         shareDialog = new ShareDialog(getActivity());
+
+        btnCompartirTwitter = (ImageButton) getView().findViewById(R.id.btn_hacer_tuit);
+        btnCompartirTwitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                    try {
+                        URL url = new URL("https://www.youtube.com/watch?v=VV9IRQSxx6w");
+                        TweetComposer.Builder builder = new TweetComposer.Builder(getContext())
+                                .text(monitor.getNombre()).url(url);
+                        builder.show();
+                    } catch (MalformedURLException e) {
+                        e.printStackTrace();
+                    }
+            }
+        });
+        btnloginTwitter = (TwitterLoginButton) getView().findViewById(R.id.twitter_login_button);
+        btnloginTwitter.setCallback(new Callback<TwitterSession>() {
+            @Override
+            public void success(Result<TwitterSession> result) {
+                TwitterSession session = result.data;
+                btnloginTwitter.setVisibility(View.INVISIBLE);
+            }
+            @Override
+            public void failure(TwitterException exception) {
+                Log.d("TwitterKit", "Login with Twitter failure", exception);
+            }
+        });
+
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        btnloginTwitter.onActivityResult(requestCode, resultCode, data);
+    }
+
 }

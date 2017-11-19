@@ -33,13 +33,14 @@ public class DetalleDeMonitorActivity extends AppCompatActivity {
      * creación de un FloatingActionButton
      */
     @BindView(R.id.btn_flotante_agregar_cita) protected FloatingActionButton btnAgregarCita;
+    private DetalleDeMonitorFragment detalleMonitor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_de_monitor);
 
-        DetalleDeMonitorFragment detalleMonitor = (DetalleDeMonitorFragment) getSupportFragmentManager().findFragmentById(R.id.fragmento_detalle_monitores);
+        detalleMonitor = (DetalleDeMonitorFragment) getSupportFragmentManager().findFragmentById(R.id.fragmento_detalle_monitores);
         Monitor monitor = (Monitor) getIntent().getExtras().getParcelable("Monitor");
         detalleMonitor.mostrarMonitor(monitor);
 
@@ -105,5 +106,12 @@ public class DetalleDeMonitorActivity extends AppCompatActivity {
         intent.putExtra(Events.RRULE, "FREQ=YEARLY");
 
         startActivity(intent);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent
+            data){
+        super.onActivityResult(requestCode, resultCode, data);
+        detalleMonitor.onActivityResult(requestCode, resultCode, data);
     }
 }
