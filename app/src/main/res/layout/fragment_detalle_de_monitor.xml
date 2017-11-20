@@ -311,15 +311,34 @@
 
             </TableLayout>
 
-            <android.support.design.widget.FloatingActionButton
-                android:id="@+id/btn_flotante_agregar_cita"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|end"
-                android:layout_margin="16dp"
-                android:src="@drawable/ic_agregar"
-                app:backgroundTint="#0040FF" />
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/btn_flotante_agregar_cita"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:layout_margin="16dp"
+                    android:src="@drawable/ic_agregar"
+                    app:backgroundTint="#0040FF" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/btn_flotante_borrar_monitor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:layout_margin="16dp"
+                    android:src="@drawable/ic_delete"
+                    app:backgroundTint="#0040FF"
+                    />
+            </LinearLayout>
+
         </FrameLayout>
+
 
     </ScrollView>
 </LinearLayout>

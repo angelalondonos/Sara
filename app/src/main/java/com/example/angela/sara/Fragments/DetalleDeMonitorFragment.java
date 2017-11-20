@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,9 +17,13 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.angela.sara.R;
+import com.example.angela.sara.activity.SaraActivity;
 import com.example.angela.sara.activity.Tabla;
+import com.example.angela.sara.util.AdaptadorDeMonitor;
+import com.example.angela.sara.util.ManagerFireBase;
 import com.example.angela.sara.vo.Cita;
 import com.example.angela.sara.vo.Monitor;
 import com.facebook.login.LoginManager;
@@ -47,7 +52,7 @@ import butterknife.ButterKnife;
  * @author Cristian Agudelo
  * A simple {@link Fragment} subclass.
  */
-public class DetalleDeMonitorFragment extends Fragment {
+public class DetalleDeMonitorFragment extends Fragment{
 
     /**
      * creación de TextView
@@ -69,7 +74,18 @@ public class DetalleDeMonitorFragment extends Fragment {
      * creación de un Monitor
      */
     private Monitor monitor;
+
     @BindView(R.id.button_horario_detalle) protected ImageButton btnHorario;
+
+    /**
+     * creación de un FloatingActionButton
+     */
+    private FloatingActionButton btnBorrarMonitor;
+
+    /*
+    * Atributo de clase ManagerFireBase
+     */
+    private ManagerFireBase managerFireBase;
 
     View view;
 
@@ -94,6 +110,8 @@ public class DetalleDeMonitorFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view= inflater.inflate(R.layout.fragment_detalle_de_monitor, container, false);
+        managerFireBase = ManagerFireBase.getInstancia();
+
 
         ButterKnife.bind(this, view);
         btnHorario.setOnClickListener(new View.OnClickListener() {
@@ -111,9 +129,15 @@ public class DetalleDeMonitorFragment extends Fragment {
             }
         });
 
-
         return view;
 
+    }
+
+    private void eliminarMoitor() {
+        Monitor monitor1 = this.monitor;
+        Log.e("Eliminado a: ", monitor1.getId() );
+        this.managerFireBase.eliminarMonitor(monitor1.getId());
+        Toast.makeText(getActivity(), getResources().getString(R.string.msg_btn_eliminar_monitor), Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -203,6 +227,13 @@ public class DetalleDeMonitorFragment extends Fragment {
                 Log.d("TwitterKit", "Login with Twitter failure", exception);
             }
         });
+        btnBorrarMonitor = (FloatingActionButton) view.findViewById(R.id.btn_flotante_borrar_monitor);
+        btnBorrarMonitor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                eliminarMoitor();
+            }
+        });//utiliza el onclick listener global
 
     }
 
@@ -211,5 +242,6 @@ public class DetalleDeMonitorFragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
         btnloginTwitter.onActivityResult(requestCode, resultCode, data);
     }
+
 
 }

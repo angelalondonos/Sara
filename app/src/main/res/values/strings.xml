@@ -43,6 +43,7 @@
     <!-- mensajes -->
     <string name="msg_btn_flotante">FUNCIONA BOTON FLOTANTE</string>
     <string name="msg_btn_crear_monitor">Se ha creado un monitor correctamente</string>
+    <string name="msg_btn_eliminar_monitor">Se ha eliminado un monitor correctamente</string>
     <string name="msg_no_hay_red">No tienes acceso a internet por favor cenectate para seguir</string>
     <string name="msg_btn_crear_cita">Se ha creado una nueva cita</string>
     <string name="msg_btn_no_crear_cita">No se puede crear la cita porque no hay un monitor seleccionado</string>
